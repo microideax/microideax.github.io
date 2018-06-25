@@ -13,15 +13,15 @@ I am a Postdoc Researcher with Advanced Digital Sciences Center, Singapore. Illi
 
 ## Work Experience
 
-* Advanced Digital Sciences Center, Singapore
-* Synopsys
-* ADSC
+*  Advanced Digital Sciences Center, Singapore
+*  Synopsys
+*  ADSC
 
 
 ## Education
 
-* Nankai University
-* University of Illinois at Urbana-Champaign
+*  Nankai University
+*  University of Illinois at Urbana-Champaign
 
 ## Project Summary
 
