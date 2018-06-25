@@ -48,5 +48,13 @@ Chip Implementation for the CUDA-to-FPGA Flow”, IEEE Transaction on Very Large
 IEEE International Symposium on Field-Programmable Custom Computing Machines (FCCM), 2014
 ```
 ## Patents
-
+```
+[1] C. Lin, Z. Guo, H. Xu, Y. Chen, K. Liang, G. Li, “Bi-CMOS based Fifth Order High Accuracy Temperature Compensated Circuit”,
+201610443932.2
+[2] C. Lin, Z. Guo, H. Xu, K. Liang, Y. Chen, G. Li, “Fifth Order High Accuracy Temperature Compensated Crystal Oscillator ASIC
+Design”, 201610443932.2
+[3] X. Gao, L. Wang, Y. Chen, “Nandflash Based Data Acquisition System”, patent No. CN20111005119.8
+[4] Y. Chen, P. Chang, L. Wang, R. Chen, H. Wu, “IC Card Identity Authentication System Used in Public Transportation”, patent No.
+ZL200810152397.0
+```
 [Link to another page](./another-page.html).
