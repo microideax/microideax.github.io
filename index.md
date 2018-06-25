@@ -14,9 +14,10 @@ I am a Postdoc Researcher with Advanced Digital Sciences Center, Singapore. Illi
 
 ## Work Experience
 
-### Advanced Digital Sciences Center, Singapore
-### Synopsys
-### ADSC
+* Advanced Digital Sciences Center, Singapore
+* Synopsys
+* ADSC
+
 
 ## Education
 
