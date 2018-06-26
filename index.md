@@ -59,7 +59,7 @@
     }
   </style>
   <link rel="icon" type="image/png" href="seal_icon.png">
-  <title>Jon Barron</title>
+  <title>Yao Chen</title>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   </head>
@@ -71,23 +71,22 @@
       <tr>
         <td width="67%" valign="middle">
         <p align="center">
-          <name>Jon Barron</name>
+          <name>Yao Chen</name>
         </p>
-        <p>I am a senior research scientist at <a href="https://research.google.com/">Google Research</a>, where I work on computer vision and computational photography. At Google I've worked on <a href="http://googleresearch.blogspot.com/2014/04/lens-blur-in-new-google-camera-app.html">Lens Blur</a>, <a href="http://googleresearch.blogspot.com/2014/10/hdr-low-light-and-high-dynamic-range.html">HDR+</a>, <a href="https://www.google.com/get/cardboard/jump/">Jump</a>, <a href="https://ai.googleblog.com/2017/10/portrait-mode-on-pixel-2-and-pixel-2-xl.html">Portrait Mode</a>, and <a href="https://www.youtube.com/watch?v=JSnB06um5r4">Glass</a>.
+        <p>I am a postdoctoral researcher at <a href="https://research.google.com/">ADSC</a>, where I work on high performance computing and data analytics.
         </p>
         <p>
-          I did my PhD at <a href="http://www.eecs.berkeley.edu/">UC Berkeley</a>, where I was advised by <a href="http://www.cs.berkeley.edu/~malik/">Jitendra Malik</a> and funded by the <a href="http://www.nsfgrfp.org/">NSF GRFP</a>. I've spent time at <a href="https://en.wikipedia.org/wiki/Google_X">Google[x]</a>, <a href="http://groups.csail.mit.edu/vision/welcome/">MIT CSAIL</a>, <a href="http://www.captricity.com/">Captricity</a>, <a href="https://www.nasa.gov/ames">NASA Ames</a>, <a href="http://www.google.com/">Google NYC</a>, the <a href="http://mrl.nyu.edu/">NYU MRL</a>, <a href="http://www.nibr.com/">Novartis</a>, and <a href="http://www.astrometry.net/">Astrometry.net</a>. I did my bachelors at the <a href="http://cs.toronto.edu">University of Toronto</a>.
+          I did my PhD at <a href="http://www.eecs.berkeley.edu/">Nankai University</a>, while I also spent two years in University of Illinois at Urbana-Champaign as a visiting PhD student. I did my bachelors at <a href="http://cs.toronto.edu">Nankai University as well</a>.
         </p>
         <p align=center>
-          <a href="mailto:jonbarron@gmail.com">Email</a> &nbsp/&nbsp
-          <a href="JonBarron-CV.pdf">CV</a> &nbsp/&nbsp
-          <a href="JonBarron-bio.txt">Biography</a> &nbsp/&nbsp
-          <a href="https://scholar.google.com/citations?hl=en&user=jktWnL8AAAAJ">Google Scholar</a> &nbsp/&nbsp
-          <a href="http://www.linkedin.com/in/jonathanbarron/"> LinkedIn </a>
+          <a href="mailto:yao.chen@adsc-create.edu.sg">Email</a> &nbsp/&nbsp
+          <a href="Yao-CV.pdf">CV</a> &nbsp/&nbsp
+          <a href="https://scholar.google.com/citations?user=R-GbxYsAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
+          <a href="https://www.linkedin.com/in/chen-yao-2b039682/"> LinkedIn </a>
         </p>
         </td>
         <td width="33%">
-        <img src="JonBarron_circle.jpg">
+        <img src="yao.jpg">
         </td>
       </tr>
       </table>
