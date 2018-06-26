@@ -1,7 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-  <meta name=viewport content=“width=800”>
   <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
   <style type="text/css">
     /* Color scheme stolen from Sergey Karayev */
@@ -73,7 +71,7 @@
         <p align="center">
           <name>Yao Chen</name>
         </p>
-        <p>I am a postdoctoral researcher at <a href="https://research.google.com/">ADSC</a>, where I work on high performance computing and data analytics.
+        <p>I am a postdoctoral researcher at <a href="https://adsc.illinois.edu/">ADSC</a>, where I work on high performance computing and data analytics.
         </p>
         <p>
           I did my PhD at <a href="http://www.eecs.berkeley.edu/">Nankai University</a>, while I also spent two years in University of Illinois at Urbana-Champaign as a visiting PhD student. I did my bachelors at <a href="http://cs.toronto.edu">Nankai University as well</a>.
