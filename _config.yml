@@ -10,7 +10,7 @@ locale: "en-US"
 title: "Yao's Homepage"
 title_separator: "-"
 name: &name "Yao Chen"
-description: &description "personal description"
+description: &description "Research Scientist at ADSC"
 url: https://microideax.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: "microideax/microideax.github.io"
@@ -78,15 +78,15 @@ analytics:
 
 # Site Author
 author:
-  name: "Your Sidebar Name"
-  avatar: "profile.png"
-  bio: "Your biography for the left-hand sidebar"
-  location: "Location"
+  name: "Yao Chen"
+  avatar: "yao.png"
+  bio: "I am a Research Scientist with Advanced Digital Sciences Center (ADSC), a research center of University of Illinois at Urbana-Champaign (UIUC) based in Singapore. Currently, I am leading the Hardware and Data Analytics group of ADSC on quite some attractive research topics under the supervision of Prof. Deming Chen and Prof. Marianne Winslett."
+  location: "Singapore"
   employer:
   pubmed: "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar: "http://yourfullgooglescholarurl.com"
+  googlescholar: "https://scholar.google.com/citations?user=R-GbxYsAAAAJ&hl=en"
   email:
-  researchgate: # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate: "https://www.researchgate.net/profile/Yao_Chen14"
   uri:
   bitbucket:
   codepen:
@@ -101,13 +101,13 @@ author:
   impactstory: #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm:
   linkedin:
-  orcid: "http://orcid.org/yourorcidurl"
+  orcid: #""
   pinterest:
   soundcloud:
   stackoverflow: # http://stackoverflow.com/users/123456/username
   steam:
   tumblr:
-  twitter: "replacethistwitterhandle"
+  twitter: #"replacethistwitterhandle"
   vine:
   weibo:
   xing:
