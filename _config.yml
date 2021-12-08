@@ -7,19 +7,16 @@
 
 # Site Settings
 locale: "en-US"
-title: "Yao's Homepage"
+title: "Yao's Page"
 title_separator: "-"
 name: &name "Yao Chen"
-description: &description "Research Scientist at ADSC"
+description: &description "Research Scientist, Coordinator for Data Analytics and Hardware Research Groups"
 url: https://microideax.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: "microideax/microideax.github.io"
 teaser: # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs: false # true, false (default)
 words_per_minute: 160
-future: true
-read_more: "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link: false #change to true to add link to talkmap on talks page
 comments:
   provider: # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
@@ -70,6 +67,7 @@ social:
   name: # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
 
+
 # Analytics
 analytics:
   provider: "google-universal" # false (default), "google", "google-universal", "custom"
@@ -79,13 +77,12 @@ analytics:
 # Site Author
 author:
   name: "Yao Chen"
-  avatar: "yao.png"
-  bio: "I am a Research Scientist with Advanced Digital Sciences Center (ADSC), a research center of University of Illinois at Urbana-Champaign (UIUC) based in Singapore. Currently, I am leading the Hardware and Data Analytics group of ADSC on quite some attractive research topics under the supervision of Prof. Deming Chen and Prof. Marianne Winslett."
-  location: "Singapore"
-  employer:
-  pubmed: "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  avatar: "images/bio-photo.jpg"
+  bio: "Research Scientist, Coordinator for Data Analytics and Hardware Research Groups"
+  location: "Advanced Digital Sciences Center"
+  employer: 
   googlescholar: "https://scholar.google.com/citations?user=R-GbxYsAAAAJ&hl=en"
-  email:
+  email: "yao.chen@adsc-create.edu.sg"
   researchgate: "https://www.researchgate.net/profile/Yao_Chen14"
   uri:
   bitbucket:
@@ -98,7 +95,6 @@ author:
   google_plus:
   keybase:
   instagram:
-  impactstory: #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm:
   linkedin:
   orcid: #""
@@ -113,6 +109,7 @@ author:
   xing:
   youtube:
   wikipedia:
+
 
 # Reading Files
 include:
@@ -142,12 +139,12 @@ exclude:
   - node_modules
   - package.json
   - tmp
-  - vendor
 keep_files:
   - .git
   - .svn
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
 
 # Conversion
 markdown: kramdown
@@ -155,6 +152,7 @@ highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
+
 
 # Markdown Processing
 kramdown:
@@ -166,6 +164,7 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+
 
 # Collections
 collections:
@@ -181,6 +180,7 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+
 
 # Defaults
 defaults:
@@ -243,26 +243,29 @@ sass:
   sass_dir: _sass
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
+
 # Outputting
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Singapore # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
 
 # Plugins
 plugins:
   - jekyll-paginate
-  - jekyll-sitemap
+  # - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jekyll-redirect-from
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
-  - jekyll-sitemap
+  # - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jemoji
+
 
 # Archives
 #  Type
@@ -292,9 +295,12 @@ tag_archive:
 #     category: /categories/:name/
 #     tag: /tags/:name/
 
+
 # HTML Compression
 # - http://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:
     envs: development
+
+theme: jekyll-theme-merlot
