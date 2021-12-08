@@ -9,8 +9,8 @@
 locale: "en-US"
 title: "Yao's Page"
 title_separator: "-"
-name: &name "Yao Chen"
-description: &description "Research Scientist, Coordinator for Data Analytics and Hardware Research Groups"
+name: &name "Yao"
+description: &description "Personal Homepage"
 url: https://microideax.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: "microideax/microideax.github.io"
@@ -77,9 +77,9 @@ analytics:
 # Site Author
 author:
   name: "Yao Chen"
-  avatar: "images/bio-photo.jpg"
+  avatar: "bio-photo.jpg"
   bio: "Research Scientist, Coordinator for Data Analytics and Hardware Research Groups"
-  location: "Advanced Digital Sciences Center"
+  location: "Advanced Digital Sciences Center, Singapore"
   employer: 
   googlescholar: "https://scholar.google.com/citations?user=R-GbxYsAAAAJ&hl=en"
   email: "yao.chen@adsc-create.edu.sg"
