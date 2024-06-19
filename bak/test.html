@@ -1,0 +1,933 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+  <title>Rui Tan</title>
+
+  <meta name="generator" content="emacs">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <style type="text/css">
+    body { font-size: 19px; font-family: 'Trebuchet MS', sans-serif;}
+
+    a:link {
+	text-decoration: none;
+	color: green;
+    }
+
+    a:visited {
+	text-decoration: none;
+	color: green;
+    }
+    
+    a:hover {
+	text-decoration: underline;
+	color: green;
+    }
+    
+    a:active {
+	text-decoration: underline;
+	color: green;
+    }
+
+    /* Style the tab */
+    .tab {
+	overflow: hidden;
+	border: none;
+	background-color: #f1f1f1;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	font-size: 19px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+	background-color: #ddd;
+	border-bottom: 5px solid MediumSeaGreen;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+	background-color: #ccc;
+	border-bottom: 5px solid green;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border: none;
+	border-top: none;
+    }
+
+    li{
+	margin: 8px 0;
+    }
+
+    .divpatch {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	vertical-align: top;
+	font-size: 19px;
+	width: 800px;
+	padding: 12px;
+	margin: 10px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .illu {
+	float: right;
+    }
+
+  </style>
+
+  <script type="text/javascript">
+    function showStuff(id) {
+    document.getElementById(id).style.display = 'block';
+    }
+    
+    function hideStuff(id) {
+    document.getElementById(id).style.display = 'none';
+    }
+
+    function openTab(evt, cityName) {
+	var i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+	    tabcontent[i].style.display = "none";
+	}
+	tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) {
+	    tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+	document.getElementById(cityName).style.display = "block";
+	evt.currentTarget.className += " active";
+    }
+
+    document.addEventListener("DOMContentLoaded", function(event) { 
+	document.getElementById("hometab").click();
+    });
+  </script>
+
+  <link rel="shortcut icon" href="rg.ico" type="image/x-icon" />
+
+</head>
+
+<body bgcolor="#DDDDDD">
+<table align="center" width="98%" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF">
+<tr><td bgcolor="green" height="5"></td></tr>
+<tr>
+<td>
+  <table cellspacing="25" cellpadding="0" border="0" align="center" width="100%"><tr><td>
+  <table>
+    <tr>
+      <td valign="top"><img src="images/tanrui-ntu3.jpg" width="219" height="250" alt="Rui Tan"></td>
+      <td>      </td>
+      <td valign="top">
+	<h1>Rui Tan</h1>
+	<!--<img src="images/cname.jpg" alt="My name in Chinese" align="top">-->
+	<!--Postdoctoral Research Associate, Visiting Research Professor<br>
+	Department of Computer Science and Engineering,	Michigan State University<br>-->
+	<!--<b>Senior Research Scientist</b>, <a href="http://www.adsc.illinois.edu/" target="_blank">Advanced Digital Sciences Center</a> (A UIUC lab in Singapore)<br>
+	<b>Principle Research Affiliate</b>, Coordinated Science Laboratory, University of Illinois at Urbana-Champaign<br>-->
+	<b>Associate Professor</b><br>
+	College of Computing and Data Science<br>
+	Nanyang Technological University<br><br>
+	<!--<b>Adjunct Senior Research Scientist</b><br>
+	Advanced Digital Sciences Center (Singapore), University of Illinois at Urbana-Champaign<br><br>-->
+	<pre style="border: 0;padding: 0;margin: 0;">
+E-mail:  tanrui@ntu.edu.sg
+Address: N4-02C-85, 50 Nanyang Ave, Singapore 639798
+Phone:   +65 6790 5491
+	</pre>
+      </td>
+    </tr>
+  </table>
+
+  <div class="tab">
+    <button id="hometab" class="tablinks" onclick="openTab(event, 'Home')">Home</button>
+    <button class="tablinks" onclick="openTab(event, 'Research')">Research</button>
+    <button class="tablinks" onclick="openTab(event, 'Publication')">Publication</button>    
+    <button class="tablinks" onclick="openTab(event, 'Funding')">Funding</button>
+    <button class="tablinks" onclick="openTab(event, 'Members')">Members</button>
+    <button class="tablinks" onclick="openTab(event, 'Teaching')">Teaching</button>
+    <button class="tablinks" onclick="openTab(event, 'Services')">Services</button>
+    <button class="tablinks" onclick="openTab(event, 'Publicity')">Publicity</button>
+  </div>
+  <!--<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#999999"><tr><td height="1"></td></tr></table>-->
+<!--
+<p>
+  I am currently a Research Scientist at <a href="http://www.adsc.illinois.edu/" target="_blank">Advanced Digital Sciences Center (ADSC)</a>, a Singapore-based research center established by the University of Illinois at Urbana-Champaign (UIUC). I also hold a joint appointment with UIUC as a Principle Research Affiliate. Before joining ADSC in September 2012, I worked as a Postdoctoral Research Associate at Michigan State University from 2010 to 2012. I obtained Ph.D. in computer science from City University of Hong Kong in 2010.
+</p>
+-->
+
+<!--<p>
+I'm currently a visiting professor in Department of Computer Science and Engineering at Michigan State University.-->
+<!--I received the B.S. and M.S. degrees in automation from Shanghai Jiao Tong University, China, in 2004 and 2007, respectively. I received the Ph.D. degree in computer science from City University of Hong Kong in 2010.-->
+<!--I'm currently a Ph.D. candidate in <a href="http://www.cs.cityu.edu.hk" target="_blank">Department of Computer Science</a> at <a href="http://www.cityu.edu.hk" target="_blank">City University of Hong Kong</a>, supervised by <a href="http://www.cse.msu.edu/~glxing" target="_blank">Prof. Guoliang Xing</a> and <a href="http://www.cs.cityu.edu.hk/~jianwang" target="_blank">Prof. Jianping Wang</a>. I successfully defended my Ph.D. thesis in July 2010. I received the B.S. and M.S. degrees in automation from <a href="http://www.sjtu.edu.cn" target="_blank">Shanghai Jiao Tong University</a>, China, in 2004 and 2007, respectively.-->
+<!--My research interests include collaborative sensing in wireless sensor networks and cyber-physical systems.-->
+<!--I received the <i>Outstanding Academic Performance Award</i> and the <i>Research Tuition Scholarship</i> both from City University of Hong Kong in 2009.-->
+<!--(Detailed biography <a href="biography.html">HTML</a>, <a href="resume2.pdf">PDF</a>.)</p>-->
+
+<!--
+<p>
+<i><font color="#FF0000"><b>News:</b></font> Multiple research positions on sensor networks, cyber-physical systems, and security are available at ADSC. [<a href="positions.html">details</a>]</i></p>-->
+
+<div id="Home" class="tabcontent">
+  <p>I am working with the members of <a href="https://ntuiot.xyz/" target="_blank">NTU IoT Research Group</a> to conduct research on <b>networked sensing</b> in various cyber-physical systems that are carried by humans, embedded in infrastructures, and distributed in wild environments. With an experimental basis, our research tries to understand how the physical processes affect the cyber systems (sensor networks and the broader Internet of Things) and exploit certain properties of the physical processes to advance the functional and non-functional aspects of the cyber systems. Our research has been recognized by various best paper awards and runner-ups at prestigious international conferences. With immediate application potential, our research has been funded externally by government authorities and companies in the information technology, energy, and manufacturing sectors. I have been serving on the technical program committees of various international conferences and also the editorial boards of journals that are related to networked sensing.</p>
+
+  <!--<p><font color="red">We are hiring!</font> Our group has research positions available regularly. We invite motivated researchers to apply. Recent position posts:
+    <ul>
+      <li>[08/2023] 8 research positions (postdocs, engineers) and 2 PhD scholarships in the topic of robust AI for autonomous driving perception are immediately available. <a href="robustAI.html">Check out the details.</a></li>-->
+    <!--<li>[07/2021] Three Research Assistant/Associate positions in the area of AIoT are immediately available. <a href="https://bit.ly/3ALhDdJ">Check out the details.</a></li>-->
+    <!--<li>[04/2022] Two research positions in the area of industrial IoT for data centers is immediately available. <a href="job2.html">Check out the details.</a></li>-->
+    <!--<li>[12/2021] A postdoctoral Research Fellow position in the area of industrial IoT is immediately available. <a href="job.html">Check out the details.</a></li>-->
+    <!--</ul>
+  </p>-->
+
+  <br>
+
+  <h2><font color="green">Research interests</font></h2>
+  <ul>
+    <li>AIoT (AI + IoT)</li>
+    <li>Sensing for resilient system functions (e.g., timing, synchronization, location, etc)</li>
+    <li>Thermal and energy management in data centers</li>
+    <li>Secure sensing and control in smart grids</li>
+  </ul>
+
+  <br>
+  <h2><font color="green">Awards and commendables</font></h2>
+  <ol>
+    <li><b>Stanford's Top 2% Scientists 2023</b> (<a href="https://elsevier.digitalcommonsdata.com/datasets/btchxktzyw/6">source</a>)</li>
+    <li><b>NTU CoE Research - Young Faculty Award 2023, Special Mention</b></li>
+    <li><b>ICCPS'23 Best Paper Award</b>
+      <br>For paper <cite><a href="https://tanrui.github.io/pub/BubCam-ICCPS.pdf">BubCam: A Vision System for Automated Quality Inspection at Manufacturing Lines</a></cite>
+      <br>1 out of 21 accepted papers selected from 82 submissions.
+    </li>
+    <li><b>SenSys'22 Best Paper Award Finalist</b>
+      <br>For paper <cite><a href="https://tanrui.github.io/pub/sensys22-PriMask.pdf">PriMask: Cascadable and Collusion-Resilient Data Masking for Mobile Cloud Inference</a></cite>
+      <br>7 out of 52 accepted papers selected from 208 submissions.
+    </li>
+    <li><b>ICCPS'22 Best Paper Award Finalist</b>
+      <br>For paper <cite><a href="https://tanrui.github.io/pub/ICCPS22.pdf">Toward Physics-Guided Safe Deep Reinforcement Learning for Green Data Center Cooling Control</a></cite>
+    <br>4 out of 25 accepted papers selected from 88 submissions.</li>
+    <li><b>SenSys'21 Best Paper Award Runner-Up</b>
+      <br>For paper <cite><a href="https://tanrui.github.io/pub/LIMU_BERT.pdf">LIMU-BERT: Unleashing the Potential of Unlabeled Data for IMU Sensing Applications</a></cite>
+      <br>2 out of 25 accepted papers selected from 139 submissions.</li>
+  <li><b>IPSN'21 Best Artifact Award Runner-Up</b>
+    <br>For paper <cite><a href="https://arxiv.org/pdf/2104.01160.pdf">PhyAug: Physics-Directed Data Augmentation for Deep Sensing Model Transfer in Cyber-Physical Systems</a></cite></li>
+  <li><b>IPSN'17 Best Paper Award</b>
+    <br>For paper <cite><a href="pub/ipsn17-EMR.pdf">Natural Timestamping Using Powerline Electromagnetic Radiation</a></cite>
+    <br>2 (tie) out of 19 accepted papers selected from 104 submissions</li>
+  <li><b>CPSR-SG'17 Best Paper Award</b>
+    <br>For paper <cite><a href="pub/MTD-CPSR.pdf">Hidden Moving Target Defense in Smart Grids</a></cite></li>  
+  <li><b>IPSN'14 Best Paper Award Runner-Up</b>
+    <br>For paper <cite><a href="pub/ipsn027-wang.pdf">Aquatic Debris Monitoring Using Smartphone-Based Robotic Sensors</a></cite>
+    <br>2 out of 23 accepted papers selected from 111 submissions</li>
+  <li><b>PerCom'13 Mark Weiser Best Paper Award Finalist</b>
+    <br>For paper <cite><a href="pub/percom-power.pdf">Supero: A Sensor System for Unsupervised Residential Power Usage Monitoring</a></cite>
+    <br>3 out of 19 accepted full papers selected from 170 submissions</li>
+  <li><b>Outstanding Academic Performance Award</b>
+    <br>from City University of Hong Kong, 2009</li>
+  <li><b>Research Tuition Scholarship</b>
+    <br>from City University of Hong Kong, 2009</li>
+  <li><b>Rockwell Master Scholarship</b>
+    <br>from Rockwell Automation, Inc., 2006</li>
+    <li><b>INFOCOM Distinguished TPC Member, 2017, 2020, 2022</b></li>
+  <!--<li><i>Excellent Bechelor Thesis</i>, Shanghai Jiao Tong University, 2004</li>-->
+</ol>
+
+  
+  
+<!--
+<ul>  
+  <li>Past research topics:
+    <ul>
+      <li>Resilience of demand response</li>
+      <li>Real-time volcano monitoring</li>
+      <li>Building power usage monitoring</li>
+      <li>Coverage, mobility, fusion, calibration in sensor networks</li>
+    </ul>
+  </li>
+</ul>-->
+
+<!--
+<ul>
+  <li><b>Resilience</b> of cyber-physical systems
+    <ul>
+      <li>Resilient CPS/IoT system functions (e.g., clock synchronization, location, etc)</li>
+      <li>Power grid control system security</li>
+      <li>Demand response security</li>
+    </ul>
+  </li>  
+  <li><b>Sustainability</b> by cyber-physical systems
+    <ul>
+      <li>Thermal and energy control in data centers</li>
+      <li>Real-time volcano monitoring</li>
+      <li>Building power usage monitoring</li>
+      <li>Aquatic environment monitoring</li>
+      <li>Coverage, mobility, fusion, calibration in sensor networks</li>
+    </ul>
+  </li>
+</ul>
+-->
+
+<br>
+<h2><font color="green">Education</font></h2>
+<ul>  
+  <li><b>PhD</b> (2010) in Computer Science, City University of Hong Kong</li>
+  <li><b>MS</b> (2007) in Pattern Recognition and Intelligent Systems, Shanghai Jiao Tong University</li>
+  <li><b>BEng with Honors</b> (2004) in Automation, Shanghai Jiao Tong University, China</li>
+</ul>
+
+<br>
+<h2><font color="green">Employments</font></h2>
+<ul>
+  <li>School of Computer Science and Engineering, Nanyang Technological University
+    <ul>
+      <li>Associate Professor (2021-now)</li>
+      <li>Assistant Professor (2016-2021)</li>
+    </ul>
+  </li>
+  <li>Advanced Digital Sciences Center, University of Illinois at Urbana-Champaign (UIUC)
+    <ul>
+      <li>Adjunct Senior Research Scientist (2016-2018)</li>
+      <li>Senior Research Scientist (2015)</li>
+      <li>Research Scientist (2012-2015)</li>
+      <li>Senior Research Affiliate (2012-2015), Coordinated Science Laboratory of UIUC</li>
+    </ul>
+  </li>
+  <li>Department of Computer Science and Engineering, Michigan State University
+    <ul>
+      <li>Postdoctoral Research Associate (2010-2012)</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<div id="Publication" class="tabcontent">
+  <h2><font color="green">Selected publications</font> (☞ <a href="publication.html">publication list</a>)<br></h2>
+  <u>Names underlined</u> are students, research staff, visiting students who worked directly with me in my group for the publication.
+  <ol>
+    <li><b>[ACM/IEEE ICCPS'23]</b> <u>Jiale Chen</u>, <u>Duc Van Le</u>, Rui Tan, Daren Ho. BubCam: A Vision System for Automated Quality Inspection at Manufacturing Lines. <font color="red"><b>Best Paper Award.</b></font> [<a href="https://tanrui.github.io/pub/BubCam-ICCPS.pdf" target="_blank">pdf</a>]</li>
+    <li><b>[ACM SenSys'22]</b> <u>Linshan Jiang</u>, <u>Qun Song</u>, Rui Tan, Mo Li. PriMask: Cascadable and Collusion-Resilient Data Masking for Mobile Cloud Inference. <font color="red"><b>Best Paper Candidate.</b></font> [<a href="https://tanrui.github.io/pub/sensys22-PriMask.pdf" target="_blank">pdf</a>]</li>
+    <li><b>[EWSN'22]</b> <u>Qun Song</u>, Zhenyu Yan, <u>Wenjie Luo</u>, Rui Tan. Sardino: Ultra-Fast Dynamic Ensemble for Secure Visual Sensing at Mobile Edge. [<a href="https://arxiv.org/pdf/2204.08189.pdf" target="_blank">pdf</a>] [<a href="https://github.com/song-qun/HyperNetwork" target="_blank">code</a>]
+    <li><b>[ACM/IEEE IPSN'21]</b> <u>Wenjie Luo</u>, <u>Zhenyu Yan</u>, <u>Qun Song</u>, Rui Tan. PhyAug: Physics-Directed Data Augmentation for Deep Sensing Model Transfer in Cyber-Physical Systems. <font color="red"><b>Best Artifact Award Runner-Up.</b></font> [<a href="https://arxiv.org/pdf/2104.01160.pdf" target="_blank">pdf</a>] [<a href="https://github.com/jiegev5/PhyAug" target="_blank">code and data</a>] [<a href="https://www.youtube.com/watch?v=LcIVBRx4x-o" target="_blank">video presentation</a>]</li>
+    <li><b>[IEEE TSUSC]</b> <u>Duc Van Le</u>, <u>Yingbo Liu</u>, <u>Rongrong Wang</u>, Rui Tan, Lek Heng Ngoh. Air Free-Cooled Tropical Data Center: Design, Evaluation, and Learned Lessons. [<a href="https://tanrui.github.io/pub/TDC-TSUSC.pdf" target="_blank">pdf</a>]</li>
+    <li><b>[IEEE ICDCS'20]</b> <u>Chaojie Gu</u>, <u>Linshan Jiang</u>, Rui Tan, Mo Li, Jun Huang. Attack-Aware Data Timestamping in Low-Power Synchronization-Free LoRaWAN. [<a href="https://tanrui.github.io/pub/timestamping-ICDCS20.pdf" target="_blank">pdf</a>] [<a href="https://youtu.be/6oASB6e-uTg" target="_blank">video presentation</a>]</li>
+    <li><b>[ACM SenSys'19]</b> <u>Qun Song</u>, <u>Zhenyu Yan</u>, Rui Tan. Moving Target Defense for Embedded Deep Visual Sensing against Adversarial Examples. [<a href="pub/deepMTD.pdf" target="_blank">pdf</a>] [<a href="https://tanrui.github.io/pub/SenSys19-slides.pdf" target="_blank">slides</a>]</li>
+    <li id="mobicom-19"><b>[ACM MobiCom'19]</b> <u>Zhenyu Yan</u>, <u>Qun Song</u>, Rui Tan, <u>Yang Li</u>, Adams Wai Kin Kong. Towards Touch-to-Access Device Authentication Using Induced Body Electric Potentials. [<a href="pub/mobicom022-yanA.pdf" target="_blank">pdf</a>] [<a href="https://tanrui.github.io/pub/mobicom19-slides.pdf" target="_blank">slides</a>]</li>
+    <li><b>[ACM UbiComp'18]</b> <u>Qun Song</u>, <u>Chaojie Gu</u>, Rui Tan. Deep Room Recognition Using Inaudible Echos. [<a href="pub/RoomRecognize.pdf" target="_blank">pdf</a>] [<a href="https://tanrui.github.io/pub/RoomRecognize-slides.pdf" target="_blank">slides</a>]</li>
+    <li><b>[ACM SenSys'17]</b> <u>Zhenyu Yan</u>, <u>Yang Li</u>, Rui Tan, Jun Huang. Application-Layer Clock Synchronization for Wearables Using Skin Electric Potentials Induced by Powerline Radiation. [<a href="pub/touchsync.pdf" target="_blank">pdf</a>] [<a href="pub/TouchSync-slides.pdf" target="_blank">slides</a>]</li>
+    <li><b>[ACM/IEEE IPSN'17]</b> <u>Yang Li</u>, Rui Tan*, David Yau. Natural Timestamping Using Powerline Electromagnetic Radiation. *Corresponding author. <font color="red"><b>Best Paper Award.</b></font> [<a href="pub/ipsn17-EMR.pdf" target="_blank">pdf</a>] [<a href="pub/IPSN2017.pptx" target="_blank">slides</a>]</li>
+    <li><b>[IEEE RTSS'16]</b> <u>Sreejaya Viswanathan</u>, Rui Tan*, David Yau. Exploiting Power Grid for Accurate and Secure Clock Synchronization in Industrial IoT. *Corresponding author. [<a href="pub/grid-sync.pdf" target="_blank">pdf</a>] [<a href="pub/grid-sync.pptx" target="_blank">slides</a>]</li>
+    <li><b>[ACM/IEEE ICCPS'16]</b> Rui Tan, <u>Hoang Hai Nguyen</u>, Eddy. Y. S. Foo, Xinshu Dong, David K. Y. Yau, Zbigniew Kalbarczyk, Ravishankar K. Iyer, Hoay Beng Gooi. Optimal False Data Injection Attack against Automatic Generation Control in Power Grids. [<a href="pub/AGC.pdf" target="_blank">pdf</a>] [<a href="pub/AGC-attack.pdf" target="_blank">slides</a>]</li>
+    <li><b>[ACM CCS'13]</b> Rui Tan, Varun Badrinath Krishna, David K. Y. Yau, Zbigniew Kalbarczyk. Impact of Integrity Attacks on Real-Time Pricing in Smart Grids. [<a href="pub/stability-ccs.pdf" target="_blank">pdf</a>] [<a href="slides/ccs13-slides.pdf" target="_blank">slides</a>]</li>
+    <li><b>[IEEE PerCom'13]</b> Dennis E. Phillips, Rui Tan*; Mohammad-Mahdi Moazzami; Guoliang Xing; Jinzhu Chen; David K. Y. Yau. Supero: A Sensor System for Unsupervised Residential Power Usage Monitoring. *Co-primary authors. <font color="red"><b>Mark Weiser Best Paper Award Finalist.</b></font> [<a href="pub/percom-power.pdf" target="_blank">pdf</a>] [<a href="pub/supero-slides.pdf" target="_blank">slides</a>] [<a href="https://youtu.be/4sSZaaV0Kv4" target="_blank">video</a>]</li>
+    <li><b>[IEEE RTSS'10]</b> Rui Tan, Guoliang Xing, Jinzhu Chen, Wen-Zhan Song, Renjie Huang. Quality-driven Volcanic Earthquake Detection using Wireless Sensor Networks. [<a href="pub/volcano-monitor.pdf" target="_blank">pdf</a>] [<a href="slides/rtss-volcano.pdf" target="_blank">slides</a>] [<a href="code/volcano/index.html">code</a>]</li>
+    <li><b>[ACM/IEEE TON, ACM MobiCom'09]</b> Rui Tan, Guoliang Xing, Benyuan Liu, Jianping Wang, Xiaohua Jia. Exploiting Data Fusion to Improve the Coverage of Wireless Sensor Networks. [<a href="pub/coverage-TON.pdf" target="_blank">pdf</a>] [<a href="pub/coverage-supplementary.pdf" target="_blank">appendices</a>]</li>
+</ol>
+
+  <h2><font color="green">Technical reports</font><br></h2>
+  <ol>
+    <li>Duc Van Le, Yingbo Liu; Rongrong Wang; Rui Tan. <a href="https://hdl.handle.net/10356/137780" target="_blank">Tropical Data Centre Proof-of-Concept</a>. Technical Report, Nanyang Technological University, 2019.</li>
+    <li>Xinshu Dong, Hui Lin, Rui Tan; Ravishankar K. Iyer; Zbigniew Kalbarczyk. <a href="https://www.ideals.illinois.edu/bitstream/handle/2142/90446/UILU-ENG-15-2203.pdf" target="_blank">Software-Defined Networking for Smart Grid Resilience: Opportunities and Challenges</a>. Coordinated Science Laboratory Technical Report UILU-ENG-15-2203, University of Illinois at Urbana-Champaign, Feb 2015.</li>
+  </ol>
+
+  <h2><font color="green">Data/Code</font><br></h2>
+  Please cite the paper given below if a data/code release is used in your research.
+  <ol>
+    <li><b>FedCFC</b> [<a href="https://github.com/hhhddyy/FedCFC">code</a>] [<a href="https://tanrui.github.io/pub/FedCFC.pdf">paper</a>]</li>
+    <li><b>TDC2</b> (World's first dataset on air-cooled data center physical systems) [<a href="https://researchdata.ntu.edu.sg/dataset.xhtml?persistentId=doi:10.21979/N9/BLBQ2T">data</a>] [<a href="https://tanrui.github.io/pub/TDC2-TSUSC.pdf">paper</a>]</li>
+    <li><b>TDC1</b> (World's first dataset on air free-cooled data center physical systems and controlled server workloads) [<a href="https://researchdata.ntu.edu.sg/dataset.xhtml?persistentId=doi:10.21979/N9/R1KU6R">data</a>] [<a href="https://tanrui.github.io/pub/TDC-TSUSC.pdf">paper</a>]</li>
+    <li><b>Sardino</b> [<a href="https://github.com/song-qun/HyperNetwork">code</a>] [<a href="https://arxiv.org/pdf/2204.08189.pdf">paper</a>]</li>
+    <li><b>PhyAug</b> [<a href="https://github.com/jiegev5/PhyAug">code and data</a>] [<a href="https://arxiv.org/pdf/2104.01160.pdf">paper1</a>] [<a href="https://tanrui.github.io/pub/PhyAug-TOSN.pdf">paper2</a>]</li>
+    <li><b>ObfNet</b> [<a href="https://github.com/ntu-aiot/ObfNet">code</a>] [<a href="https://github.com/ntu-aiot/ObfNet-showcase">data</a>] [<a href="https://arxiv.org/pdf/1912.09859.pdf">paper</a>]</li>
+    <li><b>Volcano</b> [<a href="code/volcano/index.html">code</a>] [<a href="pub/volcano-monitor.pdf">paper</a>]</li>
+  </ol>
+  
+  <h2><font color="green">Patents</font></h2>
+<ol>
+  <li><b>Method and System for Carrying Out Timing Related Tasks.</b><br> Inventors (ordered alphabetically): Yang Li, Rui Tan, Sreejaya Viswanathan, David Yau.<br>
+    US Patent 16464264 (applied in May 2019; granted in Oct 2020).
+    <!--Based on
+    <ul>
+      <li><b>Timestamping Using Powerline Electromagnetic Radiation.</b> Yang Li, Rui Tan, David Yau. Provisional Patent Filing Application 10201702886Y.</li>
+      <li><b>Accurate and Secure Clock Synchronization based on Electric Network Frequency.</b> Sreejaya Viswanathan, Rui Tan, David Yau. Provisional Patent Filing Application 10201609938T.</li>
+    </ul>-->
+  </li>
+  <!--<li><b>An Automated Calibration Approach for Data Center Digital Twin via Neural Surrogate Model.</b><br>
+    Inventors: Ruihang Wang, Xin Zhou, Yonggang Wen, Rui Tan.<br>
+    Singapore provisional patent application 10202009828S, Oct 2020.</li>-->
+</ol>
+
+<h2><font color="green">Standard</font></h2>
+<ol>
+  <li><a href="https://www.singaporestandardseshop.sg/Product/SSPdtDetail/f64b2a31-57a0-49ec-8716-57ccbdc33365">Deployment and Operation of Data Centre IT Equipment under Tropical Climate</a><br>
+    Singapore Standard 697:2023
+    <br>
+    Role: Working Group Member
+  </li>
+</ol>
+</div>
+
+<div id="Funding" class="tabcontent">
+  <h2><font color="green">Funding</font></h2>
+  <ol>
+    <li><b>Holistic Moving Target Defence for Autonomous Driving Perception.</b><br>
+      Funded by AI Singapore. PI. S$4M, July 2023 to June 2026.</li>
+    <li><b>Towards Zero-Carbon Autonomous Driving AI.</b><br>
+      Funded by Singapore's Ministry of Education Tier-1 (Thematic Call). PI. S$150K, Mar 2023 to Mar 2026.</li>
+    <li><b>Physics-Guided Generalization of AIoT Sensing.</b><br>
+      Funded by Singapore's Ministry of Education Tier-1. PI. S$150K, Mar 2023 to Aug 2025.</li>
+    <li><b>Air-Cooled Tropical Data Centre 2.0</b><br>
+      Funded by Singapore National Research Foundation (NRF). PI. S$1.62M, Apr 2021 to Mar 2024.<br>
+      As part of an NRF IAF-PP Programme (Sustainable Tropical Data Centre Testbed).</li>
+    <li><b>Tropical Edge Data Centre Testbed.</b><br>
+      NTU Seed Grant. PI. S$70K, Mar 2021 to Dec 2022.</li>
+    <li><b><a href="https://sites.google.com/view/racps/" target="_blank">Attack-Resilient AI-Empowered Autonomous Cyber-Physical Systems.</a></b><br>
+      Funded by Singapore's National Satellite of Excellence in Trustworthy Software Systems (NSoE-TSS). PI. S$550K, Oct 2020 to Jun 2023.</li>
+    <li><b>Practical Touch-Based Access Control for Indoor IoT Objects.</b><br>
+      Funded by Singapore's Ministry of Education Tier-1. PI. S$90K, Nov 2019 to Dec 2021.</li>
+    <li><b>Location Sensing using Inaudible Echolocation and Powerline Electromagnetic Radiation.</b><br>
+      Funded by Singtel Cognitive and Artificial Intelligence Lab for Enterprises. PI. S$567K, Jul 2019 to Dec 2022.</li>
+    <li><b>Feasibility of Object Localization using LoRa Radios.</b><br>
+      Funded by The Joint NTU-WeBank Research Centre of Eco-Intelligent Applications (THEIA). PI. S$100K, June 2019 to Dec 2020.</li>
+    <li><b>AIoT for Predictive Maintenance.</b><br>
+      Funded by HP-NTU Digital Manufacturing Corporate Lab. NTU PI. S$3M, Oct 2018 to Oct 2023.</li>
+    <li><b>Tropical Data Centre Proof-of-Concept.</b><br>
+      Funded by Info-communications Media Development Authority (IMDA) of Singapore. NTU PI. S$1.39M, Dec 2017 to Dec 2019.</li>
+    <!--<li><b>FogGrid: Transforming Microgrid Operations via Blockchain and Fog Computing in Singapore.</b><br>
+	Funded by Energy Market Authority (EMA) of Singapore. Co-PI. Apr 2018 to Apr 2021.</li>-->
+    <li><b>Strategic Capability Building for IoT Research.</b><br>
+      NTU CoE seed grant. PI. S$120K, September 2016 to August 2018.</li>
+    <li><b>Resilient Cyber Infrastructure for Cyber-Physical Systems.</b><br>
+      Funded by Signapore National Research Foundation (NRF) as part of Delta corporate lab in NTU. Co-PI. S$600K, July 2016 to June 2019.</li>
+    <li><b>Resilient Cyber-Physical Systems by Advanced Sensing and Computing.</b><br>NTU Start-up Grant. PI. S$200K, Jan 2016 to Jan 2020. <font color="#800080"><i>Project yield: 19 conference papers and 20 journal papers.</i></font></li>
+    <li><b>PopSeCo: Power Plant Security by Advanced Sensing and Computing.</b><br>Funded by Energy Market Authority (EMA) of Singapore. Co-PI. S$2.72M, Apr 2015 to Oct 2018.</li>
+    <!--<li><b>Cybersecurity Analysis and Experiments on a Micro-grid Testbed.</b><br>Advanced Digital Sciences Center internal fund. Co-PI (with PI: Ravishankar K. Iyer). S$108K, Dec 2014 - Nov 2016.</li>
+	<li><b>A Cyber-Physical Approach to Securing Urban Transportation Systems.</b><br>Funded by Singapore NRF. Team member (proposed 1/6 of the research). S$7.98M. Jan 2015 - Dec 2018.</li>-->
+  </ol>
+</div>
+
+<div id="Members" class="tabcontent">
+  <h2><font color="green">Members</font></h2>
+  <ul>
+    <li>Current members:</li>
+    <ul>
+      <li>Duc Phuc Nguyen (PhD student, 2024/01-)</li>
+      <li>Yihan Xu (PhD student, 2024/01-; Research Associate, 2023/11-)</li>
+      <li>Zimo Ma (PhD student, 2024/01-; Research Associate, 2023/08-)</li>
+      <li>Andreas Kuster (co-supervised PhD student)</li>
+      <li>Gaole Dai (co-supervised PhD student, 2022-)<br>PhD program working title: <u>Contrastive Learning for Wearable Sensing</u></li>
+      <li>Dongfang Guo (PhD student, 2021-; Research Associate, 2019-)<br>PhD program working title: <u>Exploit New Sensing Modalities for Location Sensing in IoT</u></li>
+      <li>Jiale Chen (PhD student, 2021-; Research Associate, 2020-)<br>PhD program working title: <u>Efficient Designs of Deep Learning Models for IoT Objects</u></li>
+      <li>Rongrong Wang (PhD student, 2020-; Research Associate, 2018-)<br>PhD program working title: <u>Toward Energy-Efficient and Smart Built Environments via Advanced Sensing</u></li>
+      <li>Siyuan Zhou (PhD student, 2020-; Research Associate, 2019-)<br>PhD program working title: <u>Embedded Deep Visual Sensing in Industrial IoT</u></li>
+      <li>Yimin Dai (PhD student, 2023-; MEng, 2021-2022)<br>
+	MEng thesis: <u>Interpersonal Distance Tracking with mmWave Radar and IMUs</u>.</li>
+      <li>Yuting Wu (PhD student, 2024/01-; Research Associate, 2021-)</li>
+      <li>Zhuoran Chen (Project Officer, 2021-)</li>
+      <li>Xiangzhong Luo (Research Fellow, 2024/03-)</li>
+      <li><a href="https://sites.google.com/site/levanduc2001/home">Van Duc Le</a> (Senior Research Fellow, 2023-; Research Fellow, 2018-2023)</li>
+      <li>Shihao Shen (Visiting Student from TJU, 2023/12-)</li>
+      <li>Huimin Chen (Visiting Student from ZJU, 2022/10-)</li>     
+    </ul>
+    <li>NTU alumni:</li>
+    <ul>
+      <li><a href="https://dapowan.github.io/">Huatao Xu</a> (co-supervised PhD student, 2021-2024)<br>PhD thesis: <u>Building Generalizable Deep Learning Solutions for Mobile Sensing</u>.</li>
+      <li>Ruihang Wang (co-supervised PhD student, 2019-2023)<br>PhD thesis: <u>Physics-Informed Machine Learning for Green Data Center Operations</u>.</li>
+      <li><a href="https://wenjieluo.xyz/">Wenjie Luo</a> (PhD student, 2019-2023)<br>PhD thesis: <u>Exploiting Sensor and Process Characteristics to Tackle Label Scarcity in AIoT Sensing</u>.</li>
+      <li>Linshan Jiang (PhD student, 2017-2021; Research Fellow, 2022)<br>PhD thesis: <u>Lightweight Privacy-Preserving Deep Learning and Inference in IoT</u>.</li>
+      <li><a href="https://song-qun.github.io/">Qun Song</a> (PhD student, 2018-2022; Visiting Student @ NTU, 2017-2018; joined the faculty of Delft University of Technology in 2022)<br>
+	<i>PhD thesis: <u>Improving Security of Autonomous Cyber-Physical Systems against Adversarial Examples</u></i>.</li>
+      <li><a href="https://yanzhenyu.com/">Zhenyu Yan</a> (PhD student, 2016-2020; Research Fellow, 2020-2021; joined the faculty of CUHK in 2021)
+	<br>
+	<i>PhD thesis: <u>Exploiting Induced Skin Electric Potential for Body-Area IoT System Functions</u></i>.</li>
+      <li><a href="https://chaojiegu.github.io/">Chaojie Gu</a> (PhD student, 2016-2020; Research Fellow, 2020-2021; joined the faculty of ZJU in 2021)
+	<br>
+	<i>PhD thesis: <u>Exploiting LoRaWAN for Efficient and Resilient IoT Networks</u></i>.</li>
+      <li><a href="https://www.bbkanbur.com/">Baris Burak Kanbur</a> (co-supervised Research Fellow, 2021/12-2022/03)</li>
+      <li>Jing Zhou (co-supervised Research Fellow, 2022/06-2023/10)</li>
+      <li>Qiping Yang (Project Officer, 2020-2021)</li>
+      <li>Yingbo Liu (Research Fellow, 2018-2019; joined the faculty of YNUFE in 2019)</li>
+      <li>Rutvij H. Jhaveri (Research Fellow, 2018-2019; joined the faculty of PDEU India in 2019)</li>
+      <li>Lilin Xu (Visiting Student from ZJU, 2023)</li>
+      <li>Hangtai Li (Visiting Student, 2019/07-2020/01)</li>
+      <li><a href="https://iwin-fins.com/sciencex_teams/chongrong-fang/">Chongrong Fang</a> (Visiting Student, 2018/11-2019/08; joined the faculty of SJTU in 2021)</li>
+      <li>Mengyao Zheng (Visiting Student, 2019/03-2019/11; admitted to Harvard master program in 2021)</li>
+      <li>Dixing Xu (Visiting Student, 2019/03-2019/07)</li>
+      <li>Jue Tian (Research Assistant/Visiting Student, 2016/08-2017/08)</li>
+    </ul>
+    <li>ADSC alumni:</li>
+    <ul>
+      <li><a href="https://sites.google.com/view/xinlou2">Xin Lou</a> (Postdoctoral Researcher; lastest development: Assistant Professor at Singapore Institute of Technology)</li>
+      <li>Dima Dafer Rabadi (co-supervised PhD student; latest development: Assistant Professor at Pennsylvania State University at Shenango)</li>
+      <li><a href="https://sites.google.com/site/subhashlakshminarayana/">Subhash Lakshminarayana</a> (Researcher; latest development: Associate Professor at University of Warwick)</li>
+      <li><a href="https://uncertaingraph.github.io/me/">Hoang Hai Nguyen</a> (Research Engineer; latest development: Software Engineer at Amazon AWS)</li>
+      <li>Yang Li (Postdoctoral Researcher; latest development: Alibaba Group)</li>
+      <li>Sreejaya Viswanathan (Senior Research Engineer)</li>
+      <!--<li>Varun Badrinath Krishna (Research Engineer @ ADSC, 2013-2014)</li>-->
+      <li>Zhan Teng Teo (Research Engineer)</li>
+      <li>Sheng-Yuan Chiu (Visiting Student)</li>
+    </ul>
+  </ul>
+</div>
+
+<div id="Research" class="tabcontent">
+  <h2><font color="green">Recent and current research</font></h2>
+
+  <h3>1. AIoT (2017-now)</h3>
+
+  <div class="divpatch">
+    <b>Physics-directed domain adaptation</b>
+    <br><br>
+
+    <img src="images/PhyAug.png" height="260px" class="illu">
+    Run-time domain shifts are common in sensing systems designed with deep learning. The shifts can be caused by sensor characteristic variations. Existing transfer learning techniques require substantial target-domain data and thus incur high post-deployment overhead. We study how to exploit the first principle governing the domain shift to reduce the demand on target-domain data. Specifically, we use the first pinciple fitted with few source/target-domain data pairs to transform the existing source-domain training data into augmented data for updating the deep neural networks. We have applied this <a href="https://arxiv.org/pdf/2104.01160.pdf">PhyAug</a> approach to recover the accuracy losses of <a href="https://github.com/SeanNaren/deepspeech.pytorch">DeepSpeech2</a> caused by microphone characteristic using 5-second data collected from the microphone. This work won the <a href="https://ipsn.acm.org/2021/">IPSN'21 Best Artifact Award Runner-Up</a>.
+  </div>
+
+    <div class="divpatch">
+    <b>Moving target defense against adversarial examples</b>
+    <br><br>
+
+    <table>
+      <tr>
+	<td>
+	  <img src="images/adversarial.png" height="135px" class="illu">
+	</td>
+	<td> </td>
+	<td>
+	  <img src="images/MTD.png" height="170px" class="illu">
+	</td>
+      </tr>
+    </table>
+    
+    Deep models are vulnerable to <a href="https://www.tensorflow.org/tutorials/generative/adversarial_fgsm">adversarial examples</a>. Many existing countermeasures build their security on the attacker's ignorance of the defense mechanisms and can be subverted once the attackers know the details of the defense. In <a href="https://personal.ntu.edu.sg/tanrui/pub/deepMTD.pdf">this research</a>, we apply the strategy of <i>moving target defense</i> to generate multiple fork models at run time from a factory-designed base model, that collaboratively detect and thwart adversarial examples. We also develop efficient implementations of our defense on embedded GPU platforms.
+    </div>
+
+    <div class="divpatch">
+    <b>Deep learning-based location fingerprinting</b>
+    <br><br>
+
+    <img src="images/echo.png" height="120px" class="illu">
+    This research uses a smartphone to emit a short inaudible acoustic chirp (only two milliseconds long) and record the ambient's reverberation as a fingerprint of the smartphone's location. We apply deep learning to deal with the challenge of the reverberation's limited information due to its narrow band and short recording time (only 0.1 seconds). We have applied this approach to implement a <a href="https://personal.ntu.edu.sg/tanrui/pub/RoomRecognize.pdf">room-level localization system</a> that can recognize up to 50 rooms with 97.7% accuracy. We have also used it to fingerprint 15 locations in a crowded museum and achieve 89% accuracy.
+  </div>
+
+  <div class="divpatch">
+    <b>Lightweight privacy preservation for deep learning and inference</b>
+    <br><br>
+
+    <img src="images/remote_inference.png" height="160px" class="illu">
+    Resource-constrained edge devices are normally incapable of sophisticated privacy preservation mechanisms (e.g., homomorphic encryption). We have studied lightweight privacy preservation approaches, including <a href="https://personal.ntu.edu.sg/tanrui/pub/IoTDI19-final.pdf">independent Gaussian random projection</a> for collaborative deep learning and <a href="https://arxiv.org/pdf/1912.09859.pdf">data obfuscation using a shallow neural network</a> for cloud inference using a deep neural network.
+  </div>
+
+  <br><br><br>
+
+  <h3>2. Sensing for resilient system functions, e.g., timing, synchronization, location, etc (2015-now)</h3>
+
+  <div class="divpatch">
+    <b>Powerline forensic time and secure clock synchronization</b>
+    <br><br>
+
+    <img src="images/PFT.png" height="200px" class="illu">
+    The frequency of the alternating current (ac) voltage of power grid has tiny fluctuations over time. The fluctuations at different locations in a power grid are similar. Based on this, we match the fluctuation traces collected by two voltage sensors to identify the offset between their clocks and synchronize their clocks. This approach achieves <a href="https://personal.ntu.edu.sg/tanrui/pub/grid-sync.pdf">10 microseconds synchronization accuracy in a building and 100 microseconds accuracy for two nodes 10km apart</a>. NTP in LAN can only achieve milliseconds accuracy; PTP (Precision Time Protocol) in LAN can achieve microseconds accuracy, but it requires PTP-enabled switches. Our system also gives security against the <a href="https://tools.ietf.org/html/rfc7384#section-3.2.6">packet delay attack</a> that is effective against message-exchange-based clock synchronization protocols. We also extend the above idea to study the accuracy of the forensic time derived from the powerline's magnetic field and achieve <a href="https://personal.ntu.edu.sg/tanrui/pub/ipsn17-EMR.pdf">150 milliseconds accuracy</a>. This work won the <a href="https://www.flickr.com/photos/149864432@N04/34135911496/">IPSN'17 Best Paper Award</a>.
+  </div>
+
+  <div class="divpatch">
+    <b>Wearable clock synchronization and device authentication in ambient electrostatic field</b>
+    <br><br>
+
+    <img src="images/SEP.png" height="200px" class="illu">
+    Powerlines induce an electrostatic field oscillating at the power grid frequency (e.g., 50Hz). This field will cause the redistribution of the charges on the human body viewed as an uncharged equipotential conductor. The redistributed charges in return distort the near-body electric field. We use an ungrounded analog-to-digital converter to measure the transient potential difference between the human body and its near field. As any such two wearables capture the same power grid frequency, we use this common frequency with the principle of NTP and achieve <a href="https://personal.ntu.edu.sg/tanrui/pub/touchsync.pdf">milliseconds synchronization accuracy</a>. Moreover, the transient potential difference signals captured by two wearables at close locations on the same human body are similar. We use this to develop a <a href="https://personal.ntu.edu.sg/tanrui/pub/mobicom022-yanA.pdf">touch-based device authentication system</a>, in which the user with a token device can authenticate himself/herself to a touchable smart object.
+  </div>
+
+  <div class="divpatch">
+    <b>Summary: Exploit power network signals for time acquisition and location sensing</b>
+
+    <br><br>
+
+    <img src="images/powerline.png" height="400px" class="illu">
+    Our research has exploited the ac voltages of a power grid, the magnetic and electrostatic fields induced by the powerlines distributed in civil infrastructures to acquire time and location information. <b><i>Time acquisition:</i></b> We can synchronize <a href="https://personal.ntu.edu.sg/tanrui/pub/grid-sync.pdf">wall-powered</a> and <a href="https://personal.ntu.edu.sg/tanrui/pub/ipsn17-EMR.pdf">wireless</a> devices distributed in a geographic area served by the same power system (from building area to city area), with sub-millisecond and sub-second accuracy, respectively. We can also synchronize <a href="https://personal.ntu.edu.sg/tanrui/pub/touchsync.pdf">body-contacted</a> devices worn by users distributed in the geographic area, with milliseconds accuracy. <b><i>Location sensing:</i></b> We exploit the powerline-induced magnetic field to perform <a href="https://personal.ntu.edu.sg/tanrui/pub/com006-luA.pdf">SLAM</a> in the building area. We also exploit the powerline electrostatic potential received by the human body to perform <a href="https://personal.ntu.edu.sg/tanrui/pub/mobicom022-yanA.pdf">same-body detection</a> for device authentication.
+  </div>
+
+  <div class="divpatch">
+    <b>Secure data timestamping in LoRaWAN</b>
+
+    <br><br>
+
+    <img src="images/LoRaTS.png" height="400px" class="illu">
+    LoRaWAN is promising for the applications of collecting low-rate data. Data samples need timestamps to make sense. However, tightly synchronizing the nodes incurs much overhead to bandwidth-limited LoRaWAN. We propose to perform gateway-side timestamping, which saves bandwidth. However, this gateway-side timestamping is vulnerable to a crafty frame delay attack. We conducted experiments in a campus network, and showed that, by setting up two attack devices (collider and eavesdropper), all LoRaWAN end devices in the area of about 50,000 square meters are affected by the attack. To develop attack awareness, we design a <a href="https://tanrui.github.io/pub/timestamping-ICDCS20.pdf">LoRaTS gateway</a> based on cheap radio hardware to detect the carrier frequency offset (CFO) changes caused by the frame delay attack.
+  </div>
+
+  <br><br><br>
+  
+  <h3>3. Thermal and energy management in data centers (2011-2014, 2017-now)</h3>
+
+  <div class="divpatch">
+    <b>TDC1: World's first trial of air free-cooled data center in tropics (completed)</b>
+
+    <br><br>
+
+    <img src="images/TDC1-sensors.png" height="200px" class="illu">
+    <img src="images/TDC1.png" height="200px" class="illu">
+    Air free cooling that utilizes natural outside air to cool the IT equipment in data center has been thought infeasible in Singapore's tropical condition with year-round high temperatures and humidity levels. From 2017 to 2019, we designed, constructed, and experimented with an air free-cooled and deeply sensorized data center testbed consisting of three server rooms hosting 12 server racks with 60kW total power rating. Our results show that Singapore's temperatures of up to 37℃ aren't a concern, but the cleaness and relative humidity of the air supplied to the servers need to be well controlled to maintain the servers' reliability. The energy efficiency metrics (e.g., DCiE) obtained on our testbed would be the upper limit in the local context. The findings of our research are documented in an <a href="https://dr.ntu.edu.sg/handle/10356/137780">NTU technical report</a> and communicated to the local data center industry via various invited technical presentations. (Read <a href="https://ntuiot.xyz/research/building/">more details on TDC1</a>.)
+  </div>
+
+  <div class="divpatch">
+    <b>TDC2: A commercially ready tropical data center (ongoing)</b>
+
+    <br><br>
+
+    <img src="images/TDC2.png" height="300px" class="illu">
+    Based on our TDC1 research results, our TDC2 project sets up an actual data center with 400 servers in an enclosed and conditioned building. The main objectives of TDC2 include: 1) To develop a practicable methodology to determine the optimal setpoints for supply air temperature and relative humidity to achieve the highest energy efficiency; 2) To understand the server reliability under the optimal temperature/humidity setpoints and the implication on the cost-benefit relationship. During the project period, the TDC2 is deeply sensorized for research and meanwhile offers commercial computing services. After the project period, TDC2 will be fully handed over to our data center operator partner for offering continued commercial services. TDC2's ultimate goal is to seed high-temperature data centers with improved energy efficiency in Singapore's tropical condition. (Read <a href="https://www.channelnewsasia.com/news/singapore/stdct-nus-ntu-test-cooling-solutions-data-centres-sustainability-15024092">CNA's news report on TDC2</a>.)
+  </div>
+
+  <br><br><br>
+    
+  <h3>4. Secure sensing and control in smart grids (2012-now)</h3>
+
+  <div class="divpatch">
+    <b>False data injection attacks on smart grid controls</b>
+    
+    <br><br>
+
+    <img src="images/AGC.png" height="200px" class="illu">
+    Recent high-profile cyber intrusions such as <a href="https://en.wikipedia.org/wiki/Stuxnet">Stuxnet</a> and <a href="https://attack.mitre.org/groups/G0035/">Dragonfly</a> have alerted us to a general class of integrity attacks called <i>false data injection</i> (FDI). In this research series, we studied the FDI attacks on the <a href="https://personal.ntu.edu.sg/tanrui/pub/AGC.pdf">frequency control</a>, voltage control (in both <a href="https://personal.ntu.edu.sg/tanrui/pub/MTD-SL.PDF">alternating current</a> and <a href="https://personal.ntu.edu.sg/tanrui/pub/traction-TCPS.pdf">direct current</a> systems), <a href="https://personal.ntu.edu.sg/tanrui/pub/MTD-TSG.pdf">state estimation</a>, and <a href="https://tanrui.github.io/pub/eenergy21-final68.pdf">voltage stability assessment</a> of power systems. In 2015, we attacked the frequency control of an NTU microgrid to deviate the 50Hz grid frequency.
+  </div>
+
+  <div class="divpatch">
+    <b>Time delay attacks on smart grid controls</b>
+
+    <br><br>
+
+    <img src="images/delay.png" height="200px" class="illu">
+    Delaying the network transmissions of control/sensor data or misleading the controller to use outdated sensor data is another class of integrity attacks that impose less requirements on the attacker compared with false data injection attacks. In this research series, we studied the impact of such <i>time delay attacks</i> on <a href="https://personal.ntu.edu.sg/tanrui/pub/ICCPS19-final.pdf">frequency control</a>, <a href="https://personal.ntu.edu.sg/tanrui/pub/avc-security.pdf">voltage control</a>, <a href="https://tanrui.github.io/pub/JSAC19.pdf">power plant process control</a>, and <a href="https://personal.ntu.edu.sg/tanrui/pub/stability-ccs.pdf">electricity real-time pricing</a>.
+
+  </div>
+</div>
+
+<div id="Teaching" class="tabcontent">
+  <h2><font color="green">Teaching</font></h2>
+  <ul>
+    <li>AI6128 Urban Computing: 2020 Fall, 2021 Fall, 2022 Fall, 2023 Fall</li>
+    <li>CE/CZ4171 IoT Communications and Networking: 2021 Spring, 2022 Spring, 2023 Spring</li>
+    <li>CE/CZ4023 Advanced Computer Networks: 2018 Fall, 2019 Fall, 2020 Fall, 2021 Fall, 2022 Fall, 2023 Fall</li>
+    <li>CE3005/CZ3006 Computer Networks/Net-Centric Computing: 2019 Fall, 2020 Fall</li>
+    <li>CE3006 Digital Communications: 2016 Fall, 2017 Spring, 2017 Fall, 2018 Spring, 2018 Fall</li>
+  </ul>
+  <!--
+  <ul>
+    <li>2022 Spring: CE/CZ4171 IoT Communications and Networking, CE3005/CZ3006 Computer Networks/Net-Centric Computing (Tutorial)</li>
+    <li>2021 Fall: CE/CZ4023 Advanced Computer Networks, AI6128 Urban Computing, CE3005/CZ3006 Computer Networks/Net-Centric Computing (Tutorial)</li>
+  <li>2021 Spring: CE/CZ4171 IoT Communications and Networking, CE3005/CZ3006 Computer Networks/Net-Centric Computing (Tutorial)</li>
+  <li>2020 Fall: CE3005/CZ3006 Computer Networks/Net-Centric Computing, CE/CZ4023 Advanced Computer Networks, AI6128 Urban Computing</li>
+  <li>2020 Spring: CE3005/CZ3006 Computer Networks/Net-Centric Computing (Tutorial)</li>
+  <li>2019 Fall: CE3005/CZ3006 Computer Networks/Net-Centric Computing, CE/CZ4023 Advanced Computer Networks</li>
+  <li>2019 Spring: CZ1012 Engineering Math (Tutorial), CZ3006 Net-Centric Computing (Tutorial)</li>
+  <li>2018 Fall: CE3006 Digital Communications, CE/CZ4023 Advanced Computer Networks, CZ1012 Engineering Math (Tutorial)</li>
+  <li>2018 Spring: CE3006 Digital Communications, CZ1012 Engineering Math (Tutorial)</li>
+  <li>2017 Fall: CE3006 Digital Communications</li>
+  <li>2017 Spring: CE3006 Digital Communications, CZ1012 Engineering Math (Tutorial), CE3002 Sensor-Interfacing-Control (Tutorial)</li>
+  <li>2016 Fall: CE3006 Digital Communications</li>
+  <li>2016 Spring: CZ1012 Engineering Math (Tutorial), CE3002 Sensor-Interfacing-Control (Tutorial)</li>  
+</ul>
+-->
+</div>
+
+<div id="Services" class="tabcontent">
+  <h2><font color="green">Professional services</font></h2>
+<ul>
+  <li><font color="green"><b>Editorship</b></font>
+    <ul>
+      <li>Associate Editor, ACM Transactions on Sensor Networks (TOSN)</li>
+      <li>Associate Editor, Frontier in Communications and Networks (Section: IoT and Sensor Networks)</li>
+    </ul>
+  </li>
+  <li><font color="green"><b>Conference chairs</b></font>
+    <ul>
+      <li>General Co-Chair, IEEE RTCSA 2025</li>
+      <li>Steering Committee Member, ACM e-Energy 2024-2026</li>
+      <li>TPC Co-Chair, SenSys 2024</li>
+      <li>TPC Co-Chair, EWSN 2024</li>
+      <li>General Co-Chair, ACM e-Energy 2024</li>
+      <li>Finance Chair, CPS-IoT Week 2024</li>
+      <li>Publication Chair, ACM BuildSys 2023</li>
+      <li>TPC Co-Chair, ACM e-Energy 2023 (as a member conference of <a href="https://fcrc.acm.org/">ACM FCRC 2023</a>)</li>
+      <li>Finance Chair, ACM BuildSys 2022</li>
+      <li>Publication Co-Chair, CPS-IoT Week 2022</li>
+      <li>Finance Chair, ACM SenSys and ACM BuildSys 2021</li>
+      <li>Workshop Co-Chair, BuildSys 2020</li>
+      <li>Poster+Demo Co-Chair, IoTDI 2020</li>
+      <li>Finance Chair of ICDCS, 2020</li>
+      <li>Joint Finance Chair of ACM SenSys and ACM BuildSys, 2019</li>
+      <li>Co-Chair, <a href="https://ntusg-iot.github.io/fogcomputing/">The 2nd Fog Computing+ Workshop: Trustworthy Fog</a>, 2018</li>     
+      <li>Poster Co-Chair, International Conference on Embedded Wireless Systems and Networks (EWSN), 2019</li>
+      <li>Publicity Co-Chair, The 1st IEEE International Conference on Industrial Internet (ICII), 2018</li>
+      <li>Publicity Co-Chair, The 3rd ACM/IEEE International Conference on Internet of Things Design and Implementation (IoTDI), 2018</li>
+      <li>Finance Chair, The 21st IEEE International Symposium on Real-Time Computing (ISORC), 2018</li>
+      <li>Session Chairs for IPSN'20, SenSys'19, IoTDI'19, SenSys'17</li>
+    </ul>
+  </li>	
+  <li><font color="green"><b>TPC members</b></font>
+    <ul>
+      <li>IEEE/ACM International Symposium on Quality of Service (IWQoS), 2024</li>
+      <li>ACM/IEEE International Conference on Cyber-Physical Systems (ICCPS), 2024</li>
+      <li>ICLR Workshop on Machine Learning for Internet of Things: Datasets, Perception, and Understanding, 2023</li>
+      <li>ACM The Web Conference (WWW), 2023</li>
+      <li>ACM International Conference on Systems for Energy-Efficient Buildings, Cities, and Transportation (BuildSys), 2022, 2023</li>
+      <li>IFIP Networking, 2022</li>
+      <li>IEEE International Conference on Distributed Computing Systems (ICDCS), 2020, 2021</li>
+      <li>ACM Conference on Embedded Networked Sensor Systems (SenSys), 2017, 2019, 2020, 2021, 2022, 2023</li>
+      <li>ACM/IEEE International Conference on Information Processing in Sensor Networks (IPSN), 2017, 2018, 2019, 2020, 2023, 2024</li>
+      <li>ACM/IEEE International Conference on Internet of Things Design and Implementation (IoTDI), 2017, 2018, 2019, 2020, 2021, 2022</li>
+      <li>IEEE Real-Time Systems Symposium (RTSS), 2013, 2014, 2015, 2016, 2019 (demo)</li>
+      <li>IEEE International Conference on Computer Communications (INFOCOM), 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024</li>
+      <li>International Conference on Embedded Wireless Systems and Networks (EWSN), 2017, 2018, 2020 (poster/demo session), 2021, 2022, 2023</li>
+      <li>IEEE International Conference on Sensing, Communication and Networking (SECON), 2018, 2021, 2022, 2023</li>
+      <li>Annual International Conference on Distributed Computing in Sensor Systems (DCOSS), 2018</li>
+      <li>IEEE International Conference on Mobile Ad-hoc and Sensor Systems (MASS), 2019, 2020, 2022</li>
+      <li>IEEE International Conference on Parallel and Distributed Systems (ICPADS), 2014, 2015, 2017, 2018, 2019</li>
+      <li>IEEE International Conference on Industrial Internet (ICII), 2018, 2019</li>
+      <li>IEEE International Conference on Embedded and Real-Time Computing Systems and Applications (RTCSA), 2017, 2021, 2022</li>
+      <li>Workshop on Challenges in Artificial Intelligence and Machine Learning for Internet of Things (AIChallengeIoT), 2021, 2022</li>
+      <li>ACM Cyber-Physical System Security Workshop (CPSS), 2015, 2016, 2017, 2022</li>
+      <li>ACM Workshop on Cyber-Physical Systems Security & Privacy (CPS-SPC), 2015, 2016</li>
+      <li>Workshop on Benchmarking Cyber-Physical Systems and Internet of Things (CPS-IoTBench), 2021</li>
+      <li>ACM Workshop on Wireless Network Testbeds, Experimental evaluation and CHaracterization (WiNTECH) with MobiCom, 2021, 2022</li>
+      <li>Workshop on Mobile and Wireless Sensing for Smart Healthcare with MobiCom, 2022</li>
+      <!--<li>IPCCC'16, CPSNA'16, GLOBECOM'16, EUC'12&'13, CyberC'12, ICSPCC'13, WF-IoT'14, HP3C'14, NAS'17, HASE'17, ICCCN'19, RTCSA'17, ISORC'17, ICESS'19</li>-->
+    </ul>
+  </li>
+  <li><font color="green"><b>For university and government</b></font>
+    <ul>
+      <li>Assistant Dean (Research), appointed by NTU/CoE, 2023/06-2024/04</li>
+      <li>Area Leader (Green Edge), NRF Foundational Research Capabilities exercise on Green Computing, 05/2023-05/2024</li>
+      <li>Working Group on Development of New Standard on Energy Efficiency of Data Centre IT Equipment, Green IT Technical Committee, appointed by IMDA, 2023-</li>
+      <li>Working Group on Development and Operation of Data Centre IT Equipment under Tropical Climate, Green IT Technical Committee, appointed by IMDA, 2021-2023</li>
+      <li>Data Centre Technical Evaluation Panel member, appointed by IMDA, 04/2021-12/2022</li>
+      <li>Undergraduate Research Experience on Campus (URECA) Coordinator, appointed by NTU/SCSE, 2020/08-2023/07</li>
+      <li>Singapore's Tropical Data Centre Guidelines Working Group member, appointed by IMDA, 2018-2019</li>
+    </ul>
+  </li>
+  <li><font color="green"><b>For K-12</b></font>
+    <ul>
+      <li>S.T. Yau High School Science Award ä¸ææ¡ä¸­å­¦ç§å­¦å¥ (Asia), Assessment Panel on Computer Science, 2021, 2022</li>
+    </ul>
+  </li>
+</ul>
+<!--
+I also serve as the regular reviewers for international conferences and journals.<br>
+<span id="showlink">Click <a href="#" onclick="showStuff('servicelist'); hideStuff('showlink'); showStuff('hidelink'); return false;">here</a> to show the details.</span>
+<span id="hidelink" onclick="hideStuff('servicelist'); showStuff('showlink'); hideStuff('hidelink'); return false;" style="display: none;">Click <a href="#">here</a> to hide the details.</span>
+<ul id="servicelist" style="display: none;">
+  <li><font color="green"><b>Reviewer</b></font>
+    <ul>
+      <li><b>Conferences:</b><br>
+	IEEE International Conference on Computer Communications (INFOCOM) <font color="#666666">2008 2009 2011 2012 2013 2014 2015</font><br>
+	ACM/IEEE International Conference on Information Processing in Sensor Networks (IPSN) <font color="#666666">2014</font><br>
+	IEEE Real-Time Systems Symposium (WSN track) <font color="#666666">2009 2010 2012</font><br>
+	IEEE Real-Time and Embedded Technology and Applications Symposium (RTAS) <font color="#666666">2010</font><br>
+	International Conference on Distributed Computing Systems (ICDCS) <font color="#666666">2010</font><br>
+	ACM International Symposium on Mobile Ad Hoc Networking and Computing (MobiHoc) <font color="#666666">2008</font><br>
+	IEEE International Conference on Pervasive Computing and Communications (PerCom) <font color="#666666">2012</font><br>
+	International Conference on Mobile Systems, Applications and Services (MobiSys) <font color="#666666">2012 2013</font><br>
+	IEEE International Conference on Mobile Ad Hoc and Sensor Systems (MASS) <font color="#666666">2010 2011 2013</font><br>
+	IEEE International Conference on Sensing, Communication, and Networking (SECON) <font color="#666666">2011</font><br>
+	IEEE International Conference on Smart Grid Communications (SmartGridComm) <font color="#666666">2013</font><br>
+	IEEE Wireless Communications and Networking Conference (WCNC) <font color="#666666">2009 2012 2013</font><br>
+	ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems (MSWiM) <font color="#666666">2008 2009</font><br>
+	IEEE/IFIP International Conference on Embedded and Ubiquitous Computing (EUC) <font color="#666666">2009</font><br>
+	IEEE Global Communications Conference (GLOBECOM) <font color="#666666">2008</font><br>
+	ACM International Workshop on Integrated Heterogeneous Sensor Networks (HeterSenet) <font color="#666666">2008</font><br>
+	IEEE International Conference on Communication (ICC) <font color="#666666">2009</font><br>
+	International Conference on Computer Communications and Networks (ICCCN) <font color="#666666">2010</font><br>
+	International Wireless Communications and Mobile Computing Conference (IWCMC) <font color="#666666">2010</font><br>
+	Military Communications Conference (MILCOM) <font color="#666666">2009</font><br>
+	International Conference on Wireless Algorithms, Systems, and Applications (WASA) <font color="#666666">2009</font><br>
+	International Conference on Cyber-Enabled Distributed Computing and Knowledge Discovery (CyberC) <font color="#666666">2011</font><br>
+	Annual Conference on Communication Networks and Services Research (CNSR) <font color="#666666">2009</font></li>
+      <li><b>Journals:</b><br>	
+	ACM Transactions on Sensor Networks<br>
+	ACM/IEEE Transactions on Networking<br>
+	ACM Transactions on Cyber-Physical Systems<br>
+	ACM Transactions on Embedded Computing Systems<br>
+	IEEE Transactions on Communications<br>
+	IEEE Transactions on Computers<br>
+	IEEE Transactions on Parallel and Distributed Systems<br>
+	IEEE Transactions on Wireless Communications<br>
+	IEEE Transactions on Mobile Computing<br>
+	IEEE Transactions on Information Forensics and Security<br>
+	IEEE Transactions on Smart Grid<br>
+	IEEE Transactions on Industrial Informatics<br>
+	IEEE Transactions on Control of Network Systems<br>
+	IEEE Transactions on Vehicular Technology<br>
+	IEEE Transactions on Design Automation of Electronic Systems<br>
+	IEEE Transactions on Services Computing<br>
+	IEEE Journal on Emerging and Selected Topics in Circuits and Systems<br>
+	IEEE Sensors Journal<br>
+	Elsevier Computer Communications<br>
+	Elsevier Computer Networks<br>
+	Elsevier Ad Hoc Networks<br>
+	Springer Computing<br>
+	Springer Wireless Networks<br>
+	EURASIP Journal on Advances in Signal Processing<br>
+	Inderscience International Journal of Sensor Networks<br>
+	Inderscience International Journal of Ad Hoc and Ubiquitous Computing<br>
+	Taylor & Francis International Journal of Parallel Emergent and Distributed Systems<br>
+	Ad Hoc & Sensor Networks<br>
+	Seismological Research Letters
+      </li>
+    </ul>
+  </li>
+</ul>
+-->
+</div>
+
+<div id="Publicity" class="tabcontent">
+  <h2><font color="green">(Old) News</font></h2>
+<ul>
+  <!--<li><font color="#FF0000">I am looking for two postdoctoral Research Fellows and a Research Assistant in the area of cyber-physical systems.</font>
+    <br><a href="job.html" target="_blank">See the detailed job ad here.</a></li>-->
+  <!--<li><font color="#FF0000">I am looking for self-motivated Research Assistants.</font><i> The candidates are expected to have background in computer science, or electronic/communication engineering. Successful candidates will conduct research in Internet of Things (IoT) and cyber-physical systems (CPS). Please send me your CV if you're interested.</i></li>-->
+  <li>[06/2023] Singapore Standard 697:2023, where our research team served as a core working group member, has been announced. <a href="https://www.imda.gov.sg/resources/press-releases-and-factsheets/press-releases/2023/imda-introduces-sustainability-standard-for-data-centres-operating-in-tropical-climates">IMDA news</a></li>
+  <li>[05/2023] Our ICCPS'23 paper won <font color="#FF0000"><b>Best Paper Award</b></font>! <a href="https://www.ntu.edu.sg/scse/news-events/news/detail/best-paper-award-at-acm-ieee-iccps-2023">NTU/SCSE news</a> <a href="https://www.ntu.edu.sg/hp-ntu-corp-lab/news-events/news/detail/best-paper-award-at-acm-ieee-iccps-2023">HP-NTU Corp Lab news</a></li>
+  <li>[06/2021] Our Tropical Data Center 2.0 project is reported by CNA. <a href="https://www.channelnewsasia.com/news/singapore/stdct-nus-ntu-test-cooling-solutions-data-centres-sustainability-15024092" target="_blank">CNA news</a></li>
+  <li>[05/2021] Our IPSN'21 paper won the <font color="red"><b>Best Artifact Award Runner-Up</b></font>! Check out the <a href="https://arxiv.org/pdf/2104.01160.pdf" target="_blank">paper</a> and <a href="https://github.com/jiegev5/PhyAug" target="_blank">research data</a>.</li>
+  <li>[02/2021] <a href="https://ebook.ntu.edu.sg/green-data-centre.html" target="_blank">Green Data Centre</a> tech primer is online.</li>
+  <li>[12/2020] Join the Editorial Board of ACM Transactions on Sensor Networks as an Associate Editor.</li>
+  <li>[04/2020] <a href="https://ntuiot.xyz" target="_blank">NTU IoT Research Group website</a> is online.</li>
+  <li>[04/2020] Appreciated as Distinguished TPC Member of INFOCOM'20.</li>
+  <li>[07/2019] Our paper on air free-cooled data centers in tropics is accepted to BuildSys'19. The paper receives (highly) positive comments from all Reviewers!</li>
+  <li>[07/2019] Our paper on counteracting adversarial example attacks on deep visual sensing is accepted to SenSys'19.</li>
+  <li>[02/2019] Two papers accepted to IoTDI and ICCPS of CPS-IoT Week 2019!</li>
+  <li>[02/2019] Two papers on exploiting indoor powerline radiation presented at / accepted by <a href="publication.html#mobicom-18">MobiCom'18</a> and <a href="#mobicom-19">MobiCom'19</a>!</li>
+  <li>[09/2018] We use a smartphone to emit a 2 milliseconds inaudible chirp and record audio for just 0.1 seconds to recognize a room. The paper will be presented on Ubicomp'18.</li>
+  <li>[11/2017] Our paper on using LoRaWAN to build control plane for multi-hop wireless networks is accepted to INFOCOM'18.</li>
+  <li>[07/2017] Our paper on using skin electric potentials to synchronize the clocks of wearables is accepted to SenSys'17!</li>
+  <li>[04/2017] Our <a href="pub/ipsn17-EMR.pdf">IPSN'17 paper</a> won the <font color="#FF0000"><b>Best Paper Award</b></font>! In this research, we show that the electromagnetic radiation from powerlines contains time information with errors down to 50 milliseconds.<br><a href="https://www.flickr.com/photos/149864432@N04/34135911496/">Photo</a> <a href="http://scse.ntu.edu.sg/NewsnEvents/Pages/News-Detail.aspx?news=930c0f2e-ae05-4157-99df-edabea20f186">NTU/SCSE news</a> <a href="http://adsc.illinois.edu/news/researchers-win-best-paper-sensor-networks-conference">Illinois news</a></li>
+  <li>[04/2017] Our <a href="pub/MTD-CPSR.pdf">CPSR-SG'17 paper</a> won the <font color="#FF0000"><b>Best Paper Award</b></font>!</font> <a href="http://scse.ntu.edu.sg/NewsnEvents/Pages/News-Detail.aspx?news=58572bef-c7dd-4ac0-a6d6-91c0f957a4b7">NTU/SCSE news</a></li>
+  <li>[01/2017] Appreciated as Distinguished TPC Member of INFOCOM'17.</li>
+  <!--<li>[01/2017] Our paper on natural timestamps in powerline EMR is accepted to IPSN'17. We show that the powerline EMR contains time information with errors down to 50ms.</li>-->
+  <li>[08/2016] Our paper on secure clock synchronization is accepted to RTSS'16. Our system achieves 0.1ms sync error for two nodes 10km apart and is provably secure against the <a href="https://tools.ietf.org/html/rfc7384#section-3.2.6" target="_blank">packet delay attack</a>!</li>
+  <li>[05/2016] ADSC Communications about our PopSeCo project: <a href="http://adsc.illinois.edu/news/adsc-research-enhance-cybersecurity-energy-systems">ADSC research to enhance cybersecurity in energy systems.</a></li>
+  <li>[01/2016] Our paper on attacks against power grid electricity generation control system is accepted to ICCPS'16. In this work, we really attacked a generator of a microgrid to deviate the 50Hz system frequency.</li>
+  <li>[12/2015] Story about my research: <a href="http://adsc.illinois.edu/news/adsc%E2%80%99s-cybersecurity-research-tackles-big-smart-grid-problems" target="_blank">ADSC's Cybersecurity Research Tackles Big Smart Grid Problems</a> (<a href="http://www.ece.illinois.edu/newsroom/article/14771" target="_blank">Illinois version</a>)</li>
+</ul>
+
+<h2><font color="green">Invited talks</font></h2>
+<ol>
+  <li>"Physics-Informed Machine Learning for Sensing and Control in Cyber-Physical Systems", Croucher Foundation Advanced Study Institute 2023 - AI for Internet of Things, Jul 19, 2023, The Chinese University of Hong Kong.</li>
+  <li>"Impacts of Increasing Temperature and Relative Humidity Setpoints in Air-Cooled Data Centers", by Duc Van Le and Rui Tan, on Seminar 34 (The Impact of Hot and Humid and Corrosive Environment on Data Center Equipment: Recent Research Activities on Data Centers), <a href="https://www.ashrae.org/conferences/2023-annual-conference-tampa">2023 ASHRAE Annual Conference</a>, Jun 26, 2023.</li>
+  <li>"Updates of Tropical Data Center 2.0", TC 9.9 Meetings, <a href="https://www.ashrae.org/conferences/2023-winter-conference-atlanta">2023 ASHRAE Winter Conference</a>, Feb 26, 2023 (presented by Duc Van Le on my behalf)</li>
+  <li>"Tropical Data Centers", 30 minutes, TC 9.9 Summer Meetings, <a href="https://www.ashrae.org/conferences/2022-annual-conference-toronto">2022 ASHRAE Annual Conference</a>, June 27, 2022.</li>
+  <li>"Experiences and Learned Lessons from an Air Free-Cooled Tropical Data Center Testbed", IEEE PES Day 2021, Apr 20, 2021. [<a href="https://www.facebook.com/watch/live/?ref=watch_permalink&v=126307786156772" target="_blank">video</a>]</li>
+  <li>"Cyber-Physical Approach to Resilient City-Scale IoT Systems", Department of Computing and Software, McMaster University, October, 2020.</li>
+  <li>"DeepMTD-Moving Target Defense for Embedded Deep Visual Sensing against Adversarial Examples", <a href="https://www.embedded-ai.org/">Embedded AI Summit</a>, Shenzhen, China, Dec 7, 2019.</li>
+  <li>"Keynote: Cyber-Physical Approach to Resilient City-Scale IoT Systems", <a href="http://cyberc.org/">International Conference on Cyber-enabled Distributed Computing and Knowledge Discovery</a>, Guilin, China, Oct 18, 2019.</li>
+  <li>"Keynote: Cyber-Physical Approach to Resilient City-Scale IoT Systems", <a href="http://ewsn2019.thss.tsinghua.edu.cn/workshops/lpnet.html">The 1st workshop on Low Power Wide Area Networks for Internet of Things</a>, EWSN'19, Beijing, Feb, 2019.</li>
+  <li>"Keynote: Cyber-Physical Approach to Resilient City-Scale IoT Systems", <a href="https://workshopdata.github.io/DATA2018/">The DATA: Data Acquisition to Analysis Workshop</a>, SenSys'18, Shenzhen, Nov, 2018.</li>
+  <li>"Cyber-Physical Approach to Resilient City-Scale IoT Systems", <a href="http://www.smartcity.ie.cuhk.edu.hk/fesc18/">International Workshop on Fog and Edge Computing for Smart Cities</a>, The Chinese University of Hong Kong, November, 2018.</li>
+  <li>"Deep Room Recognition Using Inaudible Echos", NTU-PKU Joint Workshop on IoT Meets AI, Nanyang Technological University, October, 2018.</li>
+  <li>"Resilient Cyber-Physical Systems by Advanced Sensing and Computing", <a href="https://engineering.virginia.edu/international-workshop-next-generation-cyber-physical-systems">International Workshop on Next-Generation Cyber-Physical Systems</a>, University of Virginia, September, 2018.</li>
+  <!--<li>"Resilient Cyber-Physical Systems by Advanced Sensing and Computing", School of Electronic Information and Electrical Engineering, Shanghai Jiao Tong University, May, 2018.</li>-->
+  <li>"Resilient Cyber-Physical Systems by Advanced Sensing and Computing", Department of Computer Science, City University of Hong Kong, June, 2017.</li>
+  <li>"Wireless Sensor Networks for Volcano Monitoring", Earth Observatory of Singapore (EOS), Oct 18, 2016.</li>
+  <li>"Worst-Cast Resilience Analysis Enabled by Smart Grid Modeling", lecture on Summer School of The French-Singaporean Network in Renewable Energy (CNERGIE), July, 2016, Porticcio, Corsica, France.</li>
+  <!--<li>"Cyber-Physical Approaches to Sustainable Power Grids", Shanghai Jiao Tong University, June, 2016</li>
+  <li>"Cyber-Physical Approaches to Sustainable Power Grids", Xi'an Jiao Tong University, May, 2016</li>-->
+  <!--<li>"Data Integrity Attacks against Power Grid Control Systems", <a href="https://www.illinois.adsc.com.sg/eics/index.html">Energy Infrastructure Cyber Security Workshop</a>, Singapore, May, 2016.</li>-->
+  <!--<li>"Cyber-Physical Approaches to Sustainable Power Grids", Department of Computer Science and Engineering, Michigan State University, March, 2014.</li>
+  <li>"Cyber-Physical Approaches to Sustainable Power Grids", Department of Computer Science, University of Iowa, March, 2014.</li>
+  <li>"Supero: A Sensor System for Unsupervised Residential Power Usage Monitoring", Department of Computer Science, City University of Hong Kong, March, 2013.</li>
+  <li>"Collaborative Sensing in Cyber-Physical Systems", Coordinated Sciences Lab, University of Illinois at Urbana-Champaign, Jan 2012.</li>-->
+</ol>
+
+<h2><font color="green">Outreach talks</font></h2>
+<ol>
+  <li>"Towards Efficient Edge AI", Technical Sharing Session on Green Computing, Nov 30th, 2023, IMDA, Singapore.</li>
+  <li>"Tropical Data Centre Proof-of-Concept", Towards Green Data Centres with AI, September 19th, 2019, SGTech, Singapore.</li>
+  <li>"Transforming Data Centre Operations and Management with AI", Singapore Cloud & Datacenter Convention, July 11th, 2019, Singapore.</li>
+  <li>"Tropical Data Centre Proof-of-Concept", Industry Sharing Session on BCA-IMDA Green Mark for New and Existing Data Centres, July 3rd, 2019, Singapore.</li>
+  <li>"Tropical Data Centre Proof-of-Concept", Singapore Digital Industry Day, November 22nd, 2018.</li>
+</ol>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--
+<h2><font color="green">Participated Projects</font></h2>
+<ul>
+  <li><a href="http://publish.illinois.edu/resilient-grid/" target="_blank">Towards a Resilient Smart Power Grid: A Testbed for Design, Analysis, and Validation of Power Grid Systems</a></li>
+  <li><a href="http://publish.illinois.edu/incentive-pricing/" target="_blank">Incentive Pricing for Aggregated User Load Scheduling and Control</a></li>
+  <li><a href="http://publish.illinois.edu/integrative-security-assessment/" target="_blank">Integrative Security Assessment of Smart Grid Cyber Infrastructure</a></li>
+  <li><a href="http://sensornet.cse.msu.edu/index.php/VolcanoSRI:_4D_Volcano_Tomography_in_a_Large-Scale_Sensor_Network" target="_blank">VolcanoSRI: 4D Volcano Tomography in a Large-Scale Sensor Network</a><br>
+        <i>Our work was reported by El Comercia, one of the largest newspapers in Ecuador. See this <a href="http://www.cse.msu.edu/?Pg=50&Col=3&Inc=1&Nid=423" target="_blank">departmental news</a></i>.</li>
+  <li><a href="http://sensornet.cse.msu.edu/index.php/Aquatic_Monitoring_Using_Robotic_Sensors" target="_blank">Aquatic Monitoring Using Robotic Sensors</a></li>
+  <li><a href="http://sensornet.cse.msu.edu/index.php/Data_Center_Thermal_Monitoring_and_Prediction" target="_blank">Data Center Thermal Monitoring and Prediction</a></li>
+  <li><a href="http://sensornet.cse.msu.edu/index.php/Residential_Power_Usage_Profiling" target="_blank">Residential Power Usage Profiling</a></li>
+</ul>
+-->
+
+
+<br><br>
+
+<!--
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#999999"><tr><td height="1"></td></tr></table>
+
+<h2><font color="green">Misc</font></h2>
+<ul>
+  <li><a href="https://docs.google.com/document/d/17NT_dqFoxCxe21Ia9yKjbFFI86Yv9RKR1hl5_mIyZr8/edit?usp=sharing">Adafruit GPS Hat for NTP on Raspberry Pi</a></li>
+  <li><a href="code/volcano/index.html">TinyOS implementation of fusion-based volcanic earthquake detection</a></li>
+  <li><a href="jphone/index.html">jPhone: a simple VoIP Java program</a></li>
+  <li><a href="http://sensornet.cse.msu.edu/index.php/TweetMeter" target="_blank">TweetMeter: A homebrew Zigbee-enabled smart plug</a></li>
+  <li>LaTeX tips:
+    <ul>
+      <li><a href="eps.html">Make high-quality EPS plots for articles</a></li>
+      <li><a href="http://docs.google.com/View?id=dd55nrnh_438hbmgppc6">Embed fonts into a LaTeX-generated PDF file</a></li>
+      <li><a href="kdvi.html">Re-packaged kdvi for latest Debian releases</a></li>
+    </ul>
+  </li>
+  <li>A few other misc links are <a href="misc.html">here</a></li>
+</ul>
+-->
+
+</td></tr></table>
+</td>
+</tr>
+<tr><td bgcolor="green" height="5"></td></tr>
+</table>
+
+<br><br>
+
+<!--
+<table align="center" width="98%" cellspacing="25" cellpadding="0" border="0">
+  <tr>
+    <td>
+      <a href="http://www.gnu.org/software/emacs/" target="_blank"><img src="images/gnu_emacs_icon_grey.png" style="border-style: none" alt="GNU Emacs"></a>   <a href="http://validator.w3.org/check?uri=referer" target="_blank"><img src="http://www.w3.org/Icons/valid-html401-blue" alt="Valid HTML 4.01 Transitional" height="31" width="88" style="border-style: none"></a>
+    </td>
+  </tr>
+</table>
+-->
+<a href="/f61217a453d065015090cd27fd6fb2c2"> </a></body>
+</html>
