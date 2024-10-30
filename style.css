@@ -1,6 +1,9 @@
 body { 
     font-size: 19px; 
     font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #DDDDDD;
 }
 
 a:link {
@@ -79,4 +82,30 @@ li {
 
 .illu {
     float: right;
+}
+
+/* Style for the main container table */
+.main-container {
+    width: 90%;
+    max-width: 1200px;  /* Adjust this value to your preferred maximum width */
+    margin: 0 auto;     /* This centers the table */
+    background-color: #FFFFFF;
+}
+
+/* Style for the content padding */
+.content-wrapper {
+    padding: 25px;
+}
+
+/* Optional: Add responsive behavior */
+@media screen and (max-width: 1300px) {
+    .main-container {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        width: 100%;
+    }
 }
