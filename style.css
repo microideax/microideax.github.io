@@ -1,0 +1,82 @@
+body { 
+    font-size: 19px; 
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+a:link {
+    text-decoration: none;
+    color: green;
+}
+
+a:visited {
+    text-decoration: none;
+    color: green;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: green;
+}
+
+a:active {
+    text-decoration: underline;
+    color: green;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: none;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 19px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+    border-bottom: 5px solid MediumSeaGreen;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+    border-bottom: 5px solid green;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: none;
+    border-top: none;
+}
+
+li {
+    margin: 8px 0;
+}
+
+.divpatch {
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+    font-size: 19px;
+    width: 800px;
+    padding: 12px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.illu {
+    float: right;
+}
