@@ -29,8 +29,13 @@ a:active {
 /* Style the tab */
 .tab {
     overflow: hidden;
-    border: none;
+    border: 1px solid #ccc;
     background-color: #f1f1f1;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
 }
 
 /* Style the buttons inside the tab */
@@ -63,6 +68,7 @@ a:active {
     padding: 6px 12px;
     border: none;
     border-top: none;
+    background-color: white;
 }
 
 li {
@@ -108,4 +114,64 @@ li {
     .main-container {
         width: 100%;
     }
+}
+
+/* <style> */
+#langSwitch {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+  }
+
+#langSwitch:hover {
+    background-color: #45a049;
+  }
+
+
+.lang-switch {
+    float: right;
+    margin: 8px 20px 8px 8px;
+    position: absolute;
+    right: 160px;  /* Match the content-wrapper padding */
+    top: 0;
+    display: inline-flex;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.lang-option {
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.lang-option:hover {
+    color: #333;
+}
+
+.lang-option.active {
+    background-color: green;
+    color: white;
+}
+
+/* Add specific style for the publication iframe */
+#publication-frame {
+    width: 100%;
+    height: 800px;
+    border: none;
+    background-color: white;
+}
+
+/* Ensure the publication content has white background */
+#Publication {
+    background-color: white;
 }

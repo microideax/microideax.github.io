@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script>
+    // Handle language changes from parent window
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.language) {
+        updateLanguage(event.data.language);
+      }
+    });
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(elem => {
+        elem.style.display = elem.getAttribute('data-lang') === lang ? 'block' : 'none';
+      });
+      // After language update, send new height to parent
+      sendHeightToParent();
+    }
+
+    // Function to send height to parent window
+    function sendHeightToParent() {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ type: 'resize', height: height }, '*');
+    }
+
+    // Initialize with English and send height
+    window.addEventListener('load', function() {
+      updateLanguage('en');
+      // Send initial height after a short delay to ensure content is rendered
+      setTimeout(sendHeightToParent, 100);
+    });
+
+    // Send height when content changes
+    window.addEventListener('resize', sendHeightToParent);
+  </script>
+</head>
+<body bgcolor="#FFFFFF">
+  <div data-lang="en">
+    <h2><font color="green">Journal Papers (* indicates co-first authors)</font></h2>
+    <ol>
+        <li><b>[TACO'24]</b> Kunpeng Xie, Ye Lu, Xinyu He, Dezhi Yi, Huijuan Dong, <u><b>Yao Chen</b></u>. Winols: A Large-Tiling Sparse Winograd CNN Accelerator on FPGAs.</li>
+        <li><b>[TPDS'23]</b> Zining Zhang, <u><b>Yao Chen</b></u>, Bingsheng He, Zhenjie Zhang. NIOT: A Novel Inference Optimization of Transformers on Modern FPGAs.</li>
+        <li><b>[TRETS'22]</b> Xinyu Chen, Feng Cheng, Hongshi Tan, <u><b>Yao Chen</b></u>, Bingsheng He, Weng-Fai Wong, Deming Chen. ThunderGP: Resource-Efficient Graph Processing Framework on FPGAs with HLS.</li>
+        <li><b>[TACL'21]</b> Prakhar Ganesh*, <u><b>Yao Chen</b></u>*, Xin Lou, Mohammad Ali Khan, Yin Yang, Deming Chen, Marianne Winslett, Hassan Sajjad, Preslav Nakov. Compressing large-scale transformer-based models: A case study on BERT.</li>
+        <li><b>[TSG'20]</b> Prakhar Ganesh, Xin Lou, <u><b>Yao Chen</b></u>, Rui Tan, David K.Y. Yau, Deming Chen, Marianne Winslett. Learning-based simultaneous detection and characterization of time delay attack in cyber-physical systems.</li>
+        <li><b>[TC'20]</b> Cheng Gong, <u><b>Yao Chen</b></u>, Ye Lu, Tao Li, Cong Hao, Deming Chen. Vecq: Minimal loss DNN model compression with vectorized weight quantization.</li>
+        <li><b>[TNanoBio'19]</b> Libo Huang, Bingo Wing-Kuen Ling, Ruichu Cai, Yan Zeng, Jiong He, <u><b>Yao Chen</b></u>. WMsorting: Wavelet packets decomposition and mutual information based spike sorting method.</li>
+        <li><b>[FGCS'18]</b> Jihe Wang, Danghui Wang, Meikang Qiu, <u><b>Yao Chen</b></u>, Bing Guo. A locality-aware shuffle optimization on fat-tree data centers.</li>
+        <li><b>[TCAD'16]</b> Ying Chen, Tan Nguyen, <u><b>Yao Chen</b></u>, Swathi T. Gurumani, Yun Liang, Kyle Rupnow, Jason Cong, Wen-mei Hwu, Deming Chen. FCUDA-HB: Hierarchical and scalable bus architecture generation on FPGAs with the FCUDA flow.</li>
+        <li><b>[TVLSI'16]</b> <u><b>Yao Chen</b></u>, Swathi Gurumani, Yun Liang, Guofeng Li, Donghui Guo, Kyle Rupnow, Deming Chen. FCUDA-NoC: A scalable and efficient network-on-chip implementation for the CUDA-to-FPGA flow.</li>
+</ol>
+    </ol>
+
+    <h2><font color="green">Conference Papers (* indicates co-first authors or corresponding authors)</font></h2>
+    <ol>
+        <li><b>[SIGMOD'25]</b> Jixian Su, Chiyu Hao, Shixuan Sun, Hao Zhang, Sen Gao, Jiaxin Jiang, Yao Chen, Chenyi Zhang, Bingsheng He, and Minyi Guo. Revisiting the Design of In-Memory Dynamic Graph Storage. (Accepted)</li>
+        <li><b>[ICDE'25]</b> Yujian Fu, Cheng Chen, Yao Chen, Weng-Fai Wong, Bingsheng He. Vista: Vector Indexing and Search for Large-scale Imbalanced Datasets.</li>
+        <li><b>[KDD'25]</b> Borui Xu, Zeyi Wen, <u><b>Yao Chen</b></u>*, Weiguo Liu*, and Bingsheng He. ScalaGBM: Memory Efficient GBDT training for high-dimensional data on GPU. </li>
+        <li><b>[ECCV'24]</b> Cheng Gong, <u><b>Yao Chen*</b></u>, Qiuyang Luo, Ye Lu, Tao Li, Yuzhi Zhang, Yufei Sun*, Le Zhang. Deep Feature Surgery: Towards Accurate and Efficient Multi-Exit Networks.</li>
+        <li><b>[SIGMOD'24]</b> Qiange Wang, <u><b>Yao Chen</b></u>, Weng-Fai Wong, Bingsheng He. HongTu: Scalable Full-Graph GNN Training on Multiple GPUs.</li>
+        <li><b>[SIGMOD'23]</b> Hongshi Tan, Xinyu Chen, <u><b>Yao Chen</b></u>*, Bingsheng He*, Weng-Fai Wong. LightRW: FPGA Accelerated Graph Dynamic Random Walks. (Passed Artifact Evaluation)</li>
+        <li><b>[MICRO'22]</b> Xinyu Chen, <u><b>Yao Chen</b></u>, Feng Cheng, Hongshi Tan, Weng-Fai Wong, Bingsheng He. ReGraph: Scaling Graph Processing on HBM-enabled FPGAs with Heterogeneous Pipelines.</li>
+        <li><b>[ASP-DAC'22]</b> Xinheng Liu*, <u><b>Yao Chen</b></u>*, Junhao Pan, Jinjun Xiong, Deming Chen. HiKonv: High throughput quantized convolution with novel bit-wise management and computation.</li>
+        <li><b>[WACV'22]</b> Prakhar Ganesh*, <u><b>Yao Chen</b></u>*, David Yin Yang, Marianne Winslett, Deming Chen. YOLO-ReT: Towards high accuracy real-time object detection on edge GPUs. [<a href="https://www.computer.org/csdl/proceedings-article/wacv/2022/091500b311/1B13M74lSow" target="_blank">pdf</a>]</li>
+        <li><b>[ASAP'22]</b> Xinheng Liu, <u><b>Yao Chen</b></u>, Cong Hao, Ashutosh Dhar, Deming Chen. WinoCNN: Kernel sharing winograd systolic array for efficient convolutional neural network acceleration on FPGAs.</li>
+        <li><b>[ICS'21]</b> Hongshi Tan, Xinyu Chen, <u><b>Yao Chen</b></u>, Wengfai Wong, Bingsheng He. ThundeRiNG: Generating multiple independent random number sequences on FPGAs.</li>
+        <li><b>[GLSVLSI'21]</b> <u><b>Yao Chen</b></u>, Cole Hawkins, Kaiqi Zhang, Zheng Zhang, Cong Hao. 3U-EdgeAI: Ultra-low memory training, ultra-low bitwidth quantization, and ultra-low latency acceleration. [<a href="https://dl.acm.org/doi/abs/10.1145/3453688.3461738" target="_blank">pdf</a>]</li>
+        <li><b>[DAC'21]</b> Lixiang Li, <u><b>Yao Chen</b></u>, Zacharie Zirnheld, Pan Li, Cong Hao. MELOPPR: Software/hardware co-design for memory-efficient low-latency personalized pagerank.</li>
+        <li><b>[DAC'21]</b> Xinyu Chen, Hongshi Tan, <u><b>Yao Chen</b></u>, Wengfai Wong, Bingsheng He, Deming Chen. Skew-oblivious data routing for data intensive applications on FPGAs with HLS.</li>
+        <li><b>[FPGA'21]</b> Xinyu Chen, Hongshi Tan, <u><b>Yao Chen</b></u>, Wengfai Wong, Bingsheng He, Deming Chen. ThunderGP: HLS-based graph processing framework on FPGAs. (Passed Artifact Evaluation)</li>
+        <li><b>[GLSVLSI'20]</b> Cong Hao, <u><b>Yao Chen</b></u>, Xiaofan Zhang, Yuhong Li, Jinjun Xiong, Wen-mei Hwu, Deming Chen. Effective algorithm-accelerator co-design for AI solutions on edge devices.</li>
+        <li><b>[ACL'20]</b> Ruichu Cai, Zhihao Liang, Boyan Xu, Zijian Li, Yuexing Hao, <u><b>Yao Chen</b></u>. TAG: Type-auxiliary guiding for code comment generation.</li>
+        <li><b>[ICDCS'20]</b> <u><b>Yao Chen</b></u>, Xin Long, Jiong He, Yuhang Chen, Hongshi Tan, Zhenxiang Zhang, Marianne Winslett, Deming Chen. HaoCL: Harnessing large-scale heterogeneous processors made easy.</li>
+        <li><b>[DAC'20]</b> Yuhong Li, Cong Hao, Xiaofan Zhang, Xinheng Liu, <u><b>Yao Chen</b></u>, Jinjun Xiong, Wen mei Hwu, Deming Chen. EDD: Efficient differentiable DNN architecture and implementation co-search for embedded AI solutions.</li>
+        <li><b>[CIDR'19]</b> Xinyu Chen, <u><b>Yao Chen</b></u>, Ronak Bajaj, Jiong He, Bingsheng He, Weng-Fai Wong, Deming Chen. Is FPGA useful for hash joins? Exploring hash joins on coupled CPU-FPGA architecture.</li>
+        <li><b>[ICCAD'19]</b> Cong Hao, <u><b>Yao Chen</b></u>, Xinheng Liu, Atif Sarwari, Daryl Sew, Ashutosh Dhar, Bryan Wu, Dongdong Fu, Jinjun Xiong, Wen-mei Hwu, Junli Gu, Deming Chen. NAIS: Neural architecture and implementation search and its applications in autonomous driving. (Invited)</li>
+        <li><b>[FPL'19]</b> Xinyu Chen, Ronak Bajaj, <u><b>Yao Chen</b></u>, Jiong He, Weng-Fai Wong, Bingsheng He, Deming Chen. On-the-fly parallel data shuffling for graph processing on OpenCL-based FPGAs.</li>
+        <li><b>[ODML-CDNNR'19]</b> Xiaofan Zhang, Cong Hao, Yuhong Li, <u><b>Yao Chen</b></u>, Jinjun Xiong, Wen-mei Hwu, Deming Chen. A bi-directional co-design approach to enable deep learning on IoT devices. In Proceedings of the ICML 2019 Workshop, Joint Workshop on On-Device Machine Learning & Compact Deep Neural Network Representations.</li>
+        <li><b>[ISVLSI'19]</b> <u><b>Yao Chen</b></u>, Kai Zhang, Cheng Gong, Cong Hao, Xiaofan Zhang, Tao Li, Deming Chen. T-DLA: An open-source deep learning accelerator for ternarized DNN models on embedded FPGA. [<a href="https://ieeexplore.ieee.org/document/8839554" target="_blank">pdf</a>]</li>
+        <li><b>[IJCNN'19]</b> Cheng Gong, Tao Li, Ye Lu, Cong Hao, Xiaofan Zhang, Deming Chen, <u><b>Yao Chen</b></u>. μL2Q: An ultra-low loss quantization method for DNN compression.</li>
+        <li><b>[FPGA'19]</b> <u><b>Yao Chen</b></u>, Jiong He, Xiaofan Zhang, Cong Hao, Deming Chen. Cloud-DNN: An open framework for mapping DNN models to cloud FPGAs. [<a href="https://dl.acm.org/doi/10.1145/3289602.3293915" target="_blank">pdf</a>]</li>
+        <li><b>[ISCAS'19]</b> Huachao Xu, Jinlong Hu, <u><b>Yao Chen</b></u>, Guofeng Li, Chao Lu. Pico-ampere voltage references for iot systems.</li>
+        <li><b>[BIBM'18]</b> <u><b>Yao Chen</b></u>, Libo Huang, Jiong He, Kunyao Zhao, Ruichu Cai, Zhifeng Hao. HASS: High accuracy spike sorting with wavelet package decomposition and mutual information.</li>
+        <li><b>[ICDCS'18]</b> Jiong He, <u><b>Yao Chen</b></u>, Tom Zhengjia Fu, Xin Long, Marianne Winslett, Liang You, Zhenjie Zhang. HaaS: Cloud-based real-time data analytics with heterogeneity-aware scheduling.</li>
+        <li><b>[ICSICT'18]</b> Huachao Xu, <u><b>Yao Chen</b></u>, Jinlong Hu, Hongkun Cai, Tao Du, Ke Liang, Guofeng Li. 110pA, 170ppm/V, -77dB@100hz voltage reference for IoT systems.</li>
+        <li><b>[ICSICT'18]</b> Huachao Xu, <u><b>Yao Chen</b></u>, Jinlong Hu, Tao Du, Hongkun Cai, Ke Liang, Guofeng Li. 73 pA, 250 ppm/v, -74db@100hz voltage reference using one type of MOSFETs.</li>
+        <li><b>[ICCSS'18]</b> Jinlong Hu, Huachao Xu, Tao Du, Guofeng Li, <u><b>Yao Chen</b></u>. Anovel1.03ppm/°C wide temperature range curvature compensated bandgap voltage reference.</li>
+        <li><b>[ISVLSI'16]</b> Tan Nguyen, <u><b>Yao Chen</b></u>, Kyle Rupnow, Swathi T. Gurumani, Deming Chen. SoC, NoC and hierarchical bus implementations of applications on FPGAs using the FCUDA flow.</li>
+        <li><b>[FPGA'16]</b> Xinheng Liu, <u><b>Yao Chen</b></u>, Tan Nguyen, Swathi Gurumani, Kyle Rupnow, Deming Chen. High level synthesis of complex applications: An h.264 video decoder.</li>
+        <li><b>[ASICON'15]</b> Liwei Yang, <u><b>Yao Chen</b></u>, Wei Zuo, Tan Nguyen, Swathi T. Gurumani, Kyle Rupnow, Deming Chen. System-level design solutions: Enabling the IoT explosion.</li>
+        <li><b>[FCCM'14]</b> Swathi T. Gurumani, Jacob Tolar, <u><b>Yao Chen</b></u>, Yun Liang, Kyle Rupnow, Deming Chen. Integrated CUDA-to-FPGA synthesis with Network-on-Chip.</li>
+      </ol>
+
+      <h2><font color="green">Preprints</font></h2>
+      <li><b>[ArXiv]</b> Zining Zhang, <u><b>Yao Chen</b></u>, Bingsheng He, Zhenjie Zhang. Aggressive Post-Training Compression on Extremely Large Language Models. 2024.</li>
+      <li><b>[ArXiv]</b> <u><b>Yao Chen</b></u>, Junhao Pan, Xinheng Liu, Jinjun Xiong, Deming Chen. HiKonv: Maximizing the Throughput of Quantized Convolution With Novel Bit-wise Management and Computation. 2023.</li>
+    
+      <h2><font color="green">Book Chapters</font></h2>
+      <ol>
+      <li>Xiaofan Zhang, <u><b>Yao Chen</b></u>, Cong Hao, Sitao Huang, Yuhong Li and Deming Chen. "Compilation and Optimizations for Efficient Machine Learning on Embedded Systems," In Embedded Machine Learning for Cyber-Physical, IoT, and Edge Computing, Springer Nature, 2023.</li>
+      <li>Daisuke Mashima, <u><b>Yao Chen</b></u>, Muhammad M. Roomi, Subhash Lakshminarayana, Deming Chen. "Cybersecurity for Modern Smart Grid Against Emerging Threats," In Foundations and Trends in Privacy and Security, 2023.</li>
+    </ol>
+  </div>
+
+  <div data-lang="zh" style="display: none;">
+    <h2><font color="green">期刊论文 (* 共一或通讯作者)</font></h2>
+    <ol>
+        <li><b>[TACO'24]</b> Kunpeng Xie, Ye Lu, Xinyu He, Dezhi Yi, Huijuan Dong, <u><b>Yao Chen</b></u>. Winols: A Large-Tiling Sparse Winograd CNN Accelerator on FPGAs.</li>
+        <li><b>[TPDS'23]</b> Zining Zhang, <u><b>Yao Chen</b></u>, Bingsheng He, Zhenjie Zhang. NIOT: A Novel Inference Optimization of Transformers on Modern FPGAs.</li>
+        <li><b>[TRETS'22]</b> Xinyu Chen, Feng Cheng, Hongshi Tan, <u><b>Yao Chen</b></u>, Bingsheng He, Weng-Fai Wong, Deming Chen. ThunderGP: Resource-Efficient Graph Processing Framework on FPGAs with HLS.</li>
+        <li><b>[TACL'21]</b> Prakhar Ganesh*, <u><b>Yao Chen</b></u>*, Xin Lou, Mohammad Ali Khan, Yin Yang, Deming Chen, Marianne Winslett, Hassan Sajjad, Preslav Nakov. Compressing large-scale transformer-based models: A case study on BERT.</li>
+        <li><b>[TSG'20]</b> Prakhar Ganesh, Xin Lou, <u><b>Yao Chen</b></u>, Rui Tan, David K.Y. Yau, Deming Chen, Marianne Winslett. Learning-based simultaneous detection and characterization of time delay attack in cyber-physical systems.</li>
+        <li><b>[TC'20]</b> Cheng Gong, <u><b>Yao Chen</b></u>, Ye Lu, Tao Li, Cong Hao, Deming Chen. Vecq: Minimal loss DNN model compression with vectorized weight quantization.</li>
+        <li><b>[TNanoBio'19]</b> Libo Huang, Bingo Wing-Kuen Ling, Ruichu Cai, Yan Zeng, Jiong He, <u><b>Yao Chen</b></u>. WMsorting: Wavelet packets decomposition and mutual information based spike sorting method.</li>
+        <li><b>[FGCS'18]</b> Jihe Wang, Danghui Wang, Meikang Qiu, <u><b>Yao Chen</b></u>, Bing Guo. A locality-aware shuffle optimization on fat-tree data centers.</li>
+        <li><b>[TCAD'16]</b> Ying Chen, Tan Nguyen, <u><b>Yao Chen</b></u>, Swathi T. Gurumani, Yun Liang, Kyle Rupnow, Jason Cong, Wen-mei Hwu, Deming Chen. FCUDA-HB: Hierarchical and scalable bus architecture generation on FPGAs with the FCUDA flow.</li>
+        <li><b>[TVLSI'16]</b> <u><b>Yao Chen</b></u>, Swathi Gurumani, Yun Liang, Guofeng Li, Donghui Guo, Kyle Rupnow, Deming Chen. FCUDA-NoC: A scalable and efficient network-on-chip implementation for the CUDA-to-FPGA flow.</li>
+    </ol>
+
+    <h2><font color="green">会议论文 (* 共一或通讯作者)</font></h2>
+    <ol>
+        <li><b>[SIGMOD'25]</b> Jixian Su, Chiyu Hao, Shixuan Sun, Hao Zhang, Sen Gao, Jiaxin Jiang, Yao Chen, Chenyi Zhang, Bingsheng He, and Minyi Guo. Revisiting the Design of In-Memory Dynamic Graph Storage. (Accepted)</li>
+        <li><b>[ICDE'25]</b> Yujian Fu, Cheng Chen, Yao Chen, Weng-Fai Wong, Bingsheng He. Vista: Vector Indexing and Search for Large-scale Imbalanced Datasets.</li>
+        <li><b>[KDD'25]</b> Borui Xu, Zeyi Wen, <u><b>Yao Chen</b></u>*, Weiguo Liu*, and Bingsheng He. ScalaGBM: Memory Efficient GBDT training for high-dimensional data on GPU. </li>
+        <li><b>[ECCV'24]</b> Cheng Gong, <u><b>Yao Chen*</b></u>, Qiuyang Luo, Ye Lu, Tao Li, Yuzhi Zhang, Yufei Sun*, Le Zhang. Deep Feature Surgery: Towards Accurate and Efficient Multi-Exit Networks.</li>
+        <li><b>[SIGMOD'24]</b> Qiange Wang, <u><b>Yao Chen</b></u>, Weng-Fai Wong, Bingsheng He. HongTu: Scalable Full-Graph GNN Training on Multiple GPUs.</li>
+        <li><b>[SIGMOD'23]</b> Hongshi Tan, Xinyu Chen, <u><b>Yao Chen</b></u>*, Bingsheng He*, Weng-Fai Wong. LightRW: FPGA Accelerated Graph Dynamic Random Walks. (Passed Artifact Evaluation)</li>
+        <li><b>[MICRO'22]</b> Xinyu Chen, <u><b>Yao Chen</b></u>, Feng Cheng, Hongshi Tan, Weng-Fai Wong, Bingsheng He. ReGraph: Scaling Graph Processing on HBM-enabled FPGAs with Heterogeneous Pipelines.</li>
+        <li><b>[ASP-DAC'22]</b> Xinheng Liu*, <u><b>Yao Chen</b></u>*, Junhao Pan, Jinjun Xiong, Deming Chen. HiKonv: High throughput quantized convolution with novel bit-wise management and computation.</li>
+        <li><b>[WACV'22]</b> Prakhar Ganesh*, <u><b>Yao Chen</b></u>*, David Yin Yang, Marianne Winslett, Deming Chen. YOLO-ReT: Towards high accuracy real-time object detection on edge GPUs. [<a href="https://www.computer.org/csdl/proceedings-article/wacv/2022/091500b311/1B13M74lSow" target="_blank">pdf</a>]</li>
+        <li><b>[ASAP'22]</b> Xinheng Liu, <u><b>Yao Chen</b></u>, Cong Hao, Ashutosh Dhar, Deming Chen. WinoCNN: Kernel sharing winograd systolic array for efficient convolutional neural network acceleration on FPGAs.</li>
+        <li><b>[ICS'21]</b> Hongshi Tan, Xinyu Chen, <u><b>Yao Chen</b></u>, Wengfai Wong, Bingsheng He. ThundeRiNG: Generating multiple independent random number sequences on FPGAs.</li>
+        <li><b>[GLSVLSI'21]</b> <u><b>Yao Chen</b></u>, Cole Hawkins, Kaiqi Zhang, Zheng Zhang, Cong Hao. 3U-EdgeAI: Ultra-low memory training, ultra-low bitwidth quantization, and ultra-low latency acceleration. [<a href="https://dl.acm.org/doi/abs/10.1145/3453688.3461738" target="_blank">pdf</a>]</li>
+        <li><b>[DAC'21]</b> Lixiang Li, <u><b>Yao Chen</b></u>, Zacharie Zirnheld, Pan Li, Cong Hao. MELOPPR: Software/hardware co-design for memory-efficient low-latency personalized pagerank.</li>
+        <li><b>[DAC'21]</b> Xinyu Chen, Hongshi Tan, <u><b>Yao Chen</b></u>, Wengfai Wong, Bingsheng He, Deming Chen. Skew-oblivious data routing for data intensive applications on FPGAs with HLS.</li>
+        <li><b>[FPGA'21]</b> Xinyu Chen, Hongshi Tan, <u><b>Yao Chen</b></u>, Wengfai Wong, Bingsheng He, Deming Chen. ThunderGP: HLS-based graph processing framework on FPGAs. (Passed Artifact Evaluation)</li>
+        <li><b>[GLSVLSI'20]</b> Cong Hao, <u><b>Yao Chen</b></u>, Xiaofan Zhang, Yuhong Li, Jinjun Xiong, Wen-mei Hwu, Deming Chen. Effective algorithm-accelerator co-design for AI solutions on edge devices.</li>
+        <li><b>[ACL'20]</b> Ruichu Cai, Zhihao Liang, Boyan Xu, Zijian Li, Yuexing Hao, <u><b>Yao Chen</b></u>. TAG: Type-auxiliary guiding for code comment generation.</li>
+        <li><b>[ICDCS'20]</b> <u><b>Yao Chen</b></u>, Xin Long, Jiong He, Yuhang Chen, Hongshi Tan, Zhenxiang Zhang, Marianne Winslett, Deming Chen. HaoCL: Harnessing large-scale heterogeneous processors made easy.</li>
+        <li><b>[DAC'20]</b> Yuhong Li, Cong Hao, Xiaofan Zhang, Xinheng Liu, <u><b>Yao Chen</b></u>, Jinjun Xiong, Wen mei Hwu, Deming Chen. EDD: Efficient differentiable DNN architecture and implementation co-search for embedded AI solutions.</li>
+        <li><b>[CIDR'19]</b> Xinyu Chen, <u><b>Yao Chen</b></u>, Ronak Bajaj, Jiong He, Bingsheng He, Weng-Fai Wong, Deming Chen. Is FPGA useful for hash joins? Exploring hash joins on coupled CPU-FPGA architecture.</li>
+        <li><b>[ICCAD'19]</b> Cong Hao, <u><b>Yao Chen</b></u>, Xinheng Liu, Atif Sarwari, Daryl Sew, Ashutosh Dhar, Bryan Wu, Dongdong Fu, Jinjun Xiong, Wen-mei Hwu, Junli Gu, Deming Chen. NAIS: Neural architecture and implementation search and its applications in autonomous driving. (Invited)</li>
+        <li><b>[FPL'19]</b> Xinyu Chen, Ronak Bajaj, <u><b>Yao Chen</b></u>, Jiong He, Weng-Fai Wong, Bingsheng He, Deming Chen. On-the-fly parallel data shuffling for graph processing on OpenCL-based FPGAs.</li>
+        <li><b>[ODML-CDNNR'19]</b> Xiaofan Zhang, Cong Hao, Yuhong Li, <u><b>Yao Chen</b></u>, Jinjun Xiong, Wen-mei Hwu, Deming Chen. A bi-directional co-design approach to enable deep learning on IoT devices. In Proceedings of the ICML 2019 Workshop, Joint Workshop on On-Device Machine Learning & Compact Deep Neural Network Representations.</li>
+        <li><b>[ISVLSI'19]</b> <u><b>Yao Chen</b></u>, Kai Zhang, Cheng Gong, Cong Hao, Xiaofan Zhang, Tao Li, Deming Chen. T-DLA: An open-source deep learning accelerator for ternarized DNN models on embedded FPGA. [<a href="https://ieeexplore.ieee.org/document/8839554" target="_blank">pdf</a>]</li>
+        <li><b>[IJCNN'19]</b> Cheng Gong, Tao Li, Ye Lu, Cong Hao, Xiaofan Zhang, Deming Chen, <u><b>Yao Chen</b></u>. μL2Q: An ultra-low loss quantization method for DNN compression.</li>
+        <li><b>[FPGA'19]</b> <u><b>Yao Chen</b></u>, Jiong He, Xiaofan Zhang, Cong Hao, Deming Chen. Cloud-DNN: An open framework for mapping DNN models to cloud FPGAs. [<a href="https://dl.acm.org/doi/10.1145/3289602.3293915" target="_blank">pdf</a>]</li>
+        <li><b>[ISCAS'19]</b> Huachao Xu, Jinlong Hu, <u><b>Yao Chen</b></u>, Guofeng Li, Chao Lu. Pico-ampere voltage references for iot systems.</li>
+        <li><b>[BIBM'18]</b> <u><b>Yao Chen</b></u>, Libo Huang, Jiong He, Kunyao Zhao, Ruichu Cai, Zhifeng Hao. HASS: High accuracy spike sorting with wavelet package decomposition and mutual information.</li>
+        <li><b>[ICDCS'18]</b> Jiong He, <u><b>Yao Chen</b></u>, Tom Zhengjia Fu, Xin Long, Marianne Winslett, Liang You, Zhenjie Zhang. HaaS: Cloud-based real-time data analytics with heterogeneity-aware scheduling.</li>
+        <li><b>[ICSICT'18]</b> Huachao Xu, <u><b>Yao Chen</b></u>, Jinlong Hu, Hongkun Cai, Tao Du, Ke Liang, Guofeng Li. 110pA, 170ppm/V, -77dB@100hz voltage reference for IoT systems.</li>
+        <li><b>[ICSICT'18]</b> Huachao Xu, <u><b>Yao Chen</b></u>, Jinlong Hu, Tao Du, Hongkun Cai, Ke Liang, Guofeng Li. 73 pA, 250 ppm/v, -74db@100hz voltage reference using one type of MOSFETs.</li>
+        <li><b>[ICCSS'18]</b> Jinlong Hu, Huachao Xu, Tao Du, Guofeng Li, <u><b>Yao Chen</b></u>. Anovel1.03ppm/°C wide temperature range curvature compensated bandgap voltage reference.</li>
+        <li><b>[ISVLSI'16]</b> Tan Nguyen, <u><b>Yao Chen</b></u>, Kyle Rupnow, Swathi T. Gurumani, Deming Chen. SoC, NoC and hierarchical bus implementations of applications on FPGAs using the FCUDA flow.</li>
+        <li><b>[FPGA'16]</b> Xinheng Liu, <u><b>Yao Chen</b></u>, Tan Nguyen, Swathi Gurumani, Kyle Rupnow, Deming Chen. High level synthesis of complex applications: An h.264 video decoder.</li>
+        <li><b>[ASICON'15]</b> Liwei Yang, <u><b>Yao Chen</b></u>, Wei Zuo, Tan Nguyen, Swathi T. Gurumani, Kyle Rupnow, Deming Chen. System-level design solutions: Enabling the IoT explosion.</li>
+        <li><b>[FCCM'14]</b> Swathi T. Gurumani, Jacob Tolar, <u><b>Yao Chen</b></u>, Yun Liang, Kyle Rupnow, Deming Chen. Integrated CUDA-to-FPGA synthesis with Network-on-Chip.</li>
+      </ol>
+
+    <h2><font color="green">预印版</font></h2>
+      <li><b>[ArXiv]</b> Zining Zhang, <u><b>Yao Chen</b></u>, Bingsheng He, Zhenjie Zhang. Aggressive Post-Training Compression on Extremely Large Language Models. 2024.</li>
+      <li><b>[ArXiv]</b> <u><b>Yao Chen</b></u>, Junhao Pan, Xinheng Liu, Jinjun Xiong, Deming Chen. HiKonv: Maximizing the Throughput of Quantized Convolution With Novel Bit-wise Management and Computation. 2023.</li>
+    
+    <h2><font color="green">书籍与章节</font></h2>
+    <ol>
+      <li>Xiaofan Zhang, <u><b>Yao Chen</b></u>, Cong Hao, Sitao Huang, Yuhong Li and Deming Chen. "Compilation and Optimizations for Efficient Machine Learning on Embedded Systems," In Embedded Machine Learning for Cyber-Physical, IoT, and Edge Computing, Springer Nature, 2023.</li>
+      <li>Daisuke Mashima, <u><b>Yao Chen</b></u>, Muhammad M. Roomi, Subhash Lakshminarayana, Deming Chen. "Cybersecurity for Modern Smart Grid Against Emerging Threats," In Foundations and Trends in Privacy and Security, 2023.</li>
+    </ol>
+  </div>
+</body>
+</html>
