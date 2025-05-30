@@ -135,15 +135,14 @@ li {
 
 
 .lang-switch {
-    float: right;
-    margin: 8px 20px 8px 8px;
     position: absolute;
-    right: 160px;  /* Match the content-wrapper padding */
+    right: 0;
     top: 0;
     display: inline-flex;
     background-color: #f0f0f0;
     border-radius: 4px;
     padding: 2px;
+    z-index: 100;
 }
 
 .lang-option {
