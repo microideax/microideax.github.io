@@ -1,48 +1,74 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-          "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Yao Chen (陈瑶) - Publicity</title>
-  <meta name="generator" content="emacs">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="rg.ico" type="image/x-icon" />
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.language) {
+        updateLanguage(event.data.language);
+      }
+    });
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(elem => {
+        if (elem.tagName.toLowerCase() === 'span') {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'inline' : 'none';
+        } else {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'block' : 'none';
+        }
+      });
+      sendHeightToParent();
+    }
+
+    function sendHeightToParent() {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ type: 'resize', height: height }, '*');
+    }
+
+    window.addEventListener('load', function() {
+      updateLanguage('en');
+      setTimeout(sendHeightToParent, 100);
+    });
+
+    window.addEventListener('resize', sendHeightToParent);
+  </script>
 </head>
+<body bgcolor="#FFFFFF">
+          <h2><font color="green">Invited Talk</font><br></h2>
 
-<body bgcolor="#DDDDDD">
-<table class="main-container" align="center" width="98%" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF">
-  <tr><td bgcolor="green" height="5"></td></tr>
-  <tr>
-    <td>
-      <table class="content-wrapper" cellspacing="25" cellpadding="0" border="0" align="center" width="100%">
-        <tr><td>
-          <h1>Publicity</h1>
-          <div class="back-link"><a href="index.html">← Back to main page</a></div>
-
-          <h2><font color="green">Invited Talk</font></h2>
-          <ol>
-            <li>From Applications to Efficient Architectures on FPGAs. Shenzhen, China, CCF ESTC 2024</li>
-            <li>Parallel Graph Processing on FPGAs. National Defence University, China, 2024.</li>
-            <!-- ... rest of invited talks ... -->
-          </ol>
-
+            <ol>
+              <li>[2025] Revisiting CAM on FPGAs. Singapore, NUS-HUST international workshop, 2025.</li>
+              <li>[2024] From Applications to Efficient Architectures on FPGAs. Shenzhen, China, CCF ESTC 2024</li>
+              <li>[2024] Parallel Graph Processing on FPGAs. National Defence University, China, 2024.</li>
+              <li>[2024] From Applications to Efficient Architectures. Wuhan University, China, 2024.</li>
+              <li>[2024] Domain-specific architectures for modern data intensive applications. University of Electronic Science and Technology China, China, 2024.</li>
+              <li>[2023] Efficient Graph Processing Architectures. National Defence University, China, 2023. (Virtual)</li>
+              <li>[2021] Model, Accelerator and System for an Object Detection. Invited talk at Nankai University, 2021. (Virtual)</li>
+              <li>[2021] DNN Acceleration on the Edge. Invited talk at Zhejiang University, 2021. (Virtual)</li>
+              <li>[2021] Machine Learning Acceleration for Cyber Security. Invited talk at Create Webinar, Singapore, 2021. (Virtual)</li>
+              <li>[2021] Deep Neural Networks on FPGAs. Invited talk at Leibniz AI Lab, Leibniz University Hannover, Hannover, Germany, 2021. (Virtual)</li>
+              <li>[2020] DNN Acceleration: A Cloud to Edge Approach. Invited talk at College of Computer Science, Nankai University, Tianjin China, 2020</li>
+            </ol>
           <h2><font color="green">Workshop Presentation</font></h2>
-          <ol>
-            <li>Efficient Architecture for Green Graph Processing on FPGAs. NRF-FRC Green Computing Workshop, Singapore, 2023.</li>
-            <li>Low Loss DNN Model Quantization. ADSC workshop, Singapore, 2021. (Virtual)</li>
-          </ol>
-
+            <ol>
+              <li>[2023] Efficient Architecture for Green Graph Processing on FPGAs. NRF-FRC Green Computing Workshop, Singapore, 2023.</li>
+              <li>[2021] Low Loss DNN Model Quantization. ADSC workshop, Singapore, 2021. (Virtual)</li>
+            </ol>
           <h2><font color="green">Paper Presentation</font></h2>
-          <ol>
-            <li>YOLO-ReT: Towards High Accuracy Real-time Object Detection on Edge GPUs. WACV Conference, 2022. (Virtual)</li>
-            <!-- ... rest of paper presentations ... -->
-          </ol>
-
-        </td></tr>
-      </table>
-    </td>
-  </tr>
-  <tr><td bgcolor="green" height="5"></td></tr>
-</table>
+            <ol>
+              <li>[2022] YOLO-ReT: Towards High Accuracy Real-time Object Detection on Edge GPUs. WACV Conference, 2022. (Virtual)</li>
+              <li>[2022] HiKonv: High Throughput Quantized Convolution With Novel Bit-wise Management and Computation. ASP-DAC Conference, 2022. (Virtual)</li>
+              <li>[2020] HaoCL: Harnessing Large-scale Heterogeneous Processors Made Easy. ICDCS Conference, Singapore, 2020. (Virtual)</li>
+              <li>[2019] T-DLA: An Open-source Deep Learning Accelerator for Ternarized DNN Models on Embedded FPGA. ISVLSI Conference, Miami, Florida, USA, 2019</li>
+              <li>[2019] Cloud-DNN: An Open Framework for Mapping DNN Models to Cloud FPGAs. FPGA Conference, Seaside, CA, US, 2019</li>
+            </ol>
 </body>
-</html> 
+</html>

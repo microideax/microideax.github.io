@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.language) {
+        updateLanguage(event.data.language);
+      }
+    });
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(elem => {
+        if (elem.tagName.toLowerCase() === 'span') {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'inline' : 'none';
+        } else {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'block' : 'none';
+        }
+      });
+      sendHeightToParent();
+    }
+
+    function sendHeightToParent() {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ type: 'resize', height: height }, '*');
+    }
+
+    window.addEventListener('load', function() {
+      updateLanguage('en');
+      setTimeout(sendHeightToParent, 100);
+    });
+
+    window.addEventListener('resize', sendHeightToParent);
+  </script>
+</head>
+<body bgcolor="#FFFFFF">
+            <!-- <h2><font color="green">Teaching Experience</font></h2> -->
+            <ul>
+              <li>Techlaunch, Management of Technology, National University of Singapore, School of Engineering. (2021.1 - 2021.4)</li>
+            </ul>
+</body>
+</html>

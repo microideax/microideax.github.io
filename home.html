@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.language) {
+        updateLanguage(event.data.language);
+      }
+    });
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(elem => {
+        if (elem.tagName.toLowerCase() === 'span') {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'inline' : 'none';
+        } else {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'block' : 'none';
+        }
+      });
+      sendHeightToParent();
+    }
+
+    function sendHeightToParent() {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ type: 'resize', height: height }, '*');
+    }
+
+    window.addEventListener('load', function() {
+      updateLanguage('en');
+      setTimeout(sendHeightToParent, 100);
+    });
+
+    window.addEventListener('resize', sendHeightToParent);
+  </script>
+</head>
+<body bgcolor="#FFFFFF">
+            <div data-lang="en">
+              <p>
+                I am a Research Assistant Professor at the Department of Computer Science, School of Computing, National University of Singapore (NUS). Before joining NUS, I was a Senior Research Scientist with the Advanced Digital Sciences Center (ADSC), a research center of the University of Illinois at Urbana-Champaign (UIUC) based in Singapore.
+              </p>
+              <p>
+                Currently, I am working with <a href="https://www.comp.nus.edu.sg/~hebs/" target="_blank">Prof. Bingsheng He</a> and <a href="https://www.comp.nus.edu.sg/~wongwf/" target="_blank">Prof. Weng-Fai Wong</a> at the NUS on quite some interesting projects.
+              </p>
+            </div>
+
+            <div data-lang="zh" style="display: none;">
+              <p>
+                我是新加坡国立大学计算机科学系的助理研究教授。在加入新加坡国立大学之前, 我是伊利诺伊大学香槟分校高级数字科学研究中心（ADSC）的高级研究科学家。
+              </p>
+              <p>
+                目前，我正与<a href="https://www.comp.nus.edu.sg/~hebs/" target="_blank">Bingsheng He教授</a> 及 <a href="https://www.comp.nus.edu.sg/~wongwf/" target="_blank">Weng-Fai Wong教授</a>共同从事一些有趣的研究。
+              </p>
+            </div>
+
+
+            <br>
+            <h2><font color="green">
+              <span data-lang="en">Research interests</span>
+              <span data-lang="zh" style="display: none;">研究方向</span>
+            </font></h2>
+
+            <div data-lang="en">
+              <ul>
+                <li>Domain-specific FPGA-based accelerators: FPGA enabled domain-specific architectures</li>
+                <li>Software/hardware co-designed efficient systems: ML/Graph accelerators, on-device AI</li>
+                <li>Electronic design automation (EDA): domain-specific high level synthesis (HLS), domain-specific architecture generation</li>
+              </ul>
+            </div>
+
+            <div data-lang="zh" style="display: none;">
+              <ul>
+                <li>领域专用加速器：基于FPGA的领域专用架构</li>
+                <li>软硬件协同设计：高效的机器学习、图计算加速器，端侧人工智能</li>
+                <li>电子设计自动化（EDA）：领域专用高层次综合（HLS），领域专用架构自动生成</li>
+              </ul>
+            </div>
+</body>
+</html>

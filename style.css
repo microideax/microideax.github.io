@@ -36,18 +36,20 @@ a:active {
     padding: 0;
     box-sizing: border-box;
     position: relative;
+    display: flex; /* Use flexbox for layout */
 }
 
 /* Style the buttons inside the tab */
 .tab button {
     background-color: inherit;
-    float: left;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 19px;
+    flex: 1; /* Make all buttons grow to fill the space equally */
+    text-align: center; /* Center the text */
 }
 
 /* Change background color of buttons on hover */
@@ -135,14 +137,19 @@ li {
 
 
 .lang-switch {
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: sticky;
+    top: 15px;
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: -50px; /* Prevent the switch from pushing down content */
     display: inline-flex;
-    background-color: #f0f0f0;
+    background-color: rgba(240, 240, 240, 0.9);
+    backdrop-filter: blur(4px);
     border-radius: 4px;
     padding: 2px;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .lang-option {

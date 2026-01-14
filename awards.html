@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.language) {
+        updateLanguage(event.data.language);
+      }
+    });
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(elem => {
+        if (elem.tagName.toLowerCase() === 'span') {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'inline' : 'none';
+        } else {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'block' : 'none';
+        }
+      });
+      sendHeightToParent();
+    }
+
+    function sendHeightToParent() {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ type: 'resize', height: height }, '*');
+    }
+
+    window.addEventListener('load', function() {
+      updateLanguage('en');
+      setTimeout(sendHeightToParent, 100);
+    });
+
+    window.addEventListener('resize', sendHeightToParent);
+  </script>
+</head>
+<body bgcolor="#FFFFFF">
+            <!-- <h2><font color="green">Awards</font></h2> -->
+            <ul>
+              <li><a href="https://www.amd-haccs.io/images/awards/NUS_award_2024.png">2023 AMD HACC Outstanding Researcher Award</a></li>
+              <li>2021 6th Place winner in 2021 RadioML Challenge</li>
+              <li>2021 Second Place winner (FPGA track), IEEE Design Automation Conference (DAC) System Design Contest</li>
+              <li>2020 Third Place winner (FPGA track), 2020 Design Automation Conference (DAC) System Design Contest</li>
+              <li>2019 First Place winner (FPGA track), IEEE Design Automation Conference (DAC) System Design Contest</li>
+              <li>2019 Best poster award, ICML Workshop 2019</li>
+              <li>2010 Best Undergraduate Research Award, Nankai University</li>
+            </ul>
+</body>
+</html>

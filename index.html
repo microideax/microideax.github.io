@@ -11,11 +11,6 @@
 
   <link rel="stylesheet" href="style.css">
 
-
-
-
-
-
   <script type="text/javascript">
     function showStuff(id) {
     document.getElementById(id).style.display = 'block';
@@ -26,48 +21,47 @@
     }
 
     function openTab(evt, tabName) {
-	var i, tabcontent, tablinks;
-	tabcontent = document.getElementsByClassName("tabcontent");
-	for (i = 0; i < tabcontent.length; i++) {
-	    tabcontent[i].style.display = "none";
-	}
-	tablinks = document.getElementsByClassName("tablinks");
-	for (i = 0; i < tablinks.length; i++) {
-	    tablinks[i].className = tablinks[i].className.replace(" active", "");
-	}
-	document.getElementById(tabName).style.display = "block";
-	evt.currentTarget.className += " active";
+    	var i, tabcontent, tablinks;
+    	tabcontent = document.getElementsByClassName("tabcontent");
+    	for (i = 0; i < tabcontent.length; i++) {
+    	    tabcontent[i].style.display = "none";
+    	}
+    	tablinks = document.getElementsByClassName("tablinks");
+    	for (i = 0; i < tablinks.length; i++) {
+    	    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    	}
+    	document.getElementById(tabName).style.display = "block";
+    	evt.currentTarget.className += " active";
 
-	// Update content language when tab is opened
-	updateContentLanguage();
+    	// Update content language when tab is opened
+    	updateContentLanguage();
     }
 
     document.addEventListener("DOMContentLoaded", function(event) { 
-	document.getElementById("hometab").click();
+	    document.getElementById("hometab").click();
     });
 
-    function handlePublicationLoad() {
-      try {
-        const frame = document.getElementById('publication-frame');
-        // Set initial height (will be updated by message)
-        frame.style.height = '100px';
-        
-        // Try to update the language if possible
-        updateContentLanguage();
-      } catch (error) {
-        console.log('Frame loaded');
-      }
-    }
-
+    // Generic resize handler
     window.addEventListener('message', function(event) {
       if (event.data && event.data.type === 'resize') {
-        const frame = document.getElementById('publication-frame');
-        if (frame) {
-          frame.style.height = event.data.height + 'px';
+        const frames = document.getElementsByTagName('iframe');
+        for (let i = 0; i < frames.length; i++) {
+          if (frames[i].contentWindow === event.source) {
+            frames[i].style.height = event.data.height + 'px';
+            break;
+          }
         }
       }
     });
 
+    function handleFrameLoad(frame) {
+       // Initial height setup or language sync can happen here if needed
+       // But the frame itself sends a resize message on load, which is handled above.
+       // We can just ensure language is synced.
+       if (typeof currentLang !== 'undefined') {
+           frame.contentWindow.postMessage({ language: currentLang }, '*');
+       }
+    }
 </script>
 
   <!-- <link rel="shortcut icon" href="rg.ico" type="image/x-icon" /> -->
@@ -78,13 +72,11 @@
   <table class="main-container" align="center" width="98%" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF">
     <tr><td bgcolor="green" height="5"></td></tr>
     <tr>
-      <td>
-        <!-- <div style="position: relative; text-align: right; padding: 10px 20px;">
-          <div class="lang-switch">
-            <span class="lang-option active" data-lang="en" onclick="toggleLanguage('en')">English</span>
-            <span class="lang-option" data-lang="zh" onclick="toggleLanguage('zh')">中文</span>
-          </div>
-        </div> -->
+      <td style="position: relative;">
+        <div class="lang-switch">
+          <span class="lang-option active" data-lang="en" onclick="toggleLanguage('en')">English</span>
+          <span class="lang-option" data-lang="zh" onclick="toggleLanguage('zh')">中文</span>
+        </div>
         <table class="content-wrapper" cellspacing="5" cellpadding="0" border="0" align="center" width="100%">
           <tr><td>
             <table>
@@ -92,38 +84,31 @@
                 <td valign="top" width="180"><img src="./Yao-Homepage_files/yao.jpg" width="175" height="200" alt="Yao Chen"></td>
                 <td width="20"></td>
                 <td valign="top">
-                  <div style="position: relative;">
-                    <div class="lang-switch">
-                      <span class="lang-option active" data-lang="en" onclick="toggleLanguage('en')">English</span>
-                      <span class="lang-option" data-lang="zh" onclick="toggleLanguage('zh')">中文</span>
+                    <div style="position: relative;">
+                      <div>
+                        <h1 style="margin-top: 0;">
+                          <span data-lang="en">Yao Chen</span>
+                          <span data-lang="zh" style="display: none;">陈瑶</span>
+                        </h1>
+                      </div>
                     </div>
-                    <div>
-                      <h1 style="margin-top: 0;">
-                        <span data-lang="en">Yao Chen</span>
-                        <span data-lang="zh" style="display: none;">陈瑶</span>
-                      </h1>
-                    </div>
-                  </div>
                   <div data-lang="en">
                     <b>Assistant Professor (Research Track)</b><br>
                     National University of Singapore, Singapore<br>
-                    <pre style="border: 0;padding: 0;margin: 0;">
-E-mail:  <a href="mailto:yaochen@nus.edu.sg">yaochen@nus.edu.sg</a>
+                    <pre style="border: 0;padding: 0;margin: 0; font-family: inherit;">E-mail:  <a href="mailto:yaochen@nus.edu.sg">yaochen@nus.edu.sg</a>
 Address: 15 Computing Drive, Com2-02-02, Singapore, 117418
 Phone:   +65 8376 7292
 <a href="https://microideax.github.io/">Homepage</a> | <a href="https://scholar.google.com/citations?user=R-GbxYsAAAAJ&hl=en">GoogleScholar</a> | <a href="https://www.researchgate.net/profile/Yao-Chen-10">ResearchGate</a>
                     </pre>
                   </div>
 
-                  <div data-lang="zh" style="display: none;">
+                  <div data-lang="zh" style="display: none; line-height: 1.2; position: relative; top: -18px;">
                     <b>助理教授（研究序列）</b><br>
                     新加坡国立大学，新加坡<br>
-                    <pre style="border: 0;padding: 0;margin: 0;">
-邮箱：  <a href="mailto:yaochen@nus.edu.sg">yaochen@nus.edu.sg</a>
-地址：  15 Computing Drive, Com2-02-02, Singapore, 117418
-电话：  +65 8376 7292
-<a href="https://microideax.github.io/">主页</a> | <a href="https://scholar.google.com/citations?user=R-GbxYsAAAAJ&hl=en">谷歌学术</a> | <a href="https://www.researchgate.net/profile/Yao-Chen-10">ResearchGate</a>
-                    </pre>
+                    邮箱：  <a href="mailto:yaochen@nus.edu.sg">yaochen@nus.edu.sg</a><br>
+                    地址：  15 Computing Drive, Com2-02-02, Singapore, 117418<br>
+                    电话：  +65 8376 7292<br>
+                    <a href="https://microideax.github.io/">主页</a> | <a href="https://scholar.google.com/citations?user=R-GbxYsAAAAJ&hl=en">谷歌学术</a> | <a href="https://www.researchgate.net/profile/Yao-Chen-10">ResearchGate</a>
                   </div>
                 </td>
               </tr>
@@ -145,314 +130,37 @@ Phone:   +65 8376 7292
               <!-- <button class="tablinks" onclick="openTab(event, 'Aboutme')">About Me</button> -->
             </div>
 
-
-
-
-          
           <div id="Home" class="tabcontent">
-            <div data-lang="en">
-              <p>
-                I am a Research Assistant Professor at the Department of Computer Science, School of Computing, National University of Singapore (NUS). Before joining NUS, I was a Senior Research Scientist with the Advanced Digital Sciences Center (ADSC), a research center of the University of Illinois at Urbana-Champaign (UIUC) based in Singapore.
-              </p>
-              <p>
-                Currently, I am working with <a href="https://www.comp.nus.edu.sg/~hebs/" target="_blank">Prof. Bingsheng He</a> and <a href="https://www.comp.nus.edu.sg/~wongwf/" target="_blank">Prof. Weng-Fai Wong</a> at the NUS on quite some interesting projects.
-              </p>
-            </div>
-
-            <div data-lang="zh" style="display: none;">
-              <p>
-                我是新加坡国立大学计算机科学系的助理研究教授。在加入新加坡国立大学之前, 我是伊利诺伊大学香槟分校高级数字科学研究中心（ADSC）的高级研究科学家。
-              </p>
-              <p>
-                目前，我正与<a href="https://www.comp.nus.edu.sg/~hebs/" target="_blank">Bingsheng He教授</a> 及 <a href="https://www.comp.nus.edu.sg/~wongwf/" target="_blank">Weng-Fai Wong教授</a>共同从事一些有趣的研究。
-              </p>
-            </div>
-
-
-            <br>
-            <h2><font color="green">
-              <span data-lang="en">Research interests</span>
-              <span data-lang="zh" style="display: none;">研究方向</span>
-            </font></h2>
-
-            <div data-lang="en">
-              <ul>
-                <li>Domain-specific FPGA-based accelerators: FPGA enabled domain-specific architectures</li>
-                <li>Software/hardware co-designed efficient systems: ML/Graph accelerators, on-device AI</li>
-                <li>Electronic design automation (EDA): domain-specific high level synthesis (HLS), domain-specific architecture generation</li>
-              </ul>
-            </div>
-
-            <div data-lang="zh" style="display: none;">
-              <ul>
-                <li>领域专用加速器：基于FPGA的领域专用架构</li>
-                <li>软硬件协同设计：高效的机器学习、图计算加速器，端侧人工智能</li>
-                <li>电子设计自动化（EDA）：领域专用高层次综合（HLS），领域专用架构自动生成</li>
-              </ul>
-            </div>
-
+            <iframe id="home-frame" src="home.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
           </div>
           
           <div id="Publication" class="tabcontent" style="background-color: white;">
-            <iframe id="publication-frame" src="publication.html" style="width:100%; border:none; background-color: white;" onload="handlePublicationLoad()"></iframe>
+            <iframe id="publication-frame" src="publication.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
           </div>
 
           <div id="Funding" class="tabcontent">
-            <!-- <h2><font color="green">Major Projects & Funding</font></h2> -->
-            <h3><font color="green">As Principle Investigator (PI)</font></h3>
-            <ol>
-              <li><b>OctoBrain: A privacy-preserving edge-cloud collaborative learning solution for lift systems.</b><br>
-                Singapore Cybersecurity Consortium (SGCSC). SGD $178,560: 2021 - 2022.</li>
-              <li><b>Pooling large scale heterogeneous Processors.</b><br>
-                Alibaba Innovation Research (AIR) Funding. USD 140K: 2017 - 2019.</li>
-            </ol>
-            <h3><font color="green">As Co-Principle Investigator (Co-PI)</font></h3>
-            <ol>
-              <li><b>Real-time deep learning networks for fraud detection in modern e-marketplace systems.</b><br>
-                AISG. SGD $3.3M: 2022 - 2025.</li>
-              <li><b>Dynamic Graph Random Walks on FPGAs.</b><br>
-                ByteDance. SGD 150K: 2023 - 2024.</li>
-              <li><b>Towards Energy-Efficient Tera Scale Graph Processing on FPGAs.</b><br>
-                Google Research. SGD 50K: 2023 - 2024.</li>
-            </ol>
-            <h3><font color="green">As a collaborator and/or Area Lead</font></h3>
-            <ol>
-              <li><b>Memory Efficient Graph Accelerators on HLS-based FPGAs.</b><br>
-                Ministry of Education, Academic Research Fund (AcRF) Tier 2. SGD 577K:2022 - 2025.</li>
-              <li><b>GraphMind: Energy-Efficient Hardware Accelerators for Graph Neural Networks.</b><br>
-                NUS Advanced Research and Technology Innovation Center. SGD 362K: 2021 - 2024.</li>
-              <li><b>Software-Hardware co-design for real-time AI.</b><br>
-                TSCP. SGD $15M: 2017 - 2022.</li>
-            </ol>
+             <iframe id="funding-frame" src="funding.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
           </div>
 
-
           <div id="Teaching" class="tabcontent">
-            <!-- <h2><font color="green">Teaching Experience</font></h2> -->
-            <ul>
-              <li>Techlaunch, Management of Technology, National University of Singapore, School of Engineering. (2021.1 - 2021.4)</li>
-            </ul>
+             <iframe id="teaching-frame" src="teaching.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
           </div>
 
           <div id="Awards" class="tabcontent">
-            <!-- <h2><font color="green">Awards</font></h2> -->
-            <ul>
-              <li><a href="https://www.amd-haccs.io/images/awards/NUS_award_2024.png">2023 AMD HACC Outstanding Researcher Award</a></li>
-              <li>2021 6th Place winner in 2021 RadioML Challenge</li>
-              <li>2021 Second Place winner (FPGA track), IEEE Design Automation Conference (DAC) System Design Contest</li>
-              <li>2020 Third Place winner (FPGA track), 2020 Design Automation Conference (DAC) System Design Contest</li>
-              <li>2019 First Place winner (FPGA track), IEEE Design Automation Conference (DAC) System Design Contest</li>
-              <li>2019 Best poster award, ICML Workshop 2019</li>
-              <li>2010 Best Undergraduate Research Award, Nankai University</li>
-            </ul>
+             <iframe id="awards-frame" src="awards.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
           </div>
 
           <div id="Misc" class="tabcontent">
-            <h2><font color="green">Software License</font></h2>
-            <ol>
-              <li>Low Loss DNN Quantization Package, SGD 2.5K/year, 2021.</li>
-            </ol>
-            <h2><font color="green">Patents</font></h2>
-            <ol>
-            <li>A GPU acceleration method for spike sorting. R. Cai, K. Zhao, J. He, Y. Chen, Z. Hao, W. Wen, B. Chen. patent No. CN109460785A.</li>
-            <li>A CUDA based spike sorting acceleration method on GPU. R. Cai, K. Zhao, J. He, Y. Chen, Z. Hao, W. Wen, B. Chen. patent No. CN109376651A.</li>
-            <li>Bi-CMOS based Fifth Order High Accuracy Temperature Compensated Circuit. C. Lin, Z. Guo, H. Xu, Y. Chen, K. Liang, G. Li. patent No. 201610443932.2.</li>
-            <li>Fifth Order High Accuracy Temperature Compensated Crystal Oscillator ASIC Design. C. Lin, Z. Guo, H. Xu, K. Liang, Y. Chen, G. Li. patent No. 201610443932.2.</li>
-            <li>Nandflash Based Data Acquisition System. X. Gao, L. Wang, Y. Chen. patent No. CN20111005119.8.</li>
-            <li>IC Card Identity Authentication System Used in Public Transportation. Y. Chen, P. Chang, L. Wang, R. Chen, H. Wu. patent No. ZL200810152397.0.</li>
-            </ol>
+             <iframe id="misc-frame" src="misc.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
           </div>
 
           <div id="Publicity" class="tabcontent">
-          <h2><font color="green">Invited Talk</font><br></h2>
-
-            <ol>
-              <li>[2025] Revisiting CAM on FPGAs. Singapore, NUS-HUST international workshop, 2025.</li>
-              <li>[2024] From Applications to Efficient Architectures on FPGAs. Shenzhen, China, CCF ESTC 2024</li>
-              <li>[2024] Parallel Graph Processing on FPGAs. National Defence University, China, 2024.</li>
-              <li>[2024] From Applications to Efficient Architectures. Wuhan University, China, 2024.</li>
-              <li>[2024] Domain-specific architectures for modern data intensive applications. University of Electronic Science and Technology China, China, 2024.</li>
-              <li>[2023] Efficient Graph Processing Architectures. National Defence University, China, 2023. (Virtual)</li>
-              <li>[2021] Model, Accelerator and System for an Object Detection. Invited talk at Nankai University, 2021. (Virtual)</li>
-              <li>[2021] DNN Acceleration on the Edge. Invited talk at Zhejiang University, 2021. (Virtual)</li>
-              <li>[2021] Machine Learning Acceleration for Cyber Security. Invited talk at Create Webinar, Singapore, 2021. (Virtual)</li>
-              <li>[2021] Deep Neural Networks on FPGAs. Invited talk at Leibniz AI Lab, Leibniz University Hannover, Hannover, Germany, 2021. (Virtual)</li>
-              <li>[2020] DNN Acceleration: A Cloud to Edge Approach. Invited talk at College of Computer Science, Nankai University, Tianjin China, 2020</li>
-            </ol>
-          <h2><font color="green">Workshop Presentation</font></h2>
-            <ol>
-              <li>[2023] Efficient Architecture for Green Graph Processing on FPGAs. NRF-FRC Green Computing Workshop, Singapore, 2023.</li>
-              <li>[2021] Low Loss DNN Model Quantization. ADSC workshop, Singapore, 2021. (Virtual)</li>
-            </ol>
-          <h2><font color="green">Paper Presentation</font></h2>
-            <ol>
-              <li>[2022] YOLO-ReT: Towards High Accuracy Real-time Object Detection on Edge GPUs. WACV Conference, 2022. (Virtual)</li>
-              <li>[2022] HiKonv: High Throughput Quantized Convolution With Novel Bit-wise Management and Computation. ASP-DAC Conference, 2022. (Virtual)</li>
-              <li>[2020] HaoCL: Harnessing Large-scale Heterogeneous Processors Made Easy. ICDCS Conference, Singapore, 2020. (Virtual)</li>
-              <li>[2019] T-DLA: An Open-source Deep Learning Accelerator for Ternarized DNN Models on Embedded FPGA. ISVLSI Conference, Miami, Florida, USA, 2019</li>
-              <li>[2019] Cloud-DNN: An Open Framework for Mapping DNN Models to Cloud FPGAs. FPGA Conference, Seaside, CA, US, 2019</li>
-            </ol>
+             <iframe id="publicity-frame" src="publicity.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
           </div>
 
-
-<div id="Services" class="tabcontent">
-  <!-- div id="Services" class=Professional services</font></h2> -->
-    <h2><font color="green">Associate Editor</font></h2>
-      <ul>
-        <li>2023 - present: ACM Transactions on Reconfigurable Technology and Systems (TRETS)</li>
-        <li>2023 - present: Frontiers in Electronics</li>
-      </ul>
-    </li>
-    <h2><font color="green">Assistant Editor</font></h2>
-      <ul>
-        <li>NRF FRC Green Computing Report (NRF Singapore), 2023</li>
-      </ul>
-    </li>
-    <h2><font color="green">Conference Chairs</font></h2>
-      <ul>
-        <li>Public Chair
-          <ul>
-            <li>2022: CSCLOUD</li>
-            <li>2022: <a href="https://cacm-eao-2022.comp.nus.edu.sg/index.html">CACM Regional Special Section on East Asia and Oceania Region</a></li>
-          </ul>
-        </li>
-        <li>Proceedings Chair
-          <ul>
-            <li>2025: SCAsia</li>
-          </ul>
-        </li>
-        <li>Registration Chair</li>
-        <ul>
-          <li>2021: ISVLSI</li>
-        </ul>
-        <li>Session Chair
-          <ul>
-            <li>2024: ASP-DAC Session Chair</li>
-            <li>2019: ISVLSI Session Chair</li>
-          </ul>
-        </li>
-      </ul>
-    </li>	
-    <h2><font color="green">TPC Members</font></h2>
-      <ul>
-        <li>2025: SC, HiPC, DATE, IEEE BigData, FCCM, ICCAD, ASAP</li>
-        <li>2024: ICDCS, ICCAD, ICDE (poster session) </li>
-        <li>2023: ICCAD, BigData, DATE</li>
-        <li>2022: ICCAD, ICCD, AAAI</li>
-        <li>2021: AIOTS, CCGRID</li>
-      </ul>
-    </li>
-    
-    <h2><font color="green">Journal Review</font></h2>
-      <ul>
-        <li>IEEE Transactions on Computers (TC)</li>
-        <li>IEEE Transactions on Parallel and Distributed Systems (TPDS)</li>
-        <li>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)</li>
-        <li>IEEE Design and Test (IEEE D&T)</li>
-        <li>ACM Transactions on Architecture and Code Optimization (TACO)</li>
-        <li>IEEE Transactions on Very Large Scale Integration (VLSI) Systems (TVLSI)</li>
-        <li>IEEE Journal on Emerging and Selected Topics in Circuits and Systems</li>
-        <li>IEEE Transactions on Network Science and Engineering</li>
-        <li>ACM Transactions on Design Automation of Electronic Systems (TODAES)</li>
-        <li>CCF Transactions on High Performance Computing</li>
-        <!-- <li>Wireless Networks</li> -->
-        <li>Micromachines</li>
-        <!-- <li>Canadian Journal of Electrical and Computer Engineering</li> -->
-        <!-- <li>Integration</li> -->
-        <!-- <li>Applied Science</li> -->
-      </ul>
-    </li>
-    <h2><font color="green">Panel Review</font></h2>
-      <ul>
-        <li>DTC Research Grant Call, Singapore, 2023</li>
-      </ul>
-    </li>
-</div>
-  
-
-
-
-
-
-
-
-
-
-<!-- 
-
-<div id="Publication" class="tabcontent">
-  <h2><font color="green">Journal Papers (*Co-first authors, #corresponding authors)</font></h2>
-  <ol>
-  <li><b>[TACO'24]</b> Kunpeng Xie, Ye Lu, Xinyu He, Dezhi Yi, Huijuan Dong, <u><b>Yao Chen</b></u>. Winols: A Large-Tiling Sparse Winograd CNN Accelerator on FPGAs.</li>
-  <li><b>[TPDS'23]</b> Zining Zhang, <u><b>Yao Chen</b></u>, Bingsheng He, Zhenjie Zhang. NIOT: A Novel Inference Optimization of Transformers on Modern FPGAs.</li>
-  <li><b>[TRETS'22]</b> Xinyu Chen, Feng Cheng, Hongshi Tan, <u><b>Yao Chen</b></u>, Bingsheng He, Weng-Fai Wong, Deming Chen. ThunderGP: Resource-Efficient Graph Processing Framework on FPGAs with HLS.</li>
-  <li><b>[TACL'21]</b> Prakhar Ganesh*, <u><b>Yao Chen</b></u>*, Xin Lou, Mohammad Ali Khan, Yin Yang, Deming Chen, Marianne Winslett, Hassan Sajjad, Preslav Nakov. Compressing large-scale transformer-based models: A case study on BERT.</li>
-  <li><b>[TSG'20]</b> Prakhar Ganesh, Xin Lou, <u><b>Yao Chen</b></u>, Rui Tan, David K.Y. Yau, Deming Chen, Marianne Winslett. Learning-based simultaneous detection and characterization of time delay attack in cyber-physical systems.</li>
-  <li><b>[TC'20]</b> Cheng Gong, <u><b>Yao Chen</b></u>, Ye Lu, Tao Li, Cong Hao, Deming Chen. Vecq: Minimal loss DNN model compression with vectorized weight quantization.</li>
-  <li><b>[TNanoBio'19]</b> Libo Huang, Bingo Wing-Kuen Ling, Ruichu Cai, Yan Zeng, Jiong He, <u><b>Yao Chen</b></u>. WMsorting: Wavelet packets decomposition and mutual information based spike sorting method.</li>
-  <li><b>[FGCS'18]</b> Jihe Wang, Danghui Wang, Meikang Qiu, <u><b>Yao Chen</b></u>, Bing Guo. A locality-aware shuffle optimization on fat-tree data centers.</li>
-  <li><b>[TCAD'16]</b> Ying Chen, Tan Nguyen, <u><b>Yao Chen</b></u>, Swathi T. Gurumani, Yun Liang, Kyle Rupnow, Jason Cong, Wen-mei Hwu, Deming Chen. FCUDA-HB: Hierarchical and scalable bus architecture generation on FPGAs with the FCUDA flow.</li>
-  <li><b>[TVLSI'16]</b> <u><b>Yao Chen</b></u>, Swathi Gurumani, Yun Liang, Guofeng Li, Donghui Guo, Kyle Rupnow, Deming Chen. FCUDA-NoC: A scalable and efficient network-on-chip implementation for the CUDA-to-FPGA flow.</li>
-</ol>
-
-
-  <h2><font color="green">Conference Papers (*Co-first authors, #corresponding authors)</font></h2>
-  <ol>
-  <li><b>[MICRO'25]</b> <u><b>Yao Chen</b></u>, Cheng Gong, Bingsheng He. HiPACK: Efficient Sub-8-Bit Direct Convolution with SIMD and Bitwise Management. (Accepted)</li>
-  <li><b>[SIGMOD'25]</b> Feng Yu, Hongshi Tan, Xinyu Chen, <u><b>Yao Chen</b></u>#, Weng-Fai Wong, and Bingsheng He. Clementi: Efficient Load Balancing and Communication Overlap for Multi-FPGA Graph Processing. (Accepted)</li>
-  <li><b>[NAACL'25]</b> Borui Xu, Zeyi Wen, <u><b>Yao Chen</b></u>#, Weiguo Liu#, and Bingsheng He. Evaluating Small Language Models for News Summarization: Implications and Factors Influencing Performance. (Accepted)</li>
-  <li><b>[SIGMOD'25]</b> Jixian Su, Chiyu Hao, Shixuan Sun, Hao Zhang, Sen Gao, Jiaxin Jiang, Yao Chen, Chenyi Zhang, Bingsheng He, and Minyi Guo. Revisiting the Design of In-Memory Dynamic Graph Storage. (Accepted)</li>
-  <li><b>[ICDE'25]</b> Yujian Fu, Cheng Chen, Yao Chen, Weng-Fai Wong, Bingsheng He. Vista: Vector Indexing and Search for Large-scale Imbalanced Datasets. (Accepted)</li>
-  <li><b>[KDD'25]</b> Borui Xu, Zeyi Wen, <u><b>Yao Chen</b></u>#, Weiguo Liu#, and Bingsheng He. ScalaGBM: Memory Efficient GBDT training for high-dimensional data on GPU. (Accepted)</li>
-  <li><b>[ECCV'24]</b> Cheng Gong, <u><b>Yao Chen</b></u>#, Qiuyang Luo, Ye Lu, Tao Li, Yuzhi Zhang, Yufei Sun#, Le Zhang. Deep Feature Surgery: Towards Accurate and Efficient Multi-Exit Networks.</li>
-  <li><b>[SIGMOD'24]</b> Qiange Wang, <u><b>Yao Chen</b></u>, Weng-Fai Wong, Bingsheng He. HongTu: Scalable Full-Graph GNN Training on Multiple GPUs.</li>
-  <li><b>[SIGMOD'23]</b> Hongshi Tan, Xinyu Chen, <u><b>Yao Chen</b></u>#, Bingsheng He#, Weng-Fai Wong. LightRW: FPGA Accelerated Graph Dynamic Random Walks. (Passed Artifact Evaluation)</li>
-  <li><b>[MICRO'22]</b> Xinyu Chen, <u><b>Yao Chen</b></u>, Feng Cheng, Hongshi Tan, Weng-Fai Wong, Bingsheng He. ReGraph: Scaling Graph Processing on HBM-enabled FPGAs with Heterogeneous Pipelines.</li>
-  <li><b>[ASP-DAC'22]</b> Xinheng Liu*, <u><b>Yao Chen</b></u>*, Junhao Pan, Jinjun Xiong, Deming Chen. HiKonv: High throughput quantized convolution with novel bit-wise management and computation.</li>
-  <li><b>[WACV'22]</b> Prakhar Ganesh*, <u><b>Yao Chen</b></u>*, David Yin Yang, Marianne Winslett, Deming Chen. YOLO-ReT: Towards high accuracy real-time object detection on edge GPUs. [<a href="https://www.computer.org/csdl/proceedings-article/wacv/2022/091500b311/1B13M74lSow" target="_blank">pdf</a>]</li>
-  <li><b>[ASAP'22]</b> Xinheng Liu, <u><b>Yao Chen</b></u>, Cong Hao, Ashutosh Dhar, Deming Chen. WinoCNN: Kernel sharing winograd systolic array for efficient convolutional neural network acceleration on FPGAs.</li>
-  <li><b>[ICS'21]</b> Hongshi Tan, Xinyu Chen, <u><b>Yao Chen</b></u>, Wengfai Wong, Bingsheng He. ThundeRiNG: Generating multiple independent random number sequences on FPGAs.</li>
-  <li><b>[GLSVLSI'21]</b> <u><b>Yao Chen</b></u>, Cole Hawkins, Kaiqi Zhang, Zheng Zhang, Cong Hao. 3U-EdgeAI: Ultra-low memory training, ultra-low bitwidth quantization, and ultra-low latency acceleration. [<a href="https://dl.acm.org/doi/abs/10.1145/3453688.3461738" target="_blank">pdf</a>]</li>
-  <li><b>[DAC'21]</b> Lixiang Li, <u><b>Yao Chen</b></u>, Zacharie Zirnheld, Pan Li, Cong Hao. MELOPPR: Software/hardware co-design for memory-efficient low-latency personalized pagerank.</li>
-  <li><b>[DAC'21]</b> Xinyu Chen, Hongshi Tan, <u><b>Yao Chen</b></u>, Wengfai Wong, Bingsheng He, Deming Chen. Skew-oblivious data routing for data intensive applications on FPGAs with HLS.</li>
-  <li><b>[FPGA'21]</b> Xinyu Chen, Hongshi Tan, <u><b>Yao Chen</b></u>, Wengfai Wong, Bingsheng He, Deming Chen. ThunderGP: HLS-based graph processing framework on FPGAs. (Passed Artifact Evaluation)</li>
-  <li><b>[GLSVLSI'20]</b> Cong Hao, <u><b>Yao Chen</b></u>, Xiaofan Zhang, Yuhong Li, Jinjun Xiong, Wen-mei Hwu, Deming Chen. Effective algorithm-accelerator co-design for AI solutions on edge devices.</li>
-  <li><b>[ACL'20]</b> Ruichu Cai, Zhihao Liang, Boyan Xu, Zijian Li, Yuexing Hao, <u><b>Yao Chen</b></u>. TAG: Type-auxiliary guiding for code comment generation.</li>
-  <li><b>[ICDCS'20]</b> <u><b>Yao Chen</b></u>, Xin Long, Jiong He, Yuhang Chen, Hongshi Tan, Zhenxiang Zhang, Marianne Winslett, Deming Chen. HaoCL: Harnessing large-scale heterogeneous processors made easy.</li>
-  <li><b>[DAC'20]</b> Yuhong Li, Cong Hao, Xiaofan Zhang, Xinheng Liu, <u><b>Yao Chen</b></u>, Jinjun Xiong, Wen mei Hwu, Deming Chen. EDD: Efficient differentiable DNN architecture and implementation co-search for embedded AI solutions.</li>
-  <li><b>[CIDR'19]</b> Xinyu Chen, <u><b>Yao Chen</b></u>, Ronak Bajaj, Jiong He, Bingsheng He, Weng-Fai Wong, Deming Chen. Is FPGA useful for hash joins? Exploring hash joins on coupled CPU-FPGA architecture.</li>
-  <li><b>[ICCAD'19]</b> Cong Hao, <u><b>Yao Chen</b></u>, Xinheng Liu, Atif Sarwari, Daryl Sew, Ashutosh Dhar, Bryan Wu, Dongdong Fu, Jinjun Xiong, Wen-mei Hwu, Junli Gu, Deming Chen. NAIS: Neural architecture and implementation search and its applications in autonomous driving. (Invited)</li>
-  <li><b>[FPL'19]</b> Xinyu Chen, Ronak Bajaj, <u><b>Yao Chen</b></u>, Jiong He, Weng-Fai Wong, Bingsheng He, Deming Chen. On-the-fly parallel data shuffling for graph processing on OpenCL-based FPGAs.</li>
-  <li><b>[ODML-CDNNR'19]</b> Xiaofan Zhang, Cong Hao, Yuhong Li, <u><b>Yao Chen</b></u>, Jinjun Xiong, Wen-mei Hwu, Deming Chen. A bi-directional co-design approach to enable deep learning on IoT devices. In Proceedings of the ICML 2019 Workshop, Joint Workshop on On-Device Machine Learning & Compact Deep Neural Network Representations.</li>
-  <li><b>[ISVLSI'19]</b> <u><b>Yao Chen</b></u>, Kai Zhang, Cheng Gong, Cong Hao, Xiaofan Zhang, Tao Li, Deming Chen. T-DLA: An open-source deep learning accelerator for ternarized DNN models on embedded FPGA. [<a href="https://ieeexplore.ieee.org/document/8839554" target="_blank">pdf</a>]</li>
-  <li><b>[IJCNN'19]</b> Cheng Gong, Tao Li, Ye Lu, Cong Hao, Xiaofan Zhang, Deming Chen, <u><b>Yao Chen</b></u>. μL2Q: An ultra-low loss quantization method for DNN compression.</li>
-  <li><b>[FPGA'19]</b> <u><b>Yao Chen</b></u>, Jiong He, Xiaofan Zhang, Cong Hao, Deming Chen. Cloud-DNN: An open framework for mapping DNN models to cloud FPGAs. [<a href="https://dl.acm.org/doi/10.1145/3289602.3293915" target="_blank">pdf</a>]</li>
-  <li><b>[ISCAS'19]</b> Huachao Xu, Jinlong Hu, <u><b>Yao Chen</b></u>, Guofeng Li, Chao Lu. Pico-ampere voltage references for iot systems.</li>
-  <li><b>[BIBM'18]</b> <u><b>Yao Chen</b></u>, Libo Huang, Jiong He, Kunyao Zhao, Ruichu Cai, Zhifeng Hao. HASS: High accuracy spike sorting with wavelet package decomposition and mutual information.</li>
-  <li><b>[ICDCS'18]</b> Jiong He, <u><b>Yao Chen</b></u>, Tom Zhengjia Fu, Xin Long, Marianne Winslett, Liang You, Zhenjie Zhang. HaaS: Cloud-based real-time data analytics with heterogeneity-aware scheduling.</li>
-  <li><b>[ICSICT'18]</b> Huachao Xu, <u><b>Yao Chen</b></u>, Jinlong Hu, Hongkun Cai, Tao Du, Ke Liang, Guofeng Li. 110pA, 170ppm/V, -77dB@100hz voltage reference for IoT systems.</li>
-  <li><b>[ICSICT'18]</b> Huachao Xu, <u><b>Yao Chen</b></u>, Jinlong Hu, Tao Du, Hongkun Cai, Ke Liang, Guofeng Li. 73 pA, 250 ppm/v, -74db@100hz voltage reference using one type of MOSFETs.</li>
-  <li><b>[ICCSS'18]</b> Jinlong Hu, Huachao Xu, Tao Du, Guofeng Li, <u><b>Yao Chen</b></u>. Anovel1.03ppm/°C wide temperature range curvature compensated bandgap voltage reference.</li>
-  <li><b>[ISVLSI'16]</b> Tan Nguyen, <u><b>Yao Chen</b></u>, Kyle Rupnow, Swathi T. Gurumani, Deming Chen. SoC, NoC and hierarchical bus implementations of applications on FPGAs using the FCUDA flow.</li>
-  <li><b>[FPGA'16]</b> Xinheng Liu, <u><b>Yao Chen</b></u>, Tan Nguyen, Swathi Gurumani, Kyle Rupnow, Deming Chen. High level synthesis of complex applications: An h.264 video decoder.</li>
-  <li><b>[ASICON'15]</b> Liwei Yang, <u><b>Yao Chen</b></u>, Wei Zuo, Tan Nguyen, Swathi T. Gurumani, Kyle Rupnow, Deming Chen. System-level design solutions: Enabling the IoT explosion.</li>
-  <li><b>[FCCM'14]</b> Swathi T. Gurumani, Jacob Tolar, <u><b>Yao Chen</b></u>, Yun Liang, Kyle Rupnow, Deming Chen. Integrated CUDA-to-FPGA synthesis with Network-on-Chip.</li>
-</ol>
-
-  <h2><font color="green">Preprints</font></h2>
-  <li><b>[ArXiv]</b> Zining Zhang, <u><b>Yao Chen</b></u>, Bingsheng He, Zhenjie Zhang. Aggressive Post-Training Compression on Extremely Large Language Models. 2024.</li>
-  <li><b>[ArXiv]</b> <u><b>Yao Chen</b></u>, Junhao Pan, Xinheng Liu, Jinjun Xiong, Deming Chen. HiKonv: Maximizing the Throughput of Quantized Convolution With Novel Bit-wise Management and Computation. 2023.</li>
-
-  <h2><font color="green">Book Chapters</font></h2>
-  <ol>
-  <li>Xiaofan Zhang, <u><b>Yao Chen</b></u>, Cong Hao, Sitao Huang, Yuhong Li and Deming Chen. "Compilation and Optimizations for Efficient Machine Learning on Embedded Systems," In Embedded Machine Learning for Cyber-Physical, IoT, and Edge Computing, Springer Nature, 2023.</li>
-  <li>Daisuke Mashima, <u><b>Yao Chen</b></u>, Muhammad M. Roomi, Subhash Lakshminarayana, Deming Chen. "Cybersecurity for Modern Smart Grid Against Emerging Threats," In Foundations and Trends in Privacy and Security, 2023.</li>
-</ol>
-
-</div>
- -->
-
-
+          <div id="Services" class="tabcontent">
+            <iframe id="services-frame" src="services.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
+          </div>
 
 <br><br>
 <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#999999"><tr><td height="1"></td></tr></table>
@@ -545,14 +253,17 @@ Phone:   +65 8376 7292
         elem.style.display = 'block';
       });
 
-      // Try to handle iframe content if possible
-      try {
-        const frame = document.getElementById('publication-frame');
-        if (frame && frame.contentWindow && frame.contentWindow.postMessage) {
-          frame.contentWindow.postMessage({ language: currentLang }, '*');
+      // Send language to all iframes
+      const frames = document.getElementsByTagName('iframe');
+      for(let i=0; i<frames.length; i++) {
+        try {
+            // Post message to all iframes
+            if(frames[i].contentWindow) {
+                frames[i].contentWindow.postMessage({ language: currentLang }, '*');
+            }
+        } catch(e) {
+            console.log('Error sending language to frame');
         }
-      } catch (error) {
-        console.log('Frame language update attempted');
       }
     }
 
@@ -561,34 +272,6 @@ Phone:   +65 8376 7292
       updateContentLanguage();
       document.getElementById("hometab").click();
     });
-
-    function loadPublication() {
-      const publicationContent = document.getElementById('publication-content');
-      
-      // Only load if not already loaded
-      if (!publicationContent.children.length) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'publication.html', true);
-        
-        xhr.onload = function() {
-          if (xhr.status === 200) {
-            publicationContent.innerHTML = xhr.responseText;
-            updateContentLanguage();
-          } else {
-            console.error('Error loading publications:', xhr.statusText);
-            publicationContent.innerHTML = '<p>Error loading publications. Please try again later.</p>';
-          }
-        };
-        
-        xhr.onerror = function() {
-          console.error('Error loading publications');
-          publicationContent.innerHTML = '<p>Error loading publications. Please try again later.</p>';
-        };
-        
-        xhr.send();
-      }
-    }
-
 
 </script>
 

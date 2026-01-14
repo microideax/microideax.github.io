@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.language) {
+        updateLanguage(event.data.language);
+      }
+    });
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(elem => {
+        if (elem.tagName.toLowerCase() === 'span') {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'inline' : 'none';
+        } else {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'block' : 'none';
+        }
+      });
+      sendHeightToParent();
+    }
+
+    function sendHeightToParent() {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ type: 'resize', height: height }, '*');
+    }
+
+    window.addEventListener('load', function() {
+      updateLanguage('en');
+      setTimeout(sendHeightToParent, 100);
+    });
+
+    window.addEventListener('resize', sendHeightToParent);
+  </script>
+</head>
+<body bgcolor="#FFFFFF">
+            <h2><font color="green">Software License</font></h2>
+            <ol>
+              <li>Low Loss DNN Quantization Package, SGD 2.5K/year, 2021.</li>
+            </ol>
+            <h2><font color="green">Patents</font></h2>
+            <ol>
+            <li>A GPU acceleration method for spike sorting. R. Cai, K. Zhao, J. He, Y. Chen, Z. Hao, W. Wen, B. Chen. patent No. CN109460785A.</li>
+            <li>A CUDA based spike sorting acceleration method on GPU. R. Cai, K. Zhao, J. He, Y. Chen, Z. Hao, W. Wen, B. Chen. patent No. CN109376651A.</li>
+            <li>Bi-CMOS based Fifth Order High Accuracy Temperature Compensated Circuit. C. Lin, Z. Guo, H. Xu, Y. Chen, K. Liang, G. Li. patent No. 201610443932.2.</li>
+            <li>Fifth Order High Accuracy Temperature Compensated Crystal Oscillator ASIC Design. C. Lin, Z. Guo, H. Xu, K. Liang, Y. Chen, G. Li. patent No. 201610443932.2.</li>
+            <li>Nandflash Based Data Acquisition System. X. Gao, L. Wang, Y. Chen. patent No. CN20111005119.8.</li>
+            <li>IC Card Identity Authentication System Used in Public Transportation. Y. Chen, P. Chang, L. Wang, R. Chen, H. Wu. patent No. ZL200810152397.0.</li>
+            </ol>
+</body>
+</html>

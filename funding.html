@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.language) {
+        updateLanguage(event.data.language);
+      }
+    });
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(elem => {
+        if (elem.tagName.toLowerCase() === 'span') {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'inline' : 'none';
+        } else {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'block' : 'none';
+        }
+      });
+      sendHeightToParent();
+    }
+
+    function sendHeightToParent() {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ type: 'resize', height: height }, '*');
+    }
+
+    window.addEventListener('load', function() {
+      updateLanguage('en');
+      setTimeout(sendHeightToParent, 100);
+    });
+
+    window.addEventListener('resize', sendHeightToParent);
+  </script>
+</head>
+<body bgcolor="#FFFFFF">
+            <!-- <h2><font color="green">Major Projects & Funding</font></h2> -->
+            <h3><font color="green">As Principle Investigator (PI)</font></h3>
+            <ol>
+              <li><b>OctoBrain: A privacy-preserving edge-cloud collaborative learning solution for lift systems.</b><br>
+                Singapore Cybersecurity Consortium (SGCSC). SGD $178,560: 2021 - 2022.</li>
+              <li><b>Pooling large scale heterogeneous Processors.</b><br>
+                Alibaba Innovation Research (AIR) Funding. USD 140K: 2017 - 2019.</li>
+            </ol>
+            <h3><font color="green">As Co-Principle Investigator (Co-PI)</font></h3>
+            <ol>
+              <li><b>Real-time deep learning networks for fraud detection in modern e-marketplace systems.</b><br>
+                AISG. SGD $3.3M: 2022 - 2025.</li>
+              <li><b>Dynamic Graph Random Walks on FPGAs.</b><br>
+                ByteDance. SGD 150K: 2023 - 2024.</li>
+              <li><b>Towards Energy-Efficient Tera Scale Graph Processing on FPGAs.</b><br>
+                Google Research. SGD 50K: 2023 - 2024.</li>
+            </ol>
+            <h3><font color="green">As a collaborator and/or Area Lead</font></h3>
+            <ol>
+              <li><b>Memory Efficient Graph Accelerators on HLS-based FPGAs.</b><br>
+                Ministry of Education, Academic Research Fund (AcRF) Tier 2. SGD 577K:2022 - 2025.</li>
+              <li><b>GraphMind: Energy-Efficient Hardware Accelerators for Graph Neural Networks.</b><br>
+                NUS Advanced Research and Technology Innovation Center. SGD 362K: 2021 - 2024.</li>
+              <li><b>Software-Hardware co-design for real-time AI.</b><br>
+                TSCP. SGD $15M: 2017 - 2022.</li>
+            </ol>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.language) {
+        updateLanguage(event.data.language);
+      }
+    });
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(elem => {
+        if (elem.tagName.toLowerCase() === 'span') {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'inline' : 'none';
+        } else {
+             elem.style.display = elem.getAttribute('data-lang') === lang ? 'block' : 'none';
+        }
+      });
+      sendHeightToParent();
+    }
+
+    function sendHeightToParent() {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ type: 'resize', height: height }, '*');
+    }
+
+    window.addEventListener('load', function() {
+      updateLanguage('en');
+      setTimeout(sendHeightToParent, 100);
+    });
+
+    window.addEventListener('resize', sendHeightToParent);
+  </script>
+</head>
+<body bgcolor="#FFFFFF">
+    <h2><font color="green">Associate Editor</font></h2>
+      <ul>
+        <li>2023 - present: ACM Transactions on Reconfigurable Technology and Systems (TRETS)</li>
+        <li>2023 - present: Frontiers in Electronics</li>
+      </ul>
+    
+    <h2><font color="green">Assistant Editor</font></h2>
+      <ul>
+        <li>NRF FRC Green Computing Report (NRF Singapore), 2023</li>
+      </ul>
+    
+    <h2><font color="green">Conference Chairs</font></h2>
+      <ul>
+        <li>Public Chair
+          <ul>
+            <li>2022: CSCLOUD</li>
+            <li>2022: <a href="https://cacm-eao-2022.comp.nus.edu.sg/index.html">CACM Regional Special Section on East Asia and Oceania Region</a></li>
+          </ul>
+        </li>
+        <li>Proceedings Chair
+          <ul>
+            <li>2025: SCAsia</li>
+          </ul>
+        </li>
+        <li>Registration Chair
+          <ul>
+            <li>2021: ISVLSI</li>
+          </ul>
+        </li>
+        <li>Session Chair
+          <ul>
+            <li>2024: ASP-DAC Session Chair</li>
+            <li>2019: ISVLSI Session Chair</li>
+          </ul>
+        </li>
+      </ul>
+    	
+    <h2><font color="green">TPC Members</font></h2>
+      <ul>
+        <li>2025: SC, HiPC, DATE, IEEE BigData, FCCM, ICCAD, ASAP</li>
+        <li>2024: ICDCS, ICCAD, ICDE (poster session) </li>
+        <li>2023: ICCAD, BigData, DATE</li>
+        <li>2022: ICCAD, ICCD, AAAI</li>
+        <li>2021: AIOTS, CCGRID</li>
+      </ul>
+    
+    
+    <h2><font color="green">Journal Review</font></h2>
+      <ul>
+        <li>IEEE Transactions on Computers (TC)</li>
+        <li>IEEE Transactions on Parallel and Distributed Systems (TPDS)</li>
+        <li>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)</li>
+        <li>IEEE Design and Test (IEEE D&T)</li>
+        <li>ACM Transactions on Architecture and Code Optimization (TACO)</li>
+        <li>IEEE Transactions on Very Large Scale Integration (VLSI) Systems (TVLSI)</li>
+        <li>IEEE Journal on Emerging and Selected Topics in Circuits and Systems</li>
+        <li>IEEE Transactions on Network Science and Engineering</li>
+        <li>ACM Transactions on Design Automation of Electronic Systems (TODAES)</li>
+        <li>CCF Transactions on High Performance Computing</li>
+        <!-- <li>Wireless Networks</li> -->
+        <li>Micromachines</li>
+        <!-- <li>Canadian Journal of Electrical and Computer Engineering</li> -->
+        <!-- <li>Integration</li> -->
+        <!-- <li>Applied Science</li> -->
+      </ul>
+    
+    <h2><font color="green">Panel Review</font></h2>
+      <ul>
+        <li>DTC Research Grant Call, Singapore, 2023</li>
+      </ul>
+</body>
+</html>
