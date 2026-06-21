@@ -1,13 +1,12 @@
 (() => {
   const pages = [
     ['index.html', 'Home', '主页'],
+    ['students.html', 'Team', '团队'],
     ['publication.html', 'Publications', '论文'],
     ['funding.html', 'Funding', '基金'],
     ['teaching.html', 'Teaching', '教学'],
-    ['students.html', 'Students', '学生'],
     ['services.html', 'Services', '学术服务'],
     ['publicity.html', 'Publicity', '学术报告'],
-    ['awards.html', 'Awards', '奖项'],
     ['misc.html', 'Misc', '其他']
   ];
 
