@@ -1,289 +1,158 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-          "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-
-  <title>Yao Chen (陈瑶)</title>
-
-  <meta name="generator" content="emacs">
-
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yao Chen — Professor at Huazhong University of Science and Technology. Research in FPGA accelerators, hardware/software co-design, and electronic design automation.">
+  <title>Yao Chen (陈瑶) — HUST</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=EB+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
-  <script type="text/javascript">
-    function showStuff(id) {
-    document.getElementById(id).style.display = 'block';
-    }
-    
-    function hideStuff(id) {
-    document.getElementById(id).style.display = 'none';
-    }
-
-    function openTab(evt, tabName) {
-    	var i, tabcontent, tablinks;
-    	tabcontent = document.getElementsByClassName("tabcontent");
-    	for (i = 0; i < tabcontent.length; i++) {
-    	    tabcontent[i].style.display = "none";
-    	}
-    	tablinks = document.getElementsByClassName("tablinks");
-    	for (i = 0; i < tablinks.length; i++) {
-    	    tablinks[i].className = tablinks[i].className.replace(" active", "");
-    	}
-    	document.getElementById(tabName).style.display = "block";
-    	evt.currentTarget.className += " active";
-
-    	// Update content language when tab is opened
-    	updateContentLanguage();
-    }
-
-    document.addEventListener("DOMContentLoaded", function(event) { 
-	    document.getElementById("hometab").click();
-    });
-
-    // Generic resize handler
-    window.addEventListener('message', function(event) {
-      if (event.data && event.data.type === 'resize') {
-        const frames = document.getElementsByTagName('iframe');
-        for (let i = 0; i < frames.length; i++) {
-          if (frames[i].contentWindow === event.source) {
-            frames[i].style.height = event.data.height + 'px';
-            break;
-          }
-        }
-      }
-    });
-
-    function handleFrameLoad(frame) {
-       // Initial height setup or language sync can happen here if needed
-       // But the frame itself sends a resize message on load, which is handled above.
-       // We can just ensure language is synced.
-       if (typeof currentLang !== 'undefined') {
-           frame.contentWindow.postMessage({ language: currentLang }, '*');
-       }
-    }
-</script>
-
-  <!-- <link rel="shortcut icon" href="rg.ico" type="image/x-icon" /> -->
-
 </head>
+<body>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a class="brand" href="index.html" data-en="Yao Chen" data-zh="陈瑶">Yao Chen</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a class="active" href="index.html" data-en="Home" data-zh="主页">Home</a>
+        <a href="publication.html" data-en="Publications" data-zh="论文">Publications</a>
+        <a href="funding.html" data-en="Funding" data-zh="基金">Funding</a>
+        <a href="teaching.html" data-en="Teaching" data-zh="教学">Teaching</a>
+        <a href="students.html" data-en="Students" data-zh="学生">Students</a>
+        <a href="services.html" data-en="Services" data-zh="学术服务">Services</a>
+        <a href="publicity.html" data-en="Publicity" data-zh="学术报告">Publicity</a>
+        <a href="awards.html" data-en="Awards" data-zh="奖项">Awards</a>
+        <a href="misc.html" data-en="Misc" data-zh="其他">Misc</a>
+        <button class="language-toggle" type="button" aria-label="Switch language">中文</button>
+      </div>
+    </nav>
+  </header>
 
-<body bgcolor="#DDDDDD">
-  <table class="main-container" align="center" width="98%" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF">
-    <tr><td bgcolor="green" height="5"></td></tr>
-    <tr>
-      <td style="position: relative;">
-        <div class="lang-switch">
-          <span class="lang-option active" data-lang="en" onclick="toggleLanguage('en')">English</span>
-          <span class="lang-option" data-lang="zh" onclick="toggleLanguage('zh')">中文</span>
+  <div class="page-shell">
+    <aside class="profile-card" aria-label="Profile">
+      <img class="portrait" src="Yao-Homepage_files/yao.jpg" alt="Portrait of Yao Chen">
+      <div class="profile-body">
+        <h1 data-en="Yao Chen" data-zh="陈瑶">Yao Chen</h1>
+        <p class="role" data-en="Professor" data-zh="教授">Professor</p>
+        <div class="affiliation">
+          <a href="https://www.hust.edu.cn/" target="_blank" rel="noopener" data-en="Huazhong University of Science and Technology" data-zh="华中科技大学">Huazhong University of Science and Technology</a>
+          <a href="https://cs.hust.edu.cn/" target="_blank" rel="noopener" data-en="School of Computer Science and Technology" data-zh="计算机科学与技术学院">School of Computer Science and Technology</a>
         </div>
-        <table class="content-wrapper" cellspacing="5" cellpadding="0" border="0" align="center" width="100%">
-          <tr><td>
-            <table>
-              <tr>
-                <td valign="top" width="180"><img src="./Yao-Homepage_files/yao.jpg" width="175" height="200" alt="Yao Chen"></td>
-                <td width="20"></td>
-                <td valign="top">
-                    <div style="position: relative;">
-                      <div>
-                        <h1 style="margin-top: 0;">
-                          <span data-lang="en">Yao Chen</span>
-                          <span data-lang="zh" style="display: none;">陈瑶</span>
-                        </h1>
-                      </div>
-                    </div>
-                  <div data-lang="en">
-                    <b>Professor</b><br>
-                    Huazhong University of Science and Technology, China<br>
-                    <pre style="border: 0;padding: 0;margin: 0; font-family: inherit;">E-mail:  <a href="mailto:chenyao_cs@hust.edu.cn">chenyao_cs@hust.edu.cn</a>
-Address: Room #5109, Department of Computer Science and Technology, East Campus
-Phone:   +86 17601240139
-<a href="https://microideax.github.io/">Homepage</a> | <a href="https://scholar.google.com/citations?user=R-GbxYsAAAAJ&hl=en">Google Scholar</a> | <a href="https://dblp.org/pid/70/3621-8.html">DBLP</a> | <a href="https://orcid.org/0000-0002-5798-2282">ORCID</a> | <a href="https://www.researchgate.net/profile/Yao-Chen-10">ResearchGate</a>
-                    </pre>
-                  </div>
 
-                  <div data-lang="zh" style="display: none; line-height: 1.2; position: relative; top: -18px;">
-                    <b>教授</b><br>
-                    华中科技大学，武汉，湖北，中国<br>
-                    邮箱：  <a href="mailto:chenyao_cs@hust.edu.cn">chenyao_cs@hust.edu.cn</a>
-                    地址：  东校区计算机学院5109室<br>
-                    电话：  +86 17601240139<br>
-                    <a href="https://microideax.github.io/">主页</a> | <a href="https://scholar.google.com/citations?user=R-GbxYsAAAAJ&hl=en">谷歌学术</a> | <a href="https://dblp.org/pid/70/3621-8.html">DBLP</a> | <a href="https://orcid.org/0000-0002-5798-2282">ORCID</a> | <a href="https://www.researchgate.net/profile/Yao-Chen-10">ResearchGate</a>
-                  </div>
-                </td>
-              </tr>
-            </table>
+        <dl class="contact-list">
+          <div><dt data-en="Email" data-zh="邮箱">Email</dt><dd><a href="mailto:chenyao_cs@hust.edu.cn">chenyao_cs@hust.edu.cn</a></dd></div>
+          <div><dt data-en="Office" data-zh="办公室">Office</dt><dd data-en="Room 5109, East Campus" data-zh="东校区计算机学院 5109 室">Room 5109, East Campus</dd></div>
+          <div><dt data-en="Phone" data-zh="电话">Phone</dt><dd>+86 17601240139</dd></div>
+        </dl>
 
-            <div class="tab">
+        <div class="profile-links">
+          <a href="https://scholar.google.com/citations?user=R-GbxYsAAAAJ&amp;hl=en" target="_blank" rel="noopener"><span aria-hidden="true">↗</span> Google Scholar</a>
+          <a href="https://dblp.org/pid/70/3621-8.html" target="_blank" rel="noopener"><span aria-hidden="true">↗</span> DBLP</a>
+          <a href="https://orcid.org/0000-0002-5798-2282" target="_blank" rel="noopener"><span aria-hidden="true">↗</span> ORCID</a>
+          <a href="https://www.researchgate.net/profile/Yao-Chen-10" target="_blank" rel="noopener"><span aria-hidden="true">↗</span> ResearchGate</a>
+        </div>
+      </div>
+    </aside>
 
-              <!-- <button id="langSwitch" onclick="toggleLanguage()" style="float:right">中文</button> -->
+    <main>
+      <section class="content-section intro" id="biography">
+        <h2 data-en="Biography" data-zh="个人简介">Biography</h2>
+        <div data-lang="en">
+          <p>I am a Professor with the School of Computer Science and Technology at <strong>Huazhong University of Science and Technology (HUST)</strong>. My work explores efficient computer systems through specialized hardware, software–hardware co-design, and automation.</p>
+          <p>Before joining HUST, I was a Research Assistant Professor at the National University of Singapore, where I collaborated with <a href="https://www.comp.nus.edu.sg/~hebs/" target="_blank" rel="noopener">Prof. Bingsheng He</a> and <a href="https://www.comp.nus.edu.sg/~wongwf/" target="_blank" rel="noopener">Prof. Weng-Fai Wong</a>. Earlier, I was a Senior Research Scientist at the Advanced Digital Sciences Center, a UIUC-affiliated research center in Singapore.</p>
+        </div>
+        <div data-lang="zh" hidden>
+          <p>我任职于<strong>华中科技大学计算机科学与技术学院</strong>，担任教授。我的研究聚焦于专用硬件、软硬件协同设计和设计自动化，以构建高效的计算机系统。</p>
+          <p>加入华中科技大学之前，我曾任新加坡国立大学计算机学院研究助理教授，与<a href="https://www.comp.nus.edu.sg/~hebs/" target="_blank" rel="noopener">何丙胜教授</a>和<a href="https://www.comp.nus.edu.sg/~wongwf/" target="_blank" rel="noopener">黄荣辉教授</a>合作开展多项研究。此前，我曾任伊利诺伊大学厄巴纳–香槟分校设在新加坡的高级数字科学研究中心高级研究科学家。</p>
+        </div>
+      </section>
 
-              <button id="hometab" class="tablinks" onclick="openTab(event, 'Home')">Home</button>
-              <button class="tablinks" onclick="openTab(event, 'Publication')">Publication</button>    
-              <button class="tablinks" onclick="openTab(event, 'Funding')">Funding</button>
-              <button class="tablinks" onclick="openTab(event, 'Teaching')">Teaching</button>
-              <button class="tablinks" onclick="openTab(event, 'Services')">Services</button>
-              <button class="tablinks" onclick="openTab(event, 'Publicity')">Publicity</button>
-              <button class="tablinks" onclick="openTab(event, 'Awards')">Awards</button>
-              <!-- <button class="tablinks" onclick="openTab(event, 'Projects')">Projects</button>-->
-              <button class="tablinks" onclick="openTab(event, 'Misc')">Misc</button>
-              <!-- <button class="tablinks" onclick="openTab(event, 'Aboutme')">About Me</button> -->
-            </div>
+      <section class="content-section" id="research">
+        <h2 data-en="Research Areas" data-zh="研究方向">Research Areas</h2>
+        <div class="research-grid">
+          <article class="research-card">
+            <div class="research-icon" aria-hidden="true">◇</div>
+            <h3 data-en="System Architecture" data-zh="计算机系统架构">Design Automation</h3>
+            <p data-en="Futuer system architectures for the fusion of supercomputing and intelligent computing." data-zh="未来超算-智算融合架构。">Domain-specific high-level synthesis and automated architecture generation.</p>
+          </article>
+          <article class="research-card">
+            <div class="research-icon" aria-hidden="true">⌁</div>
+            <h3 data-en="Domain-Specific Accelerators" data-zh="领域专用加速器">Domain-Specific Accelerators</h3>
+            <p data-en="FPGA-enabled domain-specific architectures for data-intensive and emerging applications." data-zh="面向数据密集型与新兴应用的FPGA领域专用体系结构。">FPGA-enabled domain-specific architectures for data-intensive and emerging applications.</p>
+          </article>
+          <article class="research-card">
+            <div class="research-icon" aria-hidden="true">⇄</div>
+            <h3 data-en="Hardware–Software Co-design" data-zh="软硬件协同设计">Hardware–Software Co-design</h3>
+            <p data-en="Efficient ML and graph accelerators, heterogeneous systems, and on-device AI." data-zh="高效机器学习与图计算加速器、异构系统和端侧人工智能。">Efficient ML and graph accelerators, heterogeneous systems, and on-device AI.</p>
+          </article>
+        </div>
+      </section>
 
-          <div id="Home" class="tabcontent">
-            <iframe id="home-frame" src="home.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
-          </div>
-          
-          <div id="Publication" class="tabcontent" style="background-color: white;">
-            <iframe id="publication-frame" src="publication.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
-          </div>
+      <section class="content-section" id="news">
+        <div class="section-title-row">
+          <h2 data-en="Recent News" data-zh="最新动态">Recent News</h2>
+          <a class="section-link" href="publication.html" data-en="All publications →" data-zh="全部论文 →">All publications →</a>
+        </div>
+        <ol class="timeline">
+          <li><time datetime="2026">2026</time><div><span class="tag paper" data-en="Paper" data-zh="论文">Paper</span><strong>Prefix cache aware data reordering for LLM augmented database analytics</strong> accepted by ICML 2026.</div></li>
+          <li><time datetime="2026">2026</time><div><span class="tag paper" data-en="Paper" data-zh="论文">Paper</span><strong>Approaching Shannon Bound with Lossless LLM Weight Compression</strong> accepted by ISCA 2026.</div></li>
+          <li><time datetime="2026">2026</time><div><span class="tag paper" data-en="Paper" data-zh="论文">Paper</span><strong>XtraMAC</strong>, an efficient mixed-precision LLM inference architecture, accepted by ISCA 2026.</div></li>
+          <li><time datetime="2025">2025</time><div><span class="tag talk" data-en="Talk" data-zh="报告">Talk</span><span data-en="Invited talk “Revisiting CAM on FPGAs” at the NUS–HUST International Workshop." data-zh="在 NUS–HUST 国际研讨会上作“Revisiting CAM on FPGAs”邀请报告。">Invited talk “Revisiting CAM on FPGAs” at the NUS–HUST International Workshop.</span></div></li>
+        </ol>
+      </section>
 
-          <div id="Funding" class="tabcontent">
-             <iframe id="funding-frame" src="funding.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
-          </div>
+      <section class="content-section" id="talks">
+        <h2 data-en="Selected Talks" data-zh="部分学术报告">Selected Talks</h2>
+        <ul class="talk-list">
+          <li><strong>Revisiting CAM on FPGAs</strong><span>NUS–HUST International Workshop · Singapore · 2025</span></li>
+          <li><strong>From Applications to Efficient Architectures on FPGAs</strong><span>CCF ESTC · Shenzhen · 2024</span></li>
+          <li><strong>Parallel Graph Processing on FPGAs</strong><span>National University of Defense Technology · 2024</span></li>
+        </ul>
+        <a class="text-link" href="publicity.html" data-en="View all talks →" data-zh="查看全部报告 →">View all talks →</a>
+      </section>
+    </main>
+  </div>
 
-          <div id="Teaching" class="tabcontent">
-             <iframe id="teaching-frame" src="teaching.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
-          </div>
+  <footer>
+    <div><span>© 2026 Yao Chen</span><span data-en="School of Computer Science and Technology, HUST" data-zh="华中科技大学计算机科学与技术学院">School of Computer Science and Technology, HUST</span></div>
+  </footer>
 
-          <div id="Awards" class="tabcontent">
-             <iframe id="awards-frame" src="awards.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
-          </div>
+  <script>
+    const languageButton = document.querySelector('.language-toggle');
+    const navToggle = document.querySelector('.nav-toggle');
+    let language = localStorage.getItem('language') || 'en';
 
-          <div id="Misc" class="tabcontent">
-             <iframe id="misc-frame" src="misc.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
-          </div>
-
-          <div id="Publicity" class="tabcontent">
-             <iframe id="publicity-frame" src="publicity.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
-          </div>
-
-          <div id="Services" class="tabcontent">
-            <iframe id="services-frame" src="services.html" style="width:100%; border:none; background-color: white; overflow: hidden;" onload="handleFrameLoad(this)"></iframe>
-          </div>
-
-<br><br>
-<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#999999"><tr><td height="1"></td></tr></table>
-
-
-          </td></tr></table>
-        </td>
-      </tr>
-      <tr><td bgcolor="green" height="5"></td></tr>
-    </table>
-
-    <br><br>
-
-
-    <a href=""> </a>
-
-    <!-- Add this script before the closing </body> tag -->
-    <script>
-      const translations = {
-        'en': {
-          'Home': 'Home',
-          'Publication': 'Publication',
-          'Funding': 'Funding', 
-          'Teaching': 'Teaching',
-          'Services': 'Services',
-          'Publicity': 'Publicity',
-          'Awards': 'Awards',
-          'Misc': 'Misc'
-        },
-        'zh': {
-          'Home': '简介',
-          'Publication': '论文',
-          'Funding': '基金',
-          'Teaching': '教学',
-          'Services': '学术服务',
-          'Publicity': '学术报告',
-          'Awards': '奖项',
-          'Misc': '其他'
-        }
-      };
-      
-      let currentLang = 'en';
-      
-    function toggleLanguage(newLang) {
-      if (newLang === currentLang) return;
-      
-      currentLang = newLang;
-      
-      // Update language switch UI
-      document.querySelectorAll('.lang-option').forEach(option => {
-        if (option.dataset.lang === currentLang) {
-          option.classList.add('active');
-        } else {
-          option.classList.remove('active');
-        }
+    function setLanguage(nextLanguage) {
+      language = nextLanguage;
+      document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+      document.querySelectorAll('[data-lang]').forEach((element) => {
+        element.hidden = element.dataset.lang !== language;
       });
-      
-      // Update tab text
-      const tablinks = document.getElementsByClassName('tablinks');
-      for(let tab of tablinks) {
-        let tabText = tab.textContent.trim();
-        let translationKey = Object.keys(translations['en']).find(key => 
-          translations['en'][key] === tabText || translations['zh'][key] === tabText
-        );
-        
-        if (translationKey) {
-          tab.textContent = translations[currentLang][translationKey];
-        }
-      }
-      
-      // Update content language
-      updateContentLanguage();
-      
-      // Re-trigger click on current active tab
-      const activeTab = document.querySelector('.tablinks.active');
-      if(activeTab) {
-        activeTab.click();
-      }
+      document.querySelectorAll('[data-en][data-zh]').forEach((element) => {
+        element.textContent = element.dataset[language];
+      });
+      languageButton.textContent = language === 'en' ? '中文' : 'English';
+      languageButton.setAttribute('aria-label', language === 'en' ? '切换到中文' : 'Switch to English');
+      localStorage.setItem('language', language);
     }
 
-    function updateContentLanguage() {
-      // Handle main page content
-      document.querySelectorAll('[data-lang]').forEach(elem => {
-        if (elem.classList.contains('lang-option')) return;
-        elem.style.display = 'none';
-      });
-      
-      document.querySelectorAll(`[data-lang="${currentLang}"]`).forEach(elem => {
-        if (elem.classList.contains('lang-option')) return;
-        elem.style.display = 'block';
-      });
-
-      // Send language to all iframes
-      const frames = document.getElementsByTagName('iframe');
-      for(let i=0; i<frames.length; i++) {
-        try {
-            // Post message to all iframes
-            if(frames[i].contentWindow) {
-                frames[i].contentWindow.postMessage({ language: currentLang }, '*');
-            }
-        } catch(e) {
-            console.log('Error sending language to frame');
-        }
-      }
-    }
-
-    // Initialize language on page load
-    document.addEventListener("DOMContentLoaded", function() {
-      updateContentLanguage();
-      document.getElementById("hometab").click();
+    languageButton.addEventListener('click', () => setLanguage(language === 'en' ? 'zh' : 'en'));
+    navToggle.addEventListener('click', () => {
+      const open = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!open));
+      document.querySelector('.nav-links').classList.toggle('open', !open);
     });
+    setLanguage(language);
+  </script>
 
-</script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R0JPVQM5PM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-R0JPVQM5PM');
-</script>
-
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R0JPVQM5PM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R0JPVQM5PM');
+  </script>
 </body>
 </html>
